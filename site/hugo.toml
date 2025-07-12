@@ -1,7 +1,13 @@
 baseURL = 'https://literallytheone.github.io'
 languageCode = 'en-us'
 title = 'LiterallyTheOne'
-theme = 'my_theme'
+
 [caches]
 [caches.images]
 dir = ':cacheDir/images'
+
+[menus]
+[[menus.main]]
+name = 'Home'
+pageRef = '/'
+weight = 10
