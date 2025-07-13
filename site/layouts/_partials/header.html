@@ -1,12 +1,18 @@
-<div class="container mx-auto px-4">
+<div class="container mx-auto px-4 mt-6 rounded">
     <header>
         <div class="flex flex-wrap items-center">
             <div class="w-full md:w-1/2">
-                <button class="bg-white rounded shadow p-4">LiterallyTheOne</button>
+                <button class="bg-white rounded shadow p4 p-4">
+                    <a href="{{ .RelPermalink }}">
+                        LiterallyTheOne
+                    </a>
+                </button>
             </div>
 
             {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
         </div>
     </header>
+    <br>
+    <br>
 </div>
 
