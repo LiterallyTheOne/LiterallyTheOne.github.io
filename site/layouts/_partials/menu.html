@@ -40,18 +40,16 @@ Renders a menu for the given menu ID.
 {{- end }}
 
 
-<div class="w-full md:w-1/8">
+<div class="rounded shadow p-4 text-sm/6 text-gray-950 dark:text-white">
 
-    <button class="bg-white rounded shadow p4 p-4">
-        <a
-                {{- range $k, $v :=$attrs }}
-                {{- with $v }}
-                {{- printf " %s=%q" $k $v | safeHTMLAttr }}
-        {{- end }}
-        {{- end -}}>
-        {{ $name }}
-        </a>
-    </button>
+    <a
+            {{- range $k, $v :=$attrs }}
+            {{- with $v }}
+            {{- printf " %s=%q" $k $v | safeHTMLAttr }}
+    {{- end }}
+    {{- end -}}>
+    {{ $name }}
+    </a>
 </div>
 {{- end }}
 {{- end }}

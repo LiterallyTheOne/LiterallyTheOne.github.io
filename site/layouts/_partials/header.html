@@ -1,18 +1,20 @@
-<div class="container mx-auto px-4 mt-6 rounded">
-    <header>
-        <div class="flex flex-wrap items-center">
-            <div class="w-full md:w-1/2">
-                <button class="bg-white rounded shadow p4 p-4">
-                    <a href="{{ .RelPermalink }}">
-                        LiterallyTheOne
-                    </a>
-                </button>
-            </div>
+<div class="fixed inset-x-0 top-0 z-10 border-b border-gray-950/5 dark:border-white/10">
+    <div class="flex flex-row justify-between bg-blue-200 dark:bg-blue-950">
 
+        <div class="flex items-center gap-4">
+            <div class="rounded shadow text-xl p-4 dark:text-white">
+                <a href="{{ .RelPermalink }}">
+                    LiterallyTheOne
+                </a>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-4 max-md:hidden">
             {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
         </div>
-    </header>
-    <br>
-    <br>
+
+
+    </div>
+
 </div>
 
