@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html
-  lang="{{ site.Language.LanguageCode }}"
-  dir="{{ or site.Language.LanguageDirection `ltr` }}"
+        lang="{{ site.Language.LanguageCode }}"
+        dir="{{ or site.Language.LanguageDirection `ltr` }}"
 >
-  <head>
+<head>
     {{ partial "head.html" . }}
-  </head>
+</head>
 
-  <body>
-    <header>{{ partial "header.html" . }}</header>
-    <main>{{ block "main" . }}{{ end }}</main>
-    <footer>{{ partial "footer.html" . }}</footer>
-  </body>
+<body>
+<header>{{ partial "header.html" . }}</header>
+<main>{{ block "main" . }}{{ end }}</main>
+<footer>{{ partial "footer.html" . }}</footer>
+</body>
 </html>
