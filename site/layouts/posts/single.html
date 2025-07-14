@@ -1,0 +1,12 @@
+{{ define "main" }}
+<article class="prose mx-auto">
+    <h1>{{ .Title }}</h1>
+    <p class="text-gray-500 text-sm">{{ .Date.Format "2006-01-02" }}</p>
+
+    {{ with .Params.image }}
+    <img src="{{ . }}" alt="" class="rounded my-4"/>
+    {{ end }}
+
+    {{ .Content }}
+</article>
+{{ end }}
