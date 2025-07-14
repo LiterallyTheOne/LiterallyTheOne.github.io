@@ -2,7 +2,7 @@
 <html
         lang="{{ site.Language.LanguageCode }}"
         dir="{{ or site.Language.LanguageDirection `ltr` }}"
-        class="dark"
+        class="dark dark:bg-gray-950"
 >
 <head>
     {{ partial "head.html" . }}
@@ -21,7 +21,11 @@
 
 <!--</div>-->
 
-<main class="pt-20 min-h-dvh">{{ block "main" . }}{{ end }}</main>
+<main class="pt-20 min-h-dvh">
+    {{ block "main" . }}{{ end }}
+</main>
+
+
 {{ partial "footer.html" . }}
 </body>
 </html>

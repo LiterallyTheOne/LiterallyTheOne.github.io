@@ -2,11 +2,30 @@
 {{ .Content }}
 
 
-{{ range site.RegularPages }}
-<h2>
-    <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-</h2>
-{{ .Summary }}
-{{ end }}
+<div class="grid grid-cols-3 grid-rows-3 gap-4">
+
+    {{ range where site.RegularPages "Section" "posts" }}
+    <div class="rounded shadow p-1 dark:text-white border-2 border-blue-200 dark:border-blue-950">
+        <div class="flex flex-col-2">
+            <div class="flex gap-2">
+                <img src="{{ .RelPermalink }}{{ .Params.image }}" alt="{{ .Title }}" width="240" height="135">
+            </div>
+
+            <div class="flex-col-2 gap-2">
+                <div>
+                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                </div>
+                <div>
+                    <time datetime="{{ .Date }}">{{ .Date.Format "2006-01-02" }}</time>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="flex flex-row">
+        </div>
+    </div>
+    {{ end }}
+</div>
 
 {{ end }}
