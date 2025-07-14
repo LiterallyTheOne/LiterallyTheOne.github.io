@@ -9,16 +9,14 @@ document.documentElement.classList.toggle(
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    dark_button = document.getElementById("theme-switcher-dark")
-    light_button = document.getElementById("theme-switcher-light")
+    theme_switcher = document.getElementById("theme-switcher")
 
-    dark_button.addEventListener('click', function() {
-        localStorage.theme = "dark";
-        location.reload();
-    });
-
-    light_button.addEventListener('click', function() {
-        localStorage.theme = "light";
+    theme_switcher.addEventListener('click', function() {
+        if(localStorage.theme == "dark"){
+            localStorage.theme = "light";
+        }else{
+            localStorage.theme = "dark";
+        }
         location.reload();
     });
 

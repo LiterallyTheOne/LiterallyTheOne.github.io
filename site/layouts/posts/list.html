@@ -1,5 +1,7 @@
 {{ define "main" }}
-{{ .Content }}
+<h1>{{ .Title }}</h1>
+{{ with .Content }}
+<div class="prose">{{ . }}</div>{{ end }}
 
 
 <div class="grid md:grid-cols-3 sm:grid-cols-1 gap-4">
@@ -28,4 +30,5 @@
     {{ end }}
 </div>
 
+{{ partial "pagination.html" . }}
 {{ end }}
