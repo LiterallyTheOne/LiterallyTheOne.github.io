@@ -1,8 +1,9 @@
 +++
 date = '2025-07-13T21:04:23+03:30'
 draft = false
-title = '1_export_command'
+title = 'Export Command'
 tags = ['Linux']
+image = "export.png"
 +++
 
 # <div style="text-align: center; color: cyan"> Export Command </div>
