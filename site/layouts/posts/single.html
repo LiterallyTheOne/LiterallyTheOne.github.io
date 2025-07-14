@@ -1,12 +1,31 @@
 {{ define "main" }}
-<article class="prose mx-auto">
-    <h1>{{ .Title }}</h1>
-    <p class="text-gray-500 text-sm">{{ .Date.Format "2006-01-02" }}</p>
+<div class="dark:text-white">
 
-    {{ with .Params.image }}
-    <img src="{{ . }}" alt="" class="rounded my-4"/>
-    {{ end }}
+    <div class="grid md:grid-cols-3 sm:grid-cols-1 gap-4">
+        <div class="flex flex-row col-start-2 gap-3 col-span-2">
 
-    {{ .Content }}
-</article>
+            <div class="overflow-auto gap-3">{{ .Content }}</div>
+            <div>
+                <div class="sticky top-20">
+                    <div
+                            class="flex flex-col items-center rounded shadow p-1 dark:text-white border-2 border-blue-200 dark:border-blue-950 gap-3 max-h-1/2"
+                    >
+                        <div class="flex gap-2 w-full">
+                            <img
+                                    src="{{ .RelPermalink }}{{ .Params.image }}"
+                                    alt="{{ .Title }}"
+                            />
+                        </div>
+
+                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                        <time class="flex" datetime="{{ .Date }}">
+                            {{ .Date.Format "2006-01-02" }}
+                        </time>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
 {{ end }}
