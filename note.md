@@ -1,6 +1,11 @@
 # <div style="text-align:center; color:cyan"> Note </div>
 
+* Sorting of the posts
+* post date and summary on top?
+
 * Add about_me page
+
+* Study about SEO
 
 ## <div style="text-align:center; color:lime"> Done </div>
 
