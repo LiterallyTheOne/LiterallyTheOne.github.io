@@ -189,8 +189,14 @@
   .col-span-2 {
     grid-column: span 2 / span 2;
   }
+  .col-span-9 {
+    grid-column: span 9 / span 9;
+  }
   .col-start-2 {
     grid-column-start: 2;
+  }
+  .col-start-3 {
+    grid-column-start: 3;
   }
   .prose {
     color: var(--tw-prose-body);
@@ -816,6 +822,11 @@
   .md\:grid-cols-3 {
     @media (width >= 48rem) {
       grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  .md\:grid-cols-12 {
+    @media (width >= 48rem) {
+      grid-template-columns: repeat(12, minmax(0, 1fr));
     }
   }
   .lg\:prose-xl {
