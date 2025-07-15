@@ -4,7 +4,7 @@
     <div class="grid md:grid-cols-3 sm:grid-cols-1 gap-4">
         <div class="flex flex-row col-start-2 gap-3 col-span-2">
 
-            <div class="overflow-auto gap-3">{{ .Content }}</div>
+            <article class="prose dark:prose-invert lg:prose-xl">{{ .Content }}</article>
             <div>
                 <div class="sticky top-20">
                     <div
@@ -23,17 +23,14 @@
                         </time>
                     </div>
 
-                    <nav id="toc" class="sticky top-4 p-4 bg-gray-100 rounded-md text-sm">
-                        <h2 class="font-bold mb-2">Table of Contents</h2>
-                        {{ .TableOfContents }}
-                    </nav>
 
-                    <!--                    <div class="flex flex-col rounded mt-10">-->
-                    <!--                        <h2 class="font-bold mb-2 text-center">Table of Contents</h2>-->
-                    <!--                        <nav id="toc" class="toc gap-3">-->
-                    <!--                            {{ .TableOfContents }}-->
-                    <!--                        </nav>-->
-                    <!--                    </div>-->
+                    <div class="flex flex-col rounded mt-10">
+                        <h2 class="font-bold mb-2 text-center">{{ .Title }}</h2>
+                        <nav id="toc" class="toc gap-3">
+                            {{ .TableOfContents }}
+                        </nav>
+                    </div>
+
                 </div>
             </div>
 

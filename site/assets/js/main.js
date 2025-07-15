@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    const headings = document.querySelectorAll("h2, h3");
+    const headings = document.querySelectorAll("article h2, article h3");
     const tocLinks = document.querySelectorAll("#toc a");
 
     const observer = new IntersectionObserver(entries => {
