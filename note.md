@@ -1,7 +1,7 @@
 # Note
 
-* Fix posts
 * Add more button in posts
+* Add tags to each post
 
 ## Done
 
