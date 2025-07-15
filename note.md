@@ -1,8 +1,8 @@
-# Note
+# <div style="text-align:center; color:cyan"> Note </div>
 
-* Add more button in posts
+* Add about_me page
 
-## Done
+## <div style="text-align:center; color:lime"> Done </div>
 
 * Might need to change `grid 3x3` in home to `flex`
 * Add tags to each post
