@@ -22,4 +22,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    const headings = document.querySelectorAll("h2, h3");
+    const tocLinks = document.querySelectorAll("#toc a");
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          tocLinks.forEach(link => {
+            link.classList.remove("toc-active");
+            if (link.getAttribute("href") === `#${id}`) {
+              link.classList.add("toc-active");
+            }
+            console.log(`#${id}`)
+          });
+        }
+      });
+    }, {
+      rootMargin: "0px 0px -70% 0px", // triggers when heading is near top
+      threshold: 0
+    });
+
+    headings.forEach(heading => {
+      if (heading.id) observer.observe(heading);
+    });
+  });
+
 //localStorage.removeItem("theme");
