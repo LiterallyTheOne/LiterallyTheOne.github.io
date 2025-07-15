@@ -1,12 +1,14 @@
 {{ define "main" }}
-<h1>{{ .Title }}</h1>
+<h1 class="text-cyan-500 text-2xl text-center mb-10">{{ .Title }}</h1>
 {{ with .Content }}
 <div class="prose">{{ . }}</div>{{ end }}
 
 
 <div class="grid md:grid-cols-3 sm:grid-cols-1 gap-4">
 
-    {{ range where site.RegularPages "Section" "posts" }}
+    {{ $pages := where .Site.RegularPages "Section" "posts" }}
+    {{ $pages = $pages.ByTitle }}
+    {{ range (.Paginate $pages 9).Pages }}
     <div class="flex flex-col
       items-center
       rounded

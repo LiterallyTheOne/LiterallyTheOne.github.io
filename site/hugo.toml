@@ -28,3 +28,7 @@ weight = 30
 [markup.goldmark]
 [markup.goldmark.renderer]
 unsafe = true
+
+
+[pagination]
+pagerSize = 6
