@@ -6,12 +6,6 @@ title = 'LiterallyTheOne'
 [caches.images]
 dir = ':cacheDir/images'
 
-[menus]
-[[menus.main]]
-name = 'Home'
-pageRef = '/'
-weight = 10
-
 [[menus.main]]
 name = 'Posts'
 pageRef = '/posts'
