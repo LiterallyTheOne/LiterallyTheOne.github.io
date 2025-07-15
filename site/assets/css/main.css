@@ -1,3 +1,11 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+.toc-active {
+font-weight: 600;
+color: #2563eb; /* Tailwind blue-600 */
+border-left: 2px solid #2563eb;
+padding-left: 0.5rem;
+}
