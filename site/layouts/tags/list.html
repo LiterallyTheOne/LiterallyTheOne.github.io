@@ -1,0 +1,16 @@
+{{ define "main" }}
+<h1 class="text-cyan-500 text-2xl text-center mb-10">{{ .Title }}</h1>
+{{ .Content }}
+
+<div class="flex flex-wrap align-items-center gap-3 justify-center">
+    <div class="flex rounded border-4 border-blue-200 dark:border-blue-800 items-center justify-center dark:text-white">
+        <div class="flex gap-4 m-3 align-items-center justify-center">
+            {{ range .Pages }}
+            <div class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-100">
+                <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</div>
+{{ end }}
