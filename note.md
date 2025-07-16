@@ -3,14 +3,14 @@
 * Study about SEO
 * post date and summary on top?
 
-* Fix the dark theme for tags
-* Add a way to show tags properly
 * Add most used tags in homepage
 
 * menu hide when `sm` add `...`
 
 ## <div style="text-align:center; color:lime"> Done </div>
 
+* Fix the dark theme for tags
+* Add a way to show tags properly
 * sm version of home
 * Add about_me page
 * Sorting of the posts
