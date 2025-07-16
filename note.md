@@ -3,9 +3,14 @@
 * Study about SEO
 * post date and summary on top?
 
+
 * Add most used tags in homepage
 
+
 * menu hide when `sm` add `...`
+
+
+* Add default image
 
 ## <div style="text-align:center; color:lime"> Done </div>
 
