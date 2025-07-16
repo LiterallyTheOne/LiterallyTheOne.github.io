@@ -704,6 +704,9 @@
   .min-h-dvh {
     min-height: 100dvh;
   }
+  .w-3\/4 {
+    width: calc(3/4 * 100%);
+  }
   .w-48 {
     width: calc(var(--spacing) * 48);
   }
