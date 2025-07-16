@@ -7,7 +7,7 @@
 <div class="grid md:grid-cols-3 sm:grid-cols-1 gap-4">
 
     {{ $pages := where .Site.RegularPages "Section" "posts" }}
-    {{ $pages = $pages.ByTitle }}
+    {{ $pages = $pages.ByDate.Reverse }}
     {{ range (.Paginate $pages 9).Pages }}
     <div class="flex flex-col
       items-center
