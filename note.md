@@ -5,6 +5,10 @@
 * Study about SEO
 * post date and summary on top?
 
+* Fix the dark theme for tags
+* Add a way to show tags properly
+* Add most used tags in homepage
+
 ## <div style="text-align:center; color:lime"> Done </div>
 
 * Sorting of the posts
