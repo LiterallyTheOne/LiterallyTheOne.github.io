@@ -1,6 +1,8 @@
 {{ define "main" }}
 <h1 class="text-cyan-500 text-2xl text-center mb-10">{{ .Title }}</h1>
-{{ .Content }}
+<div class="prose dark:prose-invert lg:prose-xl prose-headings:text-center prose-h1:text-cyan-500 prose-h2:text-lime-500 prose-h3:text-orange-500 prose-inline-code:text-purple-500 prose-inline-code:rounded prose-inline-code:bg-gray-200 prose-inline-code:before:content-none prose-inline-code:after:content-none">
+    {{ .Content }}
+</div>
 
 <div class="flex flex-wrap align-items-center gap-3 justify-center">
     <div class="flex rounded border-4 border-blue-200 dark:border-blue-800 items-center justify-center dark:text-white">
