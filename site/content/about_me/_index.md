@@ -7,7 +7,7 @@ date = 2025-07-16
 
 ## About me
 
-Ramin Zarebidoky known as LiterallyTheOne is a highly motivated computer engineer
+Ramin Zarebidoky, known as LiterallyTheOne, is a highly motivated computer engineer
 with over 10 years of experience in programming (Python and C++).
 He is currently a PhD candidate in AI at Yazd University.
 His main focus right now is on three topics: Computer vision,
