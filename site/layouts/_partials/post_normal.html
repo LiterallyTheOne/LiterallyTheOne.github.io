@@ -14,8 +14,14 @@
         <img src="{{ .RelPermalink }}{{ .Params.image }}" alt="{{ .Title }}">
     </div>
 
-    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-    <time class="flex" datetime="{{ .Date }}">{{ .Date.Format "2006-01-02" }}</time>
+    <a class="flex text-xl font-bold text-center" href="{{ .RelPermalink }}">
+        {{ .Title }}
+    </a>
+
+    <time class="flex text-sm text-gray-500" datetime="{{ .Date }}">
+        {{ .Date.Format "2006-01-02" }}
+    </time>
+
 
     <div class="flex gap-2 flex-wrap justify-center">
         {{ with .Params.tags }}
