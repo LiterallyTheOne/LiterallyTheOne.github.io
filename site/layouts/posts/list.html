@@ -7,7 +7,7 @@
 <div class="grid md:grid-cols-3 sm:grid-cols-1 gap-4">
 
     {{ $pages := where .Site.RegularPages "Section" "posts" }}
-    {{ $pages = $pages.ByTitle }}
+    {{ $pages = $pages.ByDate.Reverse }}
     {{ range (.Paginate $pages 9).Pages }}
     <div class="flex flex-col
       items-center
@@ -21,7 +21,7 @@
       gap-3
 
 ">
-        <div class="flex gap-2 w-full">
+        <div class="flex gap-2 w-full items-center justify-center">
             <img src="{{ .RelPermalink }}{{ .Params.image }}" alt="{{ .Title }}">
         </div>
 

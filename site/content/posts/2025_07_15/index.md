@@ -6,7 +6,7 @@ tags = ["vim", "PyCharm"]
 image = "inoremap.png"
 +++
 
-# <div style="text-align: center; color: cyan">inoremap in vim</div>
+# inoremap in vim
 
 `inoremap` stands for `Insert-mode Non-recursive Map`.
 It is a really helpful command in `vim` which helps
@@ -33,7 +33,7 @@ inoremap jj <Esc>
 For convenience, you can put these codes in your `vim` config.
 One of the `vim` config files that you can edit is: `~/.vimrc`.
 
-## <div style="text-align: center; color: lime">How I use it</div>
+## How I use it
 
 I really like to have my headers in markdown centered, and have
 their own colors.
@@ -59,7 +59,7 @@ sure that I am in insert mode and type on of the following:
 * `\h2`: header 2
 * `\h3`: header 3
 
-## <div style="text-align: center; color: lime">Config in Pycharm</div>
+## Config in Pycharm
 
 For normal `vim`, we could have put our codes in `~/.vimrc`.
 For `vim plugin` in `Pycharm`, the only thing that we should do

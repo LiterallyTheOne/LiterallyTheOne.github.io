@@ -7,6 +7,11 @@ title = 'LiterallyTheOne'
 dir = ':cacheDir/images'
 
 [[menus.main]]
+name = 'About Me'
+pageRef = '/about_me'
+weight = 10
+
+[[menus.main]]
 name = 'Posts'
 pageRef = '/posts'
 weight = 20
