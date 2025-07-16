@@ -1,10 +1,9 @@
 # <div style="text-align:center; color:cyan"> Note </div>
 
-* post date and summary on top?
-
 * Add about_me page
 
 * Study about SEO
+* post date and summary on top?
 
 ## <div style="text-align:center; color:lime"> Done </div>
 
