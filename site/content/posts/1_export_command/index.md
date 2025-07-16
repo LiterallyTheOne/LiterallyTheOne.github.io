@@ -6,7 +6,7 @@ tags = ['Linux']
 image = "export.png"
 +++
 
-# <div style="text-align: center; color: cyan"> Export Command </div>
+# Export Command
 
 Why should we mostly use `export` for setting environmental variables?
 

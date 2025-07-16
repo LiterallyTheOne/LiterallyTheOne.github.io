@@ -7,6 +7,8 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-orange-500: oklch(70.5% 0.213 47.604);
+    --color-lime-500: oklch(76.8% 0.233 130.85);
     --color-cyan-500: oklch(71.5% 0.143 215.221);
     --color-blue-100: oklch(93.2% 0.032 255.585);
     --color-blue-200: oklch(88.2% 0.059 254.128);
@@ -688,6 +690,9 @@
   .flex-row {
     flex-direction: row;
   }
+  .flex-row-reverse {
+    flex-direction: row-reverse;
+  }
   .flex-wrap {
     flex-wrap: wrap;
   }
@@ -1095,6 +1100,31 @@
       --tw-prose-pre-bg: var(--tw-prose-invert-pre-bg);
       --tw-prose-th-borders: var(--tw-prose-invert-th-borders);
       --tw-prose-td-borders: var(--tw-prose-invert-td-borders);
+    }
+  }
+  .prose-headings\:text-center {
+    & :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+      text-align: center;
+    }
+  }
+  .prose-headings\:underline {
+    & :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+      text-decoration-line: underline;
+    }
+  }
+  .prose-h1\:text-cyan-500 {
+    & :is(:where(h1):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+      color: var(--color-cyan-500);
+    }
+  }
+  .prose-h2\:text-lime-500 {
+    & :is(:where(h2):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+      color: var(--color-lime-500);
+    }
+  }
+  .prose-h3\:text-orange-500 {
+    & :is(:where(h3):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+      color: var(--color-orange-500);
     }
   }
 }

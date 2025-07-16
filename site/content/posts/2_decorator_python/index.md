@@ -6,9 +6,9 @@ tags = ["Python"]
 image = "decorator_python.jpg"
 +++
 
-# <div style="text-align:center; color:cyan"> Decorator in Python </div>
+# Decorator in Python
 
-## <div style="text-align:center; color:lime"> Introduction </div>
+## Introduction
 
 You might have seen `@something` before a
 function in Python and ask yourself, what
@@ -20,7 +20,7 @@ In this tutorial, we define a `decorator` using
 a function and a class also with give an example
 on stacking 3 `decorator`s.
 
-## <div style="text-align:center; color:lime"> Decorator with function </div>
+## Decorator with function
 
 ```python
 
@@ -72,7 +72,7 @@ our function with values of `a=1,b=1,c=3`, we are
 getting an `Exception` that we defined in the `if` statement
 in our `wrapper`.
 
-## <div style="text-align:center; color:lime"> Decorator with class </div>
+## Decorator with class
 
 ```python
 from typing import Callable
@@ -112,7 +112,7 @@ as the function. we get our `decorated` function as an argument
 in `__init__` function. Then we should define a `__call__` function
 that works exactly like our `wrapper`.
 
-## <div style="text-align:center; color:lime"> Stacking decorators</div>
+## Stacking decorators
 
 ```python
 
