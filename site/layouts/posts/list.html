@@ -28,7 +28,7 @@
         <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         <time class="flex" datetime="{{ .Date }}">{{ .Date.Format "2006-01-02" }}</time>
 
-        <div class="flex gap-2 flex-wrap">
+        <div class="flex gap-2 flex-wrap justify-center">
             {{ with .Params.tags }}
             {{ range . }}
             <div class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-100">
