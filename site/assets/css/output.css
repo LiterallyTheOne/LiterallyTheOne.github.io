@@ -676,9 +676,6 @@
   .h-48 {
     height: calc(var(--spacing) * 48);
   }
-  .max-h-1\/2 {
-    max-height: calc(1/2 * 100%);
-  }
   .min-h-dvh {
     min-height: 100dvh;
   }
@@ -1134,11 +1131,6 @@
   .prose-headings\:text-center {
     & :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
       text-align: center;
-    }
-  }
-  .prose-headings\:underline {
-    & :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
-      text-decoration-line: underline;
     }
   }
   .prose-h1\:text-cyan-500 {
