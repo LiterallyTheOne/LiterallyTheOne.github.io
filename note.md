@@ -15,6 +15,8 @@
 * canonical
 * manifest
 
+* add search
+
 ## <div style="text-align:center; color:lime"> Done </div>
 
 * Fix the dark theme for tags
