@@ -1,7 +1,51 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
+
+<meta name="description"
+      content="{{ with .Params.description }}{{ . }}{{ else }}Official website of Ramin Zarebidoky, (LiterallyTheOne).{{ end }}">
+<meta name="author" content="Ramin Zarebidoky">
+
+<!-- Open graph -->
+<meta property="og:title" content="{{ .Title }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:image"
+      content="{{ with .Params.image }}{{ . }}{{ else }}{{ .Site.BaseURL }}images/profile.jpg{{ end }}">
+<meta property="og:description"
+      content="{{ with .Params.description }}{{ . }}{{ else }}Official site of Ramin Zarebidoky (LiterallyTheOne).{{ end }}">
+
+<!--Twitter card-->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ .Title }}">
+<meta name="twitter:description"
+      content="{{ with .Params.description }}{{ . }}{{ else }}Official website of Ramin Zarebidoky, (LiterallyTheOne).{{ end }}">
+<meta name="twitter:image"
+      content="{{ with .Params.image }}{{ . }}{{ else }}{{ .Site.BaseURL }}images/profile.jpg{{ end }}">
+
+
 {{ partialCached "head/css.html" . }}
 {{ partialCached "head/js.html" . }}
 
 <link rel="canonical" href="{{ .Permalink }}">
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Ramin Zarebidoky",
+        "alternateName": "LiterallyTheOne",
+        "url": "https://literallytheone.github.io/",
+        "sameAs": [
+            "https://github.com/LiterallyTheOne",
+            "https://www.youtube.com/@LiterallyTheOne",
+            "https://twitter.com/LiterallyTheOne",
+            "https://www.linkedin.com/in/ramin-zarebidoky/"
+        ],
+        "jobTitle": "AI Researcher",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Yazd University"
+        }
+    }
+</script>
