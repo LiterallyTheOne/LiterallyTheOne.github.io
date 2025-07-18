@@ -35,6 +35,20 @@
 
         </div>
 
+        <div class="flex items-center gap-3 mr-2 md:hidden">
+            <button id="menuButton" class="p-2">
+                <!-- 3 dot icon (you can use Heroicons or similar) -->
+                <svg class="size-5 fill-black/40 dark:fill-gray-400" viewBox="0 0 20 20">
+                   <path d="M8 2a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM8 6.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM9.5 12.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z"></path>
+                </svg>
+            </button>
+
+            <!-- Dropdown menu -->
+            <div id="menuDropdown" class="hidden absolute right-0 mt-40 w-40 border rounded shadow-md z-50 bg-white dark:bg-gray-950">
+                {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+            </div>
+        </div>
+
 
     </div>
 
