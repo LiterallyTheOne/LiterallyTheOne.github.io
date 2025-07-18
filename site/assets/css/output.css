@@ -947,6 +947,11 @@
       max-width: calc(1/4 * 100%);
     }
   }
+  .md\:max-w-1\/5 {
+    @media (width >= 48rem) {
+      max-width: calc(1/5 * 100%);
+    }
+  }
   .md\:grid-cols-3 {
     @media (width >= 48rem) {
       grid-template-columns: repeat(3, minmax(0, 1fr));
