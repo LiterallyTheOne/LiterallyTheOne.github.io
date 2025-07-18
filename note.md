@@ -1,24 +1,20 @@
 # <div style="text-align:center; color:cyan"> Note </div>
 
-* Study about SEO
 * post date and summary on top?
-
 
 * Add most used tags in homepage
 
-
-* menu hide when `sm` add `...`
-
-
 * Add default image
 
-* canonical
 * manifest
 
 * add search
 
 ## <div style="text-align:center; color:lime"> Done </div>
 
+* Study about SEO
+* canonical
+* menu hide when `sm` add `...`
 * Fix the dark theme for tags
 * Add a way to show tags properly
 * sm version of home

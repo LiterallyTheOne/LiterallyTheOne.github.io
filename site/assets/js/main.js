@@ -49,4 +49,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const menuButton = document.getElementById('menuButton');
+  const menuDropdown = document.getElementById('menuDropdown');
+
+  menuButton.addEventListener('click', () => {
+    menuDropdown.classList.toggle('hidden');
+  });
+
+  // Optional: close menu if clicking outside
+  document.addEventListener('click', (event) => {
+    if (!menuButton.contains(event.target) && !menuDropdown.contains(event.target)) {
+      menuDropdown.classList.add('hidden');
+    }
+  });
+});
 //localStorage.removeItem("theme");
