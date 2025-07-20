@@ -2,14 +2,13 @@
 
 * post date and summary on top?
 
-* Add most used tags in homepage
-
 * manifest
 
 * Consider using `headlessUI`
 
 ## <div style="text-align:center; color:lime"> Done </div>
 
+* Add most used tags in homepage
 * Add default image to posts
 * Make the search look better
 * add search
