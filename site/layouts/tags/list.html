@@ -7,11 +7,15 @@
 <div class="flex flex-wrap items-center gap-3 justify-center">
     <div class="flex flex-wrap rounded border-4 border-blue-200 dark:border-blue-800 items-center justify-center dark:text-white">
         <div class="flex flex-wrap gap-4 m-3 align-items-center justify-center">
-            {{ range .Pages }}
+            {{ $tags := .Site.Taxonomies.tags.ByCount }}
+            {{ range $tags }}
+            {{ $cnt := .Count }}
             <div class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-100">
-                <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+                <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }} ({{ $cnt }})</a>
             </div>
             {{ end }}
+
+
         </div>
     </div>
 </div>
