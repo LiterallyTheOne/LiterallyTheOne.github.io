@@ -1,0 +1,36 @@
+{{ define "main" }}
+
+<div class="flex flex-col m-4 justify-center gap-4">
+
+    <div class="flex flex-wrap rounded  items-center justify-center">
+        <div class="flex rounded border-4 border-blue-200 dark:border-blue-800">
+            <div class="m-3 prose dark:prose-invert lg:prose-xl prose-headings:text-center prose-h1:text-cyan-500 prose-h2:text-lime-500 prose-h3:text-orange-500 prose-inline-code:text-purple-500 prose-inline-code:rounded prose-inline-code:bg-gray-200 prose-inline-code:before:content-none prose-inline-code:after:content-none">
+                {{ .Content }}
+            </div>
+        </div>
+    </div>
+
+    <div class="flex flex-wrap rounded  items-center justify-center">
+        <div class="flex rounded border-4 border-blue-200 dark:border-blue-800">
+            <div class="dark:text-white">
+                <label>
+                    <input type="text" id="searchBox" placeholder="Search...">
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div id="searchResults"
+         class="flex flex-col gap-4 rounded shadow-md dark:text-white bg-white dark:bg-gray-950">
+    </div>
+</div>
+
+{{ $flex := resources.Get "js/vendor/flexsearch.bundle.min.js" }}
+<script src="{{ $flex.RelPermalink }}" integrity="{{ $flex.Data.Integrity }}"></script>
+
+
+{{ $s := resources.Get "js/search.js"}}
+<script type="module" src="{{ $s.RelPermalink }}"></script>
+
+{{ end }}
+
