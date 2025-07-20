@@ -1,9 +1,9 @@
 const index = new FlexSearch.Document({
   tokenize: "forward",
   document: {
+    store: true,
     id: "url",
     index: ["title", "description", "content"],
-    store: ["url", "title", "description"]  // 👈 Store full data to use in rendering
   }
 });
 
@@ -15,7 +15,12 @@ for (const doc of data) {
 }
 }
 function search(query) {
-  const results = index.search(query, { enrich: true, suggest: true });
+  const results = index.search({ query: query,
+  enrich: true,
+  suggest: true,
+  highlight: {template: "<b class='rounded shadow-md bg-purple-500'>$1</b>", boundary: 100},
+
+      });
   const flat = [
     ...new Set(results.flatMap(group => group.result))
   ];
@@ -26,20 +31,22 @@ function render(results) {
   const container = document.getElementById("searchResults");
   container.innerHTML = "";
   for (const res of results) {
-    const li = document.createElement("li");
+    const d1 = document.createElement("div");
+    d1.classList.add("rounded");
+    d1.classList.add("border-2");
     const a = document.createElement("a");
+    a.classList.add("bg-cyan-500");
     a.href = res.doc.url;
-    a.textContent = res.doc.title || res.doc.url; // fallback to URL if title is missing
-    li.appendChild(a);
+    a.innerHTML = res.doc.title || res.doc.url;  // allows HTML (like <mark>)
+//    a.textContent = res.doc.title || res.doc.url; // fallback to URL if title is missing
+    d1.appendChild(a);
 
     // Optionally show description
-    if (res.description) {
-      const desc = document.createElement("p");
-      desc.textContent = res.doc.description;
-      li.appendChild(desc);
-    }
+    const desc = document.createElement("p");
+    desc.innerHTML = res.highlight;
+    d1.appendChild(desc);
 
-    container.appendChild(li);
+    container.appendChild(d1);
   }
 }
 
@@ -55,13 +62,12 @@ if (query.length > 1) {
 }
 });
 
-document.getElementById("searchBox").addEventListener("focus", async (e) => {
-  const div_result= document.getElementById("searchResultsDiv");
-  div_result.classList.remove('hidden');
-});
+//document.getElementById("searchBox").addEventListener("focus", async (e) => {
+//  const div_result= document.getElementById("searchResults");
+//  div_result.classList.remove('hidden');
+//});
 
-
-document.getElementById("searchBox").addEventListener("blur", async (e) => {
-  const div_result= document.getElementById("searchResultsDiv");
-  div_result.classList.add('hidden');
-});
+//document.getElementById("searchBox").addEventListener("blur", async (e) => {
+//  const div_result= document.getElementById("searchResults");
+//  div_result.classList.add('hidden');
+//});
