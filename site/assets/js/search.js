@@ -51,3 +51,14 @@ if (query.length > 1) {
   render(results);
 }
 });
+
+document.getElementById("searchBox").addEventListener("focus", async (e) => {
+  const div_result= document.getElementById("searchResultsDiv");
+  div_result.classList.remove('hidden');
+});
+
+
+document.getElementById("searchBox").addEventListener("blur", async (e) => {
+  const div_result= document.getElementById("searchResultsDiv");
+  div_result.classList.add('hidden');
+});
