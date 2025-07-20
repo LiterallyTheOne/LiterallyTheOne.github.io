@@ -4,14 +4,13 @@
 
 * Add most used tags in homepage
 
-* Add default image
-
 * manifest
 
 * Consider using `headlessUI`
 
 ## <div style="text-align:center; color:lime"> Done </div>
 
+* Add default image to posts
 * Make the search look better
 * add search
 * Study about SEO
