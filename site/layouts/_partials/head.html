@@ -49,3 +49,10 @@
         }
     }
 </script>
+
+{{ $flex := resources.Get "js/vendor/flexsearch.bundle.min.js" }}
+<script src="{{ $flex.RelPermalink }}" integrity="{{ $flex.Data.Integrity }}"></script>
+
+
+{{ $s := resources.Get "js/search.js"}}
+<script type="module" src="{{ $s.RelPermalink }}"></script>
