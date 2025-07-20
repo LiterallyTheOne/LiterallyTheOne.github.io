@@ -8,10 +8,12 @@
 
 * manifest
 
-* add search
+* Consider using `headlessUI`
 
 ## <div style="text-align:center; color:lime"> Done </div>
 
+* Make the search look better
+* add search
 * Study about SEO
 * canonical
 * menu hide when `sm` add `...`
