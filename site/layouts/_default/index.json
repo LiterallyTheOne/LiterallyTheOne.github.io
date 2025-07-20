@@ -1,0 +1,13 @@
+{{- $types := site.Params.searchTypes | default (slice "posts") -}}
+{{- $pages := where .Site.RegularPages "Type" "in" $types -}}
+[
+  {{- range $i, $page := $pages -}}
+    {{- if $i }},{{ end }}
+    {
+      "title": {{ $page.Title | jsonify }},
+      "description": {{ $page.Params.description | default $page.Summary | plainify | jsonify }},
+      "content": {{ $page.Plain | jsonify }},
+      "url": {{ $page.RelPermalink | jsonify }}
+    }
+  {{- end -}}
+]

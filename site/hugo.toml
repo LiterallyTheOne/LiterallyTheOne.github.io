@@ -31,3 +31,7 @@ unsafe = true
 
 [pagination]
 pagerSize = 6
+
+
+[outputs]
+home = ["HTML", "JSON"]
