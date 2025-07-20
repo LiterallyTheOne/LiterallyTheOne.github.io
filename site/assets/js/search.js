@@ -49,6 +49,9 @@ if (!index.length) await loadData();
 if (query.length > 1) {
   const results = search(query);
   render(results);
+}else{
+  const container = document.getElementById("searchResults");
+  container.innerHTML = "";
 }
 });
 
