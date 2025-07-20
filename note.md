@@ -8,11 +8,11 @@
 
 * manifest
 
-* Make the search look better
 * Consider using `headlessUI`
 
 ## <div style="text-align:center; color:lime"> Done </div>
 
+* Make the search look better
 * add search
 * Study about SEO
 * canonical
