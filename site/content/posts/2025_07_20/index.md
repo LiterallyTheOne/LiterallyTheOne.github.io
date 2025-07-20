@@ -9,6 +9,8 @@ image = "Trying_PyTorch_Ignite.png"
 
 # Trying Pytorch Ignite
 
+## Introduction
+
 The day before yesterday, I ran into a problem.
 The problem was, my training procedure on `Google Colab` was pretty slow
 and barely any `GPU` ram was occupied.
@@ -104,6 +106,13 @@ def log_validation_results(engine):
     )
 ```
 
+For the score function, I added the code below, which uses `accuracy`:
+
+```python
+def score_function(engine):
+    return engine.state.metrics["accuracy"]
+```
+
 To always have the best model saved, I added a `ModelCheckPoint` to
 `val_evaluator`.
 
@@ -180,3 +189,13 @@ And it works, perfectly.
 
 `cfg` in code is the config that I am using.
 I use `hydra` to control my configs.
+
+## Final thoughts
+
+`PyTorch Ignite` is an extremely great package to
+train our models.
+It is modular which I pretty much like and is closer to the
+way that I think.
+I strongly recommend that you check it out.
+Here is the link to the official site:
+[https://docs.pytorch.org/ignite/index.html](https://docs.pytorch.org/ignite/index.html)
