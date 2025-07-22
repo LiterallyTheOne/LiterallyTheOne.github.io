@@ -8,6 +8,9 @@
 
 * Change `favicon.ico` to something better
 
+* Add a section for courses
+* Add a section for concepts
+
 ## <div style="text-align:center; color:lime"> Done </div>
 
 * Add most used tags in homepage
