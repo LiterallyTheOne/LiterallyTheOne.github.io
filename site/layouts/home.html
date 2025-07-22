@@ -39,7 +39,7 @@
             <div class="grid md:grid-cols-3 sm:grid-cols-1 gap-4 mb-10  ">
 
 
-                {{ range first 9 (where site.RegularPages "Section" "posts") }}
+                {{ range first 6 (where site.RegularPages "Section" "posts") }}
 
                 {{ partial "post_normal.html" . }}
 

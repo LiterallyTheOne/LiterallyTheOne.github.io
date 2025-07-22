@@ -6,6 +6,8 @@
 
 * Consider using `headlessUI`
 
+* Change `favicon.ico` to something better
+
 ## <div style="text-align:center; color:lime"> Done </div>
 
 * Add most used tags in homepage
