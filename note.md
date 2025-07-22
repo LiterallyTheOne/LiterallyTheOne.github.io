@@ -6,7 +6,7 @@
 
 * Consider using `headlessUI`
 
-* Change `facion.ico` to something better
+* Change `favicon.ico` to something better
 
 ## <div style="text-align:center; color:lime"> Done </div>
 
