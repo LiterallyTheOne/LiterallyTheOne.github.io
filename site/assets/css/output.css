@@ -748,6 +748,9 @@
   .w-full {
     width: 100%;
   }
+  .shrink {
+    flex-shrink: 1;
+  }
   .flex-col {
     flex-direction: column;
   }
