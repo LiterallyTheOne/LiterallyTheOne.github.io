@@ -11,6 +11,8 @@
 * Add a section for courses
 * Add a section for concepts
 
+* Check why tailwindcss typography didn't perform well on Iphone chrome
+
 ## <div style="text-align:center; color:lime"> Done </div>
 
 * Add most used tags in homepage
