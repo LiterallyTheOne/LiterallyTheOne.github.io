@@ -1,5 +1,5 @@
 +++
-date = '2025-07-24T21:13:00+03:30'
+date = '2025-07-26T21:13:00+03:30'
 draft = false
 title = 'Data augmentation is so important'
 description = "A post about the importance of data augmentation"
