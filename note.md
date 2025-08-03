@@ -13,6 +13,8 @@
 
 * Check why tailwindcss typography didn't perform well on Iphone chrome
 
+* Add latex support for markdown files
+
 ## <div style="text-align:center; color:lime"> Done </div>
 
 * Add most used tags in homepage
