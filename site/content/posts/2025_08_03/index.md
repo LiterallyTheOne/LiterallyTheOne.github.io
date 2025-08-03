@@ -13,26 +13,26 @@ image = "giga_model.png"
 
 Today, I was planning to give other models a try.
 Each model requires its own preprocesses, train_transforms, and validation_transforms.
-I think of the steps of a deep learning project like below:
+I think of the steps of a deep learning project as below:
 
 ![deep_learning](deep_learning.drawio.svg)
 
-So, in this way of thinking, model has no idea about preprocessing
+So, in this way of thinking, the model has no idea about preprocessing
 and transforms before it.
 Which is a really great and modular way to think about that.
-But, when you want to try different approaches it is a little bit troublesome.
+But when you want to try different approaches, it is a little bit troublesome.
 
 ## My Approach
 
 To solve this problem, I have defined a class called `GigaModel`.
 This model consists of `preprocessors`, `train_transforms`, `validation_transforms`.
-It is like a bundle and in the future when I look out the charts, I can
+It is like a bundle, and in the future, when I look at the charts, I can
 track the approach that I used way better.
-So, The method looks like something below:
+So, the method looks like something below:
 
 ![giga_model](giga_model.drawio.svg)
 
-The code of it, is like below:
+The code for it is like below:
 
 ```python
 class GigaModel:
@@ -132,11 +132,11 @@ def get_giga_model(
     )
 ```
 
-As you can see, If I want to create a new approach,
+As you can see, if I want to create a new approach,
 the only thing that I need to do is to abstract from `GigaModel`
 and replace only the `get_*` functions.
-For example, for my `Convolutional` model which uses `Time of flight` data,
-I should right something like below:
+For example, for my `Convolutional` model, which uses `Time of flight` data,
+I should write something like below:
 
 ```python
 class GigaTofConv1(GigaModel):
@@ -186,15 +186,15 @@ def get_giga_model(
     )
 ```
 
-As shown in the code above, I have only re-written the functions which
+As shown in the code above, I have only rewritten the functions which
 were needed.
 The `get_giga_model` function for every approach that I make is a way to have
 `dependency injection`.
-The name of all functions are the same, I only change the import.
+The names of all functions are the same; I only change the import.
 
 ## Final thoughts
 
 I think putting all the actions which is needed for a model to create
-the result that is intended to create, is a good technique.
-My code still modular, because model, preprocesses and transforms
-work separately but they are in a `bundle` that I can use multiple time.
+the result that is intended to create is a good technique.
+My code is still modular, because models, preprocesses, and transforms
+work separately, but they are in a `bundle` that I can use multiple times.
