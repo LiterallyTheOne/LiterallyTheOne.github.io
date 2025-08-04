@@ -3,7 +3,7 @@ date = '2025-07-29T08:00:00+03:30'
 draft = false
 title = 'Working with Time of Flight data'
 description = "A post about Working with Time of Flight data"
-tags = ["Polars", "Sensor", "Kaggle", "CMI", "Deep learning"]
+tags = ["Polars", "Sensor", "Kaggle", "CMI", "Deep-learning"]
 image = "time_of_flight_cmi.png"
 +++
 

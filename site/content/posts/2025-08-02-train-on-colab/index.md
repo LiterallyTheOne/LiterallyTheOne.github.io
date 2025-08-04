@@ -3,7 +3,7 @@ date = '2025-08-02T16:33:00+03:30'
 draft = false
 title = 'Train on google colab'
 description = "A post about my approach to train my model on google colab"
-tags = ["Python", "Google Colab", "Kaggle", "Deep learning"]
+tags = ["Python", "Google-Colab", "Kaggle", "Deep-learning"]
 image = "train_on_colab.png"
 +++
 

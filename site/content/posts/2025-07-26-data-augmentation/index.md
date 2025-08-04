@@ -3,7 +3,7 @@ date = '2025-07-26T21:13:00+03:30'
 draft = false
 title = 'Data augmentation is so important'
 description = "A post about the importance of data augmentation"
-tags = ["Pytorch", "Deep learning", "Data augmentation", "Kaggle", "CMI"]
+tags = ["Pytorch", "Deep-learning", "Data-augmentation", "Kaggle", "CMI"]
 image = "data_augmentation.png"
 +++
 

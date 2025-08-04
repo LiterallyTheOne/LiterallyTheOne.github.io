@@ -3,7 +3,7 @@ date = '2025-08-03T16:56:00+03:30'
 draft = false
 title = 'Model with all its preprocesses and transforms'
 description = "A post about model with all its preprocesses and transforms"
-tags = ["Python", "PyTorch", "Deep learning"]
+tags = ["Python", "PyTorch", "Deep-learning"]
 image = "giga_model.png"
 +++
 
