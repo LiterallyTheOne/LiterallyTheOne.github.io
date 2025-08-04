@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (link.getAttribute("href") === `#${id}`) {
               link.classList.add("toc-active");
             }
-            console.log(`#${id}`)
+//            console.log(`#${id}`)
           });
         }
       });

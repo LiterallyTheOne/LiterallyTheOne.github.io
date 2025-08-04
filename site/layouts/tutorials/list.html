@@ -1,4 +1,5 @@
 {{ define "main" }}
+
 {{ partial "breadcrumbs.html" . }}
 
 <h1 class="text-cyan-500 text-2xl text-center mb-10">{{ .Title }}</h1>
@@ -11,11 +12,17 @@
 
 <div class="grid md:grid-cols-3 sm:grid-cols-1 gap-4 mb-4">
 
-    {{ $pages := where .Site.RegularPages "Section" "posts" }}
-    {{ $pages = $pages.ByDate.Reverse }}
-    {{ range (.Paginate $pages 9).Pages }}
+    {{ if gt (len .Sections) 0 }}
+    {{ range .Sections }}
     {{ partial "post_normal.html" . }}
     {{ end }}
+    {{ else }}
+    {{ range .RegularPages }}
+    {{ partial "post_normal.html" . }}
+    {{ end }}
+    {{ end }}
+
+
 </div>
 
 {{ partial "pagination.html" . }}
