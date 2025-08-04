@@ -8,7 +8,7 @@ dir = ':cacheDir/images'
 
 [[menus.main]]
 name = 'About Me'
-pageRef = '/about_me'
+pageRef = '/about'
 weight = 10
 
 [[menus.main]]

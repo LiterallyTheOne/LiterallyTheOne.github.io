@@ -3,7 +3,7 @@ date = '2025-07-16T15:32:00+03:30'
 draft = false
 title = 'How I use TailwindCSS Typography'
 description = "A post about how I use the TailWindCSS Typography"
-tags = ["CSS", "TailwindCSS", "TailwindCSS typography"]
+tags = ["CSS", "TailwindCSS", "TailwindCSS-typography"]
 image = "tailwindcss_typography.png"
 +++
 
