@@ -22,6 +22,12 @@ pageRef = '/tags'
 weight = 30
 
 
+[[menus.main]]
+name = 'Tutorials'
+pageRef = '/tutorials'
+weight = 40
+
+
 
 [markup]
 [markup.goldmark]
