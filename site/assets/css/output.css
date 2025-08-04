@@ -40,12 +40,9 @@
     --text-xl--line-height: calc(1.75 / 1.25);
     --text-2xl: 1.5rem;
     --text-2xl--line-height: calc(2 / 1.5);
-    --text-3xl: 1.875rem;
-    --text-3xl--line-height: calc(2.25 / 1.875);
     --font-weight-medium: 500;
     --font-weight-bold: 700;
     --tracking-tight: -0.025em;
-    --leading-tight: 1.25;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -267,9 +264,6 @@
   }
   .m-6 {
     margin: calc(var(--spacing) * 6);
-  }
-  .mx-2 {
-    margin-inline: calc(var(--spacing) * 2);
   }
   .prose {
     color: var(--tw-prose-body);
@@ -747,9 +741,6 @@
     width: calc(var(--spacing) * 20);
     height: calc(var(--spacing) * 20);
   }
-  .h-3 {
-    height: calc(var(--spacing) * 3);
-  }
   .h-48 {
     height: calc(var(--spacing) * 48);
   }
@@ -758,9 +749,6 @@
   }
   .min-h-dvh {
     min-height: 100dvh;
-  }
-  .w-3 {
-    width: calc(var(--spacing) * 3);
   }
   .w-40 {
     width: calc(var(--spacing) * 40);
@@ -890,9 +878,6 @@
     @supports (color: color-mix(in lab, red, red)) {
       fill: color-mix(in oklab, var(--color-black) 40%, transparent);
     }
-  }
-  .fill-gray-500 {
-    fill: var(--color-gray-500);
   }
   .fill-gray-600 {
     fill: var(--color-gray-600);
@@ -1282,11 +1267,6 @@
   .dark\:bg-gray-950 {
     &:where(.dark, .dark *) {
       background-color: var(--color-gray-950);
-    }
-  }
-  .dark\:fill-gray-100 {
-    &:where(.dark, .dark *) {
-      fill: var(--color-gray-100);
     }
   }
   .dark\:fill-gray-400 {
