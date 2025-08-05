@@ -15,6 +15,8 @@
 
 * Add latex support for markdown files
 
+* Change `png` images to `webp` images
+
 ## <div style="text-align:center; color:lime"> Done </div>
 
 * Add most used tags in homepage
