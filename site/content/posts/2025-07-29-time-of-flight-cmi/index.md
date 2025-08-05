@@ -4,7 +4,7 @@ draft = false
 title = 'Working with Time of Flight data'
 description = "A post about Working with Time of Flight data"
 tags = ["Polars", "Sensor", "Kaggle", "CMI", "Deep-learning"]
-image = "time_of_flight_cmi.png"
+image = "time-of-flight-cmi.webp"
 +++
 
 # Working with Time of Flight data

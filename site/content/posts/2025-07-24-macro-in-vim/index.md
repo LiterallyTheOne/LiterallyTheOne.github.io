@@ -4,7 +4,7 @@ draft = false
 title = 'Macro in Vim'
 description = "A post about Macro in Vim"
 tags = ["vim"]
-image = "macro_in_vim.png"
+image = "macro-in-vim.webp"
 +++
 
 # Macro in Vim

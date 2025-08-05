@@ -4,7 +4,7 @@ draft = false
 title = 'Using util files in a Kaggle competition'
 description = "A post about how to usi util files in a Kaggle competition"
 tags = ["Kaggle", "Deep-Learning", "Python"]
-image = "utils_in_kaggle_dataset.png"
+image = "utils-in-kaggle-dataset.webp"
 +++
 
 # Utils package in Kaggle Competition

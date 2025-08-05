@@ -4,7 +4,7 @@ draft = false
 title = 'How I use TailwindCSS Typography'
 description = "A post about how I use the TailWindCSS Typography"
 tags = ["CSS", "TailwindCSS", "TailwindCSS-typography"]
-image = "tailwindcss_typography.png"
+image = "tailwindcss-typography.webp"
 +++
 
 # How I use TailwindCSS typography

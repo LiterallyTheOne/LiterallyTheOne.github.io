@@ -4,7 +4,7 @@ draft = false
 title = 'Model with all its preprocesses and transforms'
 description = "A post about model with all its preprocesses and transforms"
 tags = ["Python", "PyTorch", "Deep-learning"]
-image = "giga_model.png"
+image = "giga-model.webp"
 +++
 
 # Model with all its preprocesses and transforms

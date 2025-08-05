@@ -4,7 +4,7 @@ draft = false
 title = 'Trying PyTorch Ignite'
 description = "A post about trying PyTorch Ignite"
 tags = ["Pytorch-Ignite", "PyTorch", "Python", "Deep-Learning"]
-image = "Trying_PyTorch_Ignite.png"
+image = "Trying-PyTorch-Ignite.webp"
 +++
 
 # Trying Pytorch Ignite
