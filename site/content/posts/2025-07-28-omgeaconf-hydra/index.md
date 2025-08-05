@@ -4,7 +4,7 @@ draft = false
 title = 'Using config in deep learning'
 description = "A post about using config in deep learning"
 tags = ["Hydra", "OmegaConf", "Deep-learning"]
-image = "omegaconf_hydra.png"
+image = "omegaconf-hydra.webp"
 +++
 
 # Using config in deep learning

@@ -4,7 +4,7 @@ draft = false
 title = 'Flexsearch on Hugo'
 description = "A post about adding flexsearch in Hugo"
 tags = ["flexsearch", "hugo", "javascript"]
-image = "add_flexsearch_to_hugo.png"
+image = "add-flexsearch-to-hugo.webp"
 +++
 
 # Flexsearch on Hugo

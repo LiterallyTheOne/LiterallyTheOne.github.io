@@ -4,7 +4,7 @@ draft = false
 title = 'Train on google colab'
 description = "A post about my approach to train my model on google colab"
 tags = ["Python", "Google-Colab", "Kaggle", "Deep-learning"]
-image = "train_on_colab.png"
+image = "train-on-colab.webp"
 +++
 
 # Train on Google Colab

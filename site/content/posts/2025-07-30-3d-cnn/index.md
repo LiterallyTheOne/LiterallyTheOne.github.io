@@ -4,7 +4,7 @@ draft = false
 title = 'CNN model for Time of Flight'
 description = "A post about CNN model for time of Flight"
 tags = ["Sensor", "Kaggle", "CMI", "Deep-learning"]
-image = "3d_cnn.png"
+image = "3d-cnn.webp"
 +++
 
 # CNN model for Time of Flight

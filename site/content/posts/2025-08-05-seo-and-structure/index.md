@@ -4,7 +4,7 @@ draft = false
 title = 'Improve SEO and structure of my site'
 description = "A post about improving SEO and struction of my website"
 tags = ["SEO", "Google-Search-Console", "Site"]
-image = "seo_improvement.webp"
+image = "seo-improvement.webp"
 +++
 
 ## Improve SEO and structure of my site

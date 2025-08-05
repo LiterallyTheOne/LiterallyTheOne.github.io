@@ -4,7 +4,7 @@ draft = false
 title = 'Data augmentation is so important'
 description = "A post about the importance of data augmentation"
 tags = ["Pytorch", "Deep-learning", "Data-augmentation", "Kaggle", "CMI"]
-image = "data_augmentation.png"
+image = "data-augmentation.webp"
 +++
 
 # Data augmentation

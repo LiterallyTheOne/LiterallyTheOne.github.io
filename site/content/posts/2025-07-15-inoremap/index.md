@@ -3,7 +3,7 @@ date = '2025-07-15T22:24:09+03:30'
 draft = false
 title = 'inoremap in vim'
 tags = ["vim", "PyCharm"]
-image = "inoremap.png"
+image = "inoremap.webp"
 +++
 
 # inoremap in vim
