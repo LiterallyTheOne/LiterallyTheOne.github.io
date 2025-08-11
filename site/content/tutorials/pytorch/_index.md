@@ -7,4 +7,10 @@ description = "A tutorial about Pytorch"
 
 # Pytorch Tutorial
 
+## introduction
+
+## Goal
+
+## Table of content
+
 {{< table-of-content >}}
