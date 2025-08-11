@@ -1,0 +1,25 @@
+<div class="flex flex-col dark:text-white">
+
+    <!--@formatter:off-->
+    {{ if gt (len .Sections) 0 }}
+        {{ range .Sections }}
+        <div class="flex">
+            {{ .Title }}
+        </div>
+           {{ range .Pages }}
+                <div class="ml-4">
+                    <a href="{{ .RelPermalink }}" class="hover:underline">
+                        {{ .Title }}
+                    </a>
+                </div>
+            {{ end }}
+        {{ end }}
+    {{ else }}
+        {{ range .RegularPages }}
+            {{ partial "post_normal.html" . }}
+        {{ end }}
+    {{ end }}
+    <!--@formatter:on-->
+
+
+</div>
