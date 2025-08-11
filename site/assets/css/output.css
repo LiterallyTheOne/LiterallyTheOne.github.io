@@ -230,12 +230,6 @@
   .z-50 {
     z-index: 50;
   }
-  .col-span-9 {
-    grid-column: span 9 / span 9;
-  }
-  .col-start-3 {
-    grid-column-start: 3;
-  }
   .container {
     width: 100%;
     @media (width >= 40rem) {
@@ -1058,11 +1052,6 @@
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
-  .md\:grid-cols-12 {
-    @media (width >= 48rem) {
-      grid-template-columns: repeat(12, minmax(0, 1fr));
-    }
-  }
   .lg\:prose-xl {
     @media (width >= 64rem) {
       font-size: 1.25rem;
@@ -1327,11 +1316,6 @@
       color: var(--color-blue-500);
     }
   }
-  .dark\:text-gray-100 {
-    &:where(.dark, .dark *) {
-      color: var(--color-gray-100);
-    }
-  }
   .dark\:text-gray-300 {
     &:where(.dark, .dark *) {
       color: var(--color-gray-300);
@@ -1340,11 +1324,6 @@
   .dark\:text-gray-500 {
     &:where(.dark, .dark *) {
       color: var(--color-gray-500);
-    }
-  }
-  .dark\:text-gray-600 {
-    &:where(.dark, .dark *) {
-      color: var(--color-gray-600);
     }
   }
   .dark\:text-white {

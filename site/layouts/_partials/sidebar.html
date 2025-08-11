@@ -1,24 +1,18 @@
 <div class="flex flex-col dark:text-white rounded border-4 border-blue-200 dark:border-blue-800">
 
     <!--@formatter:off-->
-    {{ if gt (len .Sections) 0 }}
-        {{ range .Sections }}
-        <div class="flex">
-            <a href="{{ .RelPermalink }}" class="hover:underline font-bold text-gray-800 dark:text-gray-500">
-                {{ .Title }}
-            </a>
-        </div>
-           {{ range .Pages }}
-                <div class="ml-4">
-                    <a href="{{ .RelPermalink }}" class="hover:underline">
-                        {{ .Title }}
-                    </a>
-                </div>
-            {{ end }}
-        {{ end }}
-    {{ else }}
-        {{ range .RegularPages }}
-            {{ partial "post-normal.html" . }}
+    {{ range .Sections }}
+    <div class="flex">
+        <a href="{{ .RelPermalink }}" class="hover:underline font-bold text-gray-800 dark:text-gray-500">
+            {{ .Title }}
+        </a>
+    </div>
+       {{ range .Pages }}
+            <div class="ml-4">
+                <a href="{{ .RelPermalink }}" class="hover:underline">
+                    {{ .Title }}
+                </a>
+            </div>
         {{ end }}
     {{ end }}
     <!--@formatter:on-->
