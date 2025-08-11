@@ -12,7 +12,7 @@
     {{ $pages := .Pages }}
     {{ $pages = $pages.ByDate.Reverse }}
     {{ range (.Paginate $pages 9).Pages }}
-    {{ partial "post_normal.html" . }}
+    {{ partial "post-normal.html" . }}
 
     {{ end }}
 </div>
