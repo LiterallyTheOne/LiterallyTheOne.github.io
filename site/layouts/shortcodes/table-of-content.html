@@ -1,0 +1,32 @@
+<div class="flex flex-col dark:text-white rounded border-4 border-blue-200 dark:border-blue-800">
+
+    <!--@formatter:off-->
+    {{ if len page.Sections | ne 0 }}
+    {{ range page.Sections }}
+    <div class="flex">
+        <a href="{{ .RelPermalink }}" class="hover:underline font-bold text-gray-800 dark:text-gray-500">
+            {{ .Title }}
+        </a>
+    </div>
+        {{ range .Pages }}
+        <div class="ml-4">
+            <a href="{{ .RelPermalink }}" class="hover:underline">
+                {{ .Title }}
+            </a>
+        </div>
+        {{ end }}
+    {{ end }}
+    {{ else }}
+        {{ range page.Pages }}
+        <div class="ml-4">
+            <a href="{{ .RelPermalink }}" class="hover:underline">
+                {{ .Title }}
+            </a>
+        </div>
+        {{ end }}
+    {{ end }}
+    <!--@formatter:on-->
+
+
+</div>
+
