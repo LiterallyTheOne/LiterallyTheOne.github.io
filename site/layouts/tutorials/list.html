@@ -2,11 +2,19 @@
 
 {{ partial "breadcrumbs.html" . }}
 
-<h1 class="text-cyan-500 text-2xl text-center mb-10">{{ .Title }}</h1>
+<div class="flex flex-wrap gap-3">
 
-{{ partial "sidebar.html" . }}
+    <div class="md:max-w-5/24 w-full hidden sm:block ml-2">
+        <div class="sticky top-20">
+            {{ partial "sidebar.html" . }}
+        </div>
+    </div>
 
-{{ partial "render-content.html" . }}
+    <div class="flex flex-wrap md:max-w-3/5 w-full">
+        {{ partial "render-content.html" . }}
+    </div>
+</div>
+
 
 {{ partial "pagination.html" . }}
 {{ end }}
