@@ -17,6 +17,9 @@
 
 * Search if my avatar should be on `webp` as well
 
+* See if I can use `sidebar.html` instead of `sidebar-tutorial.html`
+  for highlighting
+
 ## <div style="text-align:center; color:lime"> Done </div>
 
 * Change `png` images to `webp` images
