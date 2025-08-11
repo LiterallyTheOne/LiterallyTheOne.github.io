@@ -15,10 +15,11 @@
 
 * Add latex support for markdown files
 
-* Change `png` images to `webp` images
+* Search if my avatar should be on `webp` as well
 
 ## <div style="text-align:center; color:lime"> Done </div>
 
+* Change `png` images to `webp` images
 * Add most used tags in homepage
 * Add default image to posts
 * Make the search look better
