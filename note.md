@@ -20,6 +20,8 @@
 * See if I can use `sidebar.html` instead of `sidebar-tutorial.html`
   for highlighting
 
+* 🌄 Make a shortcode for images
+
 ## <div style="text-align:center; color:lime"> Done </div>
 
 * Change `png` images to `webp` images
