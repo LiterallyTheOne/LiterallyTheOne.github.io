@@ -1,0 +1,29 @@
+{{ $current := .RelPermalink }}
+
+{{ range where site.Sections "Section" "tutorials" }}
+
+<div class="flex flex-col dark:text-white rounded border-4 border-blue-200 dark:border-blue-800">
+
+    <!--@formatter:off-->
+    {{ range .Sections }}
+    <div class="flex">
+        <a href="{{ .RelPermalink }}" class="hover:underline font-bold
+        {{ if eq .RelPermalink $current }}text-blue-500 dark:text-blue-300 underline{{ else }}text-gray-800 dark:text-gray-500{{ end }}">
+            {{ .Title }}
+        </a>
+    </div>
+    {{ range .Pages }}
+    <div class="ml-4">
+        <a href="{{ .RelPermalink }}" class="hover:underline
+        {{ if eq .RelPermalink $current }}text-blue-500 dark:text-blue-300 underline font-semibold{{ end }}">
+            {{ .Title }}
+        </a>
+    </div>
+    {{ end }}
+    {{ end }}
+    <!--@formatter:on-->
+
+
+</div>
+
+{{ end }}
