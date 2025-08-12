@@ -1,0 +1,3 @@
+[submodule "site/site/content/tutorials/pytorch"]
+	path = site/site/content/tutorials/pytorch
+	url = https://github.com/LiterallyTheOne/Pytorch_Tutorial
