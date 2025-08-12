@@ -22,6 +22,9 @@
 
 * 🌄 Make a shortcode for images
 
+* 🔗💳Add a link in the main page to `about`
+  when someone clicks on my card
+
 ## <div style="text-align:center; color:lime"> Done </div>
 
 * Change `png` images to `webp` images
