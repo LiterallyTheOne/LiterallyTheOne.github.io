@@ -2,7 +2,7 @@
 
 {{ partial "breadcrumbs.html" . }}
 
-<div class="flex flex-wrap gap-3">
+<div class="flex flex-wrap gap-3 mb-2">
 
     <div class="md:max-w-5/24 w-full hidden sm:block ml-2">
         <div class="sticky top-20">
@@ -12,10 +12,38 @@
         </div>
     </div>
 
-    <div class="flex flex-wrap md:max-w-3/5 w-full">
-        {{ partial "render-content.html" . }}
+    <div class="flex flex-col md:max-w-3/5 w-full">
+        <div class="flex justify-center align-items-center items-center">
+            {{ partial "render-content.html" . }}
+        </div>
+
+        <div class="mt-2 rounded border-4 border-blue-200 dark:border-blue-800">
+
+            <h1 class="text-2xl text-center text-cyan-500">
+                <a href="/tutorials/">
+                    Tutorials
+                </a>
+            </h1>
+
+            <div class="ml-2 mr-2 grid md:grid-cols-3 sm:grid-cols-1 gap-4 mb-10  ">
+
+                {{ range where site.Sections "Section" "tutorials" }}
+
+                {{ $pages := .Sections }}
+                {{ $pages = $pages.ByDate.Reverse }}
+                {{ range (.Paginate $pages 9).Pages }}
+
+                {{ partial "post-normal.html" . }}
+
+                {{ end }}
+                {{ end }}
+            </div>
+
+            {{ partial "pagination.html" . }}
+        </div>
+
+
     </div>
 </div>
-
 
 {{ end }}
