@@ -22,6 +22,8 @@
 
 * 🌄 Make a shortcode for images
 
+* 🪾Should I make a submodule for the posts as well?
+
 ## <div style="text-align:center; color:lime"> Done </div>
 
 * 🔗💳Add a link in the main page to `about`
