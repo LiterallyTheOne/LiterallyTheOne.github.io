@@ -8,5 +8,3 @@ description = "Tutorials"
 
 Here are the tutorials that I tried to make them as simple as possible
 with the practical examples.
-
-{{< table-of-content >}}
