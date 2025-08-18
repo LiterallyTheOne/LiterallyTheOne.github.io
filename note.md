@@ -22,11 +22,10 @@
 
 * 🌄 Make a shortcode for images
 
-* 🔗💳Add a link in the main page to `about`
-  when someone clicks on my card
-
 ## <div style="text-align:center; color:lime"> Done </div>
 
+* 🔗💳Add a link in the main page to `about`
+  when someone clicks on my card
 * Change `png` images to `webp` images
 * Add most used tags in homepage
 * Add default image to posts
