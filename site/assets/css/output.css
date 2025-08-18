@@ -752,6 +752,9 @@
   .h-\[300px\] {
     height: 300px;
   }
+  .max-h-48 {
+    max-height: calc(var(--spacing) * 48);
+  }
   .min-h-dvh {
     min-height: 100dvh;
   }
@@ -766,6 +769,9 @@
   }
   .w-full {
     width: 100%;
+  }
+  .max-w-48 {
+    max-width: calc(var(--spacing) * 48);
   }
   .shrink {
     flex-shrink: 1;
