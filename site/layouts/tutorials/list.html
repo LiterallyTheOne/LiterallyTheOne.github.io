@@ -20,23 +20,29 @@
         <div class="mt-2 rounded border-4 border-blue-200 dark:border-blue-800">
 
             <h1 class="text-2xl text-center text-cyan-500">
-                <a href="/tutorials/">
-                    Tutorials
+                <a href="{{ .RelPermalink }}">
+                    {{ .Title }}
                 </a>
             </h1>
 
             <div class="ml-2 mr-2 grid md:grid-cols-3 sm:grid-cols-1 gap-4 mb-10  ">
 
-                {{ range where site.Sections "Section" "tutorials" }}
+                <!--@formatter:off-->
+                {{ if len page.Sections | ne 0 }}
+                   {{ $pages := page.Sections }}
+                   {{ range (.Paginate $pages 9).Pages }}
+                        {{ partial "post-normal.html" . }}
+                    {{ end }}
 
-                {{ $pages := .Sections }}
-                {{ $pages = $pages.ByDate.Reverse }}
-                {{ range (.Paginate $pages 9).Pages }}
+                {{ else }}
 
-                {{ partial "post-normal.html" . }}
-
+                    {{ $pages := page.Pages }}
+                    {{ range (.Paginate $pages 9).Pages }}
+                        {{ partial "post-normal.html" . }}
+                    {{ end }}
                 {{ end }}
-                {{ end }}
+                <!--@formatter:on-->
+
             </div>
 
             {{ partial "pagination.html" . }}
