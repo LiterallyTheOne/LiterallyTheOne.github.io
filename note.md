@@ -13,7 +13,6 @@
 
 * Check why tailwindcss typography didn't perform well on Iphone chrome
 
-* Add latex support for markdown files
 
 * Search if my avatar should be on `webp` as well
 
@@ -26,6 +25,7 @@
 
 ## <div style="text-align:center; color:lime"> Done </div>
 
+* Add latex support for markdown files
 * 🔗💳Add a link in the main page to `about`
   when someone clicks on my card
 * Change `png` images to `webp` images
