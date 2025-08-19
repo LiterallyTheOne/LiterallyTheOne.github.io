@@ -13,7 +13,6 @@
 
 * Check why tailwindcss typography didn't perform well on Iphone chrome
 
-* Add latex support for markdown files
 
 * Search if my avatar should be on `webp` as well
 
@@ -22,11 +21,13 @@
 
 * 🌄 Make a shortcode for images
 
-* 🔗💳Add a link in the main page to `about`
-  when someone clicks on my card
+* 🪾Should I make a submodule for the posts as well?
 
 ## <div style="text-align:center; color:lime"> Done </div>
 
+* Add latex support for markdown files
+* 🔗💳Add a link in the main page to `about`
+  when someone clicks on my card
 * Change `png` images to `webp` images
 * Add most used tags in homepage
 * Add default image to posts
