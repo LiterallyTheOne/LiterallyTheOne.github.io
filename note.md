@@ -26,6 +26,8 @@
 
 * put the source code in frontmatter
 
+* Should I only include a page once in search results?
+
 ## <div style="text-align:center; color:lime"> Done </div>
 
 * Add latex support for markdown files
