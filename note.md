@@ -9,6 +9,20 @@
 * 🔗put the source code in frontmatter
 * 💡Should I only include a page once in search results?
 
+## seositecheckup
+
+* To address URL canonicalization issues, it is recommended to select a primary URL for your webpage and set up
+  redirects from all other variations to the preferred one.
+* To improve the website experience for your visitors, it is recommended to eliminate any render-blocking resources on
+  this webpage.
+* Using images in a modern format can significantly reduce the file size and improve the loading speed of a webpage,
+  providing a better user experience and potentially increasing engagement.
+* Connect your webpage with social media networks using APIs or AddThis, as social signals are becoming increasingly
+  important for search engines to validate a site's trustworthiness and authority.
+* Serve properly sized images to reduce page loading times and to improve user's experience.
+* Without an SPF record, spammers can easily spoof emails from this domain, potentially leading to compromised email
+  security and deliverability issues.
+
 ## TODO not that important
 
 * Add a section for courses
