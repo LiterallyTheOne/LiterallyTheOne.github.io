@@ -11,7 +11,7 @@
 
 ">
 
-    <a href="{{ .RelPermalink }}">
+    <a class="flex flex-col items-center" href="{{ .RelPermalink }}">
         <div class="flex gap-2 w-full items-center justify-center">
             {{ if .Params.image }}
             <img src="{{ .RelPermalink }}{{ .Params.image }}" alt="{{ .Title }}">
