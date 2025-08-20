@@ -1,4 +1,4 @@
-{{- $types := site.Params.searchTypes | default (slice "posts") -}}
+{{- $types := site.Params.searchTypes | default (slice "posts" "tutorials") -}}
 {{- $pages := where .Site.RegularPages "Type" "in" $types -}}
 [
   {{- range $i, $page := $pages -}}
