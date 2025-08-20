@@ -22,7 +22,7 @@
 
                 {{ range first 6 (where site.RegularPages "Section" "posts") }}
 
-                {{ partial "post-normal.html" . }}
+                {{ partial "post-card.html" . }}
 
                 {{ end }}
             </div>
@@ -42,7 +42,7 @@
 
                 {{ range first 6 .Sections }}
 
-                {{ partial "post-normal.html" . }}
+                {{ partial "post-card.html" . }}
 
                 {{ end }}
                 {{ end }}

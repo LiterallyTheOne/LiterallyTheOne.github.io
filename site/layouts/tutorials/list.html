@@ -31,14 +31,14 @@
                 {{ if len page.Sections | ne 0 }}
                    {{ $pages := page.Sections }}
                    {{ range (.Paginate $pages 9).Pages }}
-                        {{ partial "post-normal.html" . }}
+                        {{ partial "post-card.html" . }}
                     {{ end }}
 
                 {{ else }}
 
                     {{ $pages := page.Pages }}
                     {{ range (.Paginate $pages 9).Pages }}
-                        {{ partial "post-normal.html" . }}
+                        {{ partial "post-card.html" . }}
                     {{ end }}
                 {{ end }}
                 <!--@formatter:on-->
