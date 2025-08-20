@@ -23,6 +23,8 @@
 
 * 🪾Should I make a submodule for the posts as well?
 
+* put the source code in frontmatter
+
 ## <div style="text-align:center; color:lime"> Done </div>
 
 * Add latex support for markdown files
