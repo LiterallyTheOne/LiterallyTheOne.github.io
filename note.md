@@ -1,5 +1,7 @@
 # <div style="text-align:center; color:cyan"> Note </div>
 
+## TODO
+
 * post date and summary on top?
 
 * manifest
@@ -11,8 +13,7 @@
 * Add a section for courses
 * Add a section for concepts
 
-* Check why tailwindcss typography didn't perform well on Iphone chrome
-
+* Check why TailwindCSS typography didn't perform well on iPhone's Chrome
 
 * Search if my avatar should be on `webp` as well
 
@@ -31,7 +32,7 @@
 * 🔗💳Add a link in the main page to `about`
   when someone clicks on my card
 * Change `png` images to `webp` images
-* Add most used tags in homepage
+* Add the most used tags on the homepage
 * Add default image to posts
 * Make the search look better
 * add search
