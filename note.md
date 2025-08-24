@@ -9,6 +9,11 @@
 * 🔗put the source code in frontmatter
 * 💡Should I only include a page once in search results?
 
+* 📏Put margin at the left and right of each post to make it look better at mobile phones
+* 🔗🆕Link to the new site from the old site
+* ⬇️📄Download pdf button for each post-card
+* 🪪License on the bottom of each post-card
+
 ## seositecheckup
 
 * To address URL canonicalization issues, it is recommended to select a primary URL for your webpage and set up
