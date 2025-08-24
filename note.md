@@ -12,7 +12,9 @@
 * 📏Put margin at the left and right of each post to make it look better at mobile phones
 * 🔗🆕Link to the new site from the old site
 * ⬇️📄Download pdf button for each post-card
+* ⬇️📄Download whole tutorial button
 * 🪪License on the bottom of each post-card
+* 📅Add latest update date and change that date to created date
 
 ## seositecheckup
 
