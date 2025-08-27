@@ -9,7 +9,6 @@
 * 🔗put the source code in frontmatter
 * 💡Should I only include a page once in search results?
 
-* 🔗🆕Link to the new site from the old site
 * ⬇️📄Download pdf button for each post-card
 * ⬇️📄Download whole tutorial button
 * 🪪License on the bottom of each post-card
@@ -42,6 +41,7 @@
 
 ## Done
 
+* 🔗🆕Link to the new site from the old site
 * 📏Put margin at the left and right of each post to make it look better at mobile phones
 * Add latex support for markdown files
 * 🔗💳Add a link in the main page to `about`
