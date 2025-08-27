@@ -22,7 +22,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:image"
-      content="{{ with .Params.image }}{{ . }}{{ else }}{{ .Site.BaseURL }}images/profile.jpg{{ end }}">
+      content="{{ with .Params.image }}{{ . }}{{ else }}{{ .Site.BaseURL }}images/profile.webp{{ end }}">
 <meta property="og:description"
       content="{{ with .Params.description }}{{ . }}{{ else }}Official site of Ramin Zarebidoky (LiterallyTheOne).{{ end }}">
 
@@ -32,7 +32,7 @@
 <meta name="twitter:description"
       content="{{ with .Params.description }}{{ . }}{{ else }}Official website of Ramin Zarebidoky, (LiterallyTheOne).{{ end }}">
 <meta name="twitter:image"
-      content="{{ with .Params.image }}{{ . }}{{ else }}{{ .Site.BaseURL }}images/profile.jpg{{ end }}">
+      content="{{ with .Params.image }}{{ . }}{{ else }}{{ .Site.BaseURL }}images/profile.webp{{ end }}">
 
 
 {{ partialCached "head/css.html" . }}

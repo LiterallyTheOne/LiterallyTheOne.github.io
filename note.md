@@ -3,11 +3,28 @@
 ## TODO
 
 * 🎇Change `favicon.ico` to something better
-* 🌠Search if my avatar should be on `webp` as well
 * 🌄 Make a shortcode for images
 * 🪾Should I make a submodule for the posts as well?
 * 🔗put the source code in frontmatter
 * 💡Should I only include a page once in search results?
+
+* ⬇️📄Download whole tutorial button
+* 🪪License on the bottom of each post-card
+* 📅Add latest update date and change that date to created date
+
+## seositecheckup
+
+* To address URL canonicalization issues, it is recommended to select a primary URL for your webpage and set up
+  redirects from all other variations to the preferred one.
+* To improve the website experience for your visitors, it is recommended to eliminate any render-blocking resources on
+  this webpage.
+* Using images in a modern format can significantly reduce the file size and improve the loading speed of a webpage,
+  providing a better user experience and potentially increasing engagement.
+* Connect your webpage with social media networks using APIs or AddThis, as social signals are becoming increasingly
+  important for search engines to validate a site's trustworthiness and authority.
+* Serve properly sized images to reduce page loading times and to improve user's experience.
+* Without an SPF record, spammers can easily spoof emails from this domain, potentially leading to compromised email
+  security and deliverability issues.
 
 ## TODO not that important
 
@@ -22,6 +39,10 @@
 
 ## Done
 
+* ⬇️📄Download pdf button for each post-card
+* 🌠Search if my avatar should be on `webp` as well
+* 🔗🆕Link to the new site from the old site
+* 📏Put margin at the left and right of each post to make it look better at mobile phones
 * Add latex support for markdown files
 * 🔗💳Add a link in the main page to `about`
   when someone clicks on my card
