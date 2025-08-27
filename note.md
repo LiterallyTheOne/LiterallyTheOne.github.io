@@ -8,9 +8,12 @@
 * 🔗put the source code in frontmatter
 * 💡Should I only include a page once in search results?
 
+* ⬇️📄Download pdf button needs work
 * ⬇️📄Download whole tutorial button
 * 🪪License on the bottom of each post-card
 * 📅Add latest update date and change that date to created date
+
+* ⌨ Table of content different headers indentation
 
 ## seositecheckup
 
