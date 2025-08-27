@@ -3,7 +3,6 @@
 ## TODO
 
 * 🎇Change `favicon.ico` to something better
-* 🌠Search if my avatar should be on `webp` as well
 * 🌄 Make a shortcode for images
 * 🪾Should I make a submodule for the posts as well?
 * 🔗put the source code in frontmatter
@@ -41,6 +40,7 @@
 
 ## Done
 
+* 🌠Search if my avatar should be on `webp` as well
 * 🔗🆕Link to the new site from the old site
 * 📏Put margin at the left and right of each post to make it look better at mobile phones
 * Add latex support for markdown files
