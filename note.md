@@ -8,9 +8,13 @@
 * 🔗put the source code in frontmatter
 * 💡Should I only include a page once in search results?
 
+* ⬇️📄Download pdf button needs work
 * ⬇️📄Download whole tutorial button
 * 🪪License on the bottom of each post-card
 * 📅Add latest update date and change that date to created date
+
+* ⌨ Table of content different headers indentation
+* 🤖 manifest
 
 ## seositecheckup
 
@@ -30,7 +34,6 @@
 
 * Add a section for courses
 * Add a section for concepts
-* manifest
 * post date and summary on top?
 * See if I can use `sidebar.html` instead of `sidebar-tutorial.html`
   for highlighting
