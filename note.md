@@ -14,7 +14,7 @@
 * 📅Add latest update date and change that date to created date
 
 * ⌨ Table of content different headers indentation
-* 🤖 manifest
+* 🤖 think about the background of the manifest
 
 ## seositecheckup
 
