@@ -2,7 +2,6 @@
 
 ## TODO
 
-* 🎇Change `favicon.ico` to something better
 * 🌄 Make a shortcode for images
 * 🪾Should I make a submodule for the posts as well?
 * 🔗put the source code in frontmatter
@@ -41,6 +40,7 @@
 
 ## Done
 
+* 🎇Change `favicon.ico` to something better
 * 🪪License on the bottom of each post-card
 * ⬇️📄Download pdf button for each post-card
 * 🌠Search if my avatar should be on `webp` as well
