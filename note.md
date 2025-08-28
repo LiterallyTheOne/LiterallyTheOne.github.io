@@ -10,7 +10,6 @@
 
 * ⬇️📄Download pdf button needs work
 * ⬇️📄Download whole tutorial button
-* 🪪License on the bottom of each post-card
 * 📅Add latest update date and change that date to created date
 
 * ⌨ Table of content different headers indentation
@@ -42,6 +41,7 @@
 
 ## Done
 
+* 🪪License on the bottom of each post-card
 * ⬇️📄Download pdf button for each post-card
 * 🌠Search if my avatar should be on `webp` as well
 * 🔗🆕Link to the new site from the old site
