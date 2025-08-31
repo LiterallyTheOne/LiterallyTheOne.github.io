@@ -4,7 +4,6 @@
 
 * 🌄 Make a shortcode for images
 * 🪾Should I make a submodule for the posts as well?
-* 🔗put the source code in frontmatter
 * 💡Should I only include a page once in search results?
 
 * ⬇️📄Download pdf button needs work
@@ -43,6 +42,7 @@
 
 ## Done
 
+* 🔗put the source code in frontmatter
 * 🎇Change `favicon.ico` to something better
 * 🪪License on the bottom of each post-card
 * ⬇️📄Download pdf button for each post-card
