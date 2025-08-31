@@ -14,6 +14,9 @@
 * ⌨ Table of content different headers indentation
 * 🤖 think about the background of the manifest
 
+* 📕🎓Add a section for courses
+* 📒🧑‍🎓Make a way that students can only see their marks
+
 ## seositecheckup
 
 * To address URL canonicalization issues, it is recommended to select a primary URL for your webpage and set up
