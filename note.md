@@ -2,19 +2,19 @@
 
 ## TODO
 
-* 🎇Change `favicon.ico` to something better
 * 🌄 Make a shortcode for images
 * 🪾Should I make a submodule for the posts as well?
-* 🔗put the source code in frontmatter
 * 💡Should I only include a page once in search results?
 
 * ⬇️📄Download pdf button needs work
 * ⬇️📄Download whole tutorial button
-* 🪪License on the bottom of each post-card
 * 📅Add latest update date and change that date to created date
 
 * ⌨ Table of content different headers indentation
-* 🤖 manifest
+* 🤖 think about the background of the manifest
+
+* 📕🎓Add a section for courses
+* 📒🧑‍🎓Make a way that students can only see their marks
 
 ## seositecheckup
 
@@ -42,6 +42,9 @@
 
 ## Done
 
+* 🔗put the source code in frontmatter
+* 🎇Change `favicon.ico` to something better
+* 🪪License on the bottom of each post-card
 * ⬇️📄Download pdf button for each post-card
 * 🌠Search if my avatar should be on `webp` as well
 * 🔗🆕Link to the new site from the old site
