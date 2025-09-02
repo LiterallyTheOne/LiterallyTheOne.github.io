@@ -16,6 +16,9 @@
 * 📕🎓Add a section for courses
 * 📒🧑‍🎓Make a way that students can only see their marks
 
+* ＞ Add a collapse button for tutorials
+* ＞ Add a collapse button for third headers
+
 ## seositecheckup
 
 * To address URL canonicalization issues, it is recommended to select a primary URL for your webpage and set up
