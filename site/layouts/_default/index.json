@@ -7,7 +7,9 @@
       "title": {{ $page.Title | jsonify }},
       "description": {{ $page.Params.description | default $page.Summary | plainify | jsonify }},
       "content": {{ $page.Plain | jsonify }},
-      "url": {{ $page.RelPermalink | jsonify }}
+      "url": {{ $page.RelPermalink | jsonify }},
+      "image": {{ $page.Params.image | jsonify }},
+      "date": {{ $page.Params.date | jsonify }}
     }
   {{- end -}}
 ]
