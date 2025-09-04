@@ -6,8 +6,6 @@
 * 🪾Should I make a submodule for the posts as well?
 * 💡Should I only include a page once in search results?
 
-* ⬇️📄Download pdf button needs work
-* ⬇️📄Download whole tutorial button
 * 📅Add latest update date and change that date to created date
 
 * ⌨ Table of content different headers indentation
@@ -18,6 +16,9 @@
 
 * ＞ Add a collapse button for tutorials
 * ＞ Add a collapse button for third headers
+
+* ⬇️📄Download pdf button needs work
+* ⬇️📄Download whole tutorial button
 
 ## seositecheckup
 
