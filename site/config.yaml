@@ -21,11 +21,6 @@ menus:
       pageRef: "/tutorials"
       weight: 40
 
-markup:
-  goldmark:
-    renderer:
-      unsafe: true
-
 pagination:
   pagerSize: 6
 
