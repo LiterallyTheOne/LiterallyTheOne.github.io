@@ -24,20 +24,7 @@ menus:
 pagination:
   pagerSize: 6
 
-outputFormats:
-  PANDOC:
-    mediaType: text/html
-    baseName: pandoc
-    isHTML: true
-    rel: alternate
-
 outputs:
   home:
     - HTML
     - JSON
-  section:
-    - HTML
-    - PANDOC
-  page:
-    - HTML
-    - PANDOC
