@@ -2,15 +2,15 @@ from pathlib import Path
 
 
 def main():
-    p = Path("../site/content")
+    p = Path("site/content")
     for path in p.glob("**/*.md"):
         print(path)
 
         with open(path) as f:
             content = f.read()
             lines = content.split("\n")
-            for i, line in enumerate(lines):
-                lines[i] = line.replace("+++", "---")
+            for i in range(len(lines)):
+                lines[i] = lines[i].replace("+++", "---")
                 lines[i] = lines[i].replace(" = ", ": ")
 
             result = "\n".join(lines)
