@@ -1,11 +1,11 @@
-+++
-date = '2025-07-29T08:00:00+03:30'
-draft = false
-title = 'Working with Time of Flight data'
-description = "A post about Working with Time of Flight data"
-tags = ["Polars", "Sensor", "Kaggle", "CMI", "Deep-learning"]
-image = "time-of-flight-cmi.webp"
-+++
+---
+date: '2025-07-29T08:00:00+03:30'
+draft: false
+title: 'Working with Time of Flight data'
+description: "A post about Working with Time of Flight data"
+tags: ["Polars", "Sensor", "Kaggle", "CMI", "Deep-learning"]
+image: "time-of-flight-cmi.webp"
+---
 
 # Working with Time of Flight data
 
@@ -55,14 +55,14 @@ class ChangeTOFTo2D:
         return cls()
 
     def __call__(self, df: pl.DataFrame) -> pl.DataFrame:
-        new_df = df.clone()
-        df_tof = new_df.select(cs.starts_with("tof"))
+        new_df: df.clone()
+        df_tof: new_df.select(cs.starts_with("tof"))
         for i in range(1, 6):
-            s_i = df_tof.select(cs.starts_with(f"tof_{i}_v"))
-            s_i_n = s_i.to_numpy()
-            s_i_n = s_i_n.reshape((-1, 8, 8))
-            new_df = new_df.with_columns(pl.Series(f"tof_{i}_2d", s_i_n))
-            new_df = new_df.drop(cs.starts_with(f"tof_{i}_v"))
+            s_i: df_tof.select(cs.starts_with(f"tof_{i}_v"))
+            s_i_n: s_i.to_numpy()
+            s_i_n: s_i_n.reshape((-1, 8, 8))
+            new_df: new_df.with_columns(pl.Series(f"tof_{i}_2d", s_i_n))
+            new_df: new_df.drop(cs.starts_with(f"tof_{i}_v"))
         return new_df
 
 ```
@@ -82,8 +82,8 @@ class TOFTransform:
             features_to_use: list[str],
             max_sequence_count,
     ):
-        self.features_to_use = features_to_use
-        self.max_sequence_count = max_sequence_count
+        self.features_to_use: features_to_use
+        self.max_sequence_count: max_sequence_count
 
     @classmethod
     def from_config(cls, cfg: DictConfig) -> "TOFTransform":
@@ -103,26 +103,26 @@ class TOFTransform:
             sequence: pl.DataFrame,
     ) -> tuple[torch.Tensor, torch.Tensor]:
 
-        num_features = len(self.features_to_use)
-        sequence_np = sequence.select(self.features_to_use).to_numpy()
+        num_features: len(self.features_to_use)
+        sequence_np: sequence.select(self.features_to_use).to_numpy()
 
-        all_zeros = np.zeros((self.max_sequence_count, num_features, 8, 8))
-        mask = np.zeros(self.max_sequence_count, dtype=bool)
+        all_zeros: np.zeros((self.max_sequence_count, num_features, 8, 8))
+        mask: np.zeros(self.max_sequence_count, dtype=bool)
 
-        result_list = []
+        result_list: []
         for i in range(sequence_np.shape[0]):
-            result_row = []
+            result_row: []
             for j in range(sequence_np.shape[1]):
                 result_row.append(sequence_np[i][j])
             result_list.append(result_row)
 
-        result_np = np.array(result_list)
+        result_np: np.array(result_list)
 
-        all_zeros[: result_np.shape[0]] = result_np
-        mask[: result_np.shape[0]] = True
+        all_zeros[: result_np.shape[0]]: result_np
+        mask[: result_np.shape[0]]: True
 
-        data = torch.from_numpy(all_zeros).float()
-        attention_mask = torch.from_numpy(mask).bool()
+        data: torch.from_numpy(all_zeros).float()
+        attention_mask: torch.from_numpy(mask).bool()
 
         return data, attention_mask
 

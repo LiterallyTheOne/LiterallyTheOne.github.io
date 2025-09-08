@@ -1,11 +1,11 @@
-+++
-date = '2025-07-20T09:20:00+03:30'
-draft = false
-title = 'Trying PyTorch Ignite'
-description = "A post about trying PyTorch Ignite"
-tags = ["Pytorch-Ignite", "PyTorch", "Python", "Deep-Learning"]
-image = "Trying-PyTorch-Ignite.webp"
-+++
+---
+date: '2025-07-20T09:20:00+03:30'
+draft: false
+title: 'Trying PyTorch Ignite'
+description: "A post about trying PyTorch Ignite"
+tags: ["Pytorch-Ignite", "PyTorch", "Python", "Deep-Learning"]
+image: "Trying-PyTorch-Ignite.webp"
+---
 
 # Trying Pytorch Ignite
 
@@ -41,7 +41,7 @@ At first, I have defined my `trainer` and `evaluators` like below:
 
 ```python
 # Define trainer
-trainer = create_supervised_trainer(
+trainer: create_supervised_trainer(
     model=model,
     optimizer=optimizer,
     loss_fn=criterion,
@@ -49,17 +49,17 @@ trainer = create_supervised_trainer(
 )
 
 # Define evaluators
-val_metrics = {
+val_metrics: {
     "accuracy": Accuracy(),
     "loss": Loss(criterion),
 }
 
-train_evaluator = create_supervised_evaluator(
+train_evaluator: create_supervised_evaluator(
     model=model,
     metrics=val_metrics,
     device=device,
 )
-val_evaluator = create_supervised_evaluator(
+val_evaluator: create_supervised_evaluator(
     model=model,
     metrics=val_metrics,
     device=device,
@@ -71,14 +71,14 @@ I attached `ProgressBar` to each of them.
 
 ```python
 # Add progress bar to trainer
-pbar = ProgressBar()
+pbar: ProgressBar()
 pbar.attach(trainer)
 
 # Add progress bar to evaluators
-pbar_1 = ProgressBar()
+pbar_1: ProgressBar()
 pbar_1.attach(train_evaluator)
 
-pbar_2 = ProgressBar()
+pbar_2: ProgressBar()
 pbar_2.attach(val_evaluator)
 ```
 
@@ -90,7 +90,7 @@ below and add them to the `trainer` handlers.
 @trainer.on(Events.EPOCH_COMPLETED)
 def log_training_results(engine):
     train_evaluator.run(train_loader)
-    metrics = train_evaluator.state.metrics
+    metrics: train_evaluator.state.metrics
     print(
         f"Training Results - Epoch[{engine.state.epoch}] Avg accuracy: {metrics['accuracy']:.2f} Avg loss: {metrics['loss']:.2f}"
     )
@@ -100,7 +100,7 @@ def log_training_results(engine):
 @trainer.on(Events.EPOCH_COMPLETED)
 def log_validation_results(engine):
     val_evaluator.run(val_loader)
-    metrics = val_evaluator.state.metrics
+    metrics: val_evaluator.state.metrics
     print(
         f"Validation Results - Epoch[{engine.state.epoch}] Avg accuracy: {metrics['accuracy']:.2f} Avg loss: {metrics['loss']:.2f}"
     )
@@ -118,7 +118,7 @@ To always have the best model saved, I added a `ModelCheckPoint` to
 
 ```python
 # Add model checkpointing to val evaluator
-model_checkpoint = ModelCheckpoint(
+model_checkpoint: ModelCheckpoint(
     f"checkpoints/{cfg.model.name}_{run_counter}",
     n_saved=1,
     filename_prefix="best",
@@ -138,7 +138,7 @@ Then, for early stopping, I added the code below.
 
 ```python
 # Add Early stopping
-early_stopping = EarlyStopping(
+early_stopping: EarlyStopping(
     patience=cfg.patience,
     score_function=score_function,
     trainer=trainer,
@@ -155,7 +155,7 @@ And, to have tensorboard logging, I added the code below:
 
 ```python
 # Add tensorboard
-tb_logger = TensorboardLogger(log_dir=f"tb-logger/{cfg.model.name}_{run_counter}")
+tb_logger: TensorboardLogger(log_dir=f"tb-logger/{cfg.model.name}_{run_counter}")
 
 tb_logger.attach_output_handler(
     trainer,

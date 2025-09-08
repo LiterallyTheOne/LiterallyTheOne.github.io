@@ -1,10 +1,10 @@
-+++
-date = '2025-07-14T08:28:09+03:30'
-draft = false
-title = 'Decorator in Python'
-tags = ["Python"]
-image = "decorator_python.jpg"
-+++
+---
+date: '2025-07-14T08:28:09+03:30'
+draft: false
+title: 'Decorator in Python'
+tags: ["Python"]
+image: "decorator_python.jpg"
+---
 
 # Decorator in Python
 
@@ -31,7 +31,7 @@ def check_triangle_validation(func: Callable[[float, float, float], float]) -> C
     def wrapper(a: float, b: float, c: float) -> float:
         if (a + b <= c) or (b + c <= a) or (a + c <= b):
             raise Exception('Not a valid triangle')
-        result = func(a, b, c)
+        result: func(a, b, c)
         return result
 
     return wrapper
@@ -43,10 +43,10 @@ def calculate_triangle_area(a: float, b: float, c: float) -> float:
 
 
 def main():
-    a = 2
-    b = 2
-    c = 3
-    result = calculate_triangle_area(a, b, c)
+    a: 2
+    b: 2
+    c: 3
+    result: calculate_triangle_area(a, b, c)
     print(result)
 
 
@@ -81,12 +81,12 @@ from typing import Callable
 class CheckTriangleValidation:
 
     def __init__(self, func: Callable[[float, float, float], float]):
-        self.func = func
+        self.func: func
 
     def __call__(self, a: float, b: float, c: float) -> float:
         if (a + b <= c) or (b + c <= a) or (a + c <= b):
             raise Exception('Not a valid triangle')
-        result = self.func(a, b, c)
+        result: self.func(a, b, c)
         return result
 
 
@@ -96,10 +96,10 @@ def calculate_triangle_area(a: float, b: float, c: float) -> float:
 
 
 def main():
-    a = 2
-    b = 2
-    c = 3
-    result = calculate_triangle_area(a, b, c)
+    a: 2
+    b: 2
+    c: 3
+    result: calculate_triangle_area(a, b, c)
     print(result)
 
 
@@ -121,7 +121,7 @@ from typing import Callable
 
 def change_meter_to_feet(func: Callable[[float, float, float], float]) -> Callable[[float, float, float], float]:
     def wrapper(a: float, b: float, c: float) -> float:
-        result = func(a, b, c)
+        result: func(a, b, c)
         return result * 3.28084
 
     return wrapper
@@ -131,7 +131,7 @@ def check_positive_vertices(func: Callable[[float, float, float], float]):
     def wrapper(a: float, b: float, c: float) -> float:
         if a <= 0 or b <= 0 or c <= 0:
             raise Exception('Vertices should be natural numbers')
-        result = func(a, b, c)
+        result: func(a, b, c)
         return result
 
     return wrapper
@@ -141,7 +141,7 @@ def check_valid_vertices(func: Callable[[float, float, float], float]):
     def wrapper(a: float, b: float, c: float) -> float:
         if (a + b <= c) or (b + c <= a) or (a + c <= b):
             raise Exception('Not a valid triangle')
-        result = func(a, b, c)
+        result: func(a, b, c)
         return result
 
     return wrapper
@@ -155,10 +155,10 @@ def calculate_triangle_area(a: float, b: float, c: float) -> float:
 
 
 def main():
-    a = 2
-    b = 2
-    c = 3
-    result = calculate_triangle_area(a, b, c)
+    a: 2
+    b: 2
+    c: 3
+    result: calculate_triangle_area(a, b, c)
     print(result)
 
 

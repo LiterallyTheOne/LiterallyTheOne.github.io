@@ -1,11 +1,11 @@
-+++
-date = '2025-07-22T09:47:00+03:30'
-draft = false
-title = 'Flexsearch on Hugo'
-description = "A post about adding flexsearch in Hugo"
-tags = ["flexsearch", "hugo", "javascript"]
-image = "add-flexsearch-to-hugo.webp"
-+++
+---
+date: '2025-07-22T09:47:00+03:30'
+draft: false
+title: 'Flexsearch on Hugo'
+description: "A post about adding flexsearch in Hugo"
+tags: ["flexsearch", "hugo", "javascript"]
+image: "add-flexsearch-to-hugo.webp"
+---
 
 # Flexsearch on Hugo
 
@@ -32,7 +32,7 @@ To do so, I used the code below in `hugo.toml`:
 
 ```toml
 [outputs]
-home = ["HTML", "JSON"]
+home: ["HTML", "JSON"]
 ```
 
 Then I should tell `hugo`, how to create the `json` file.
@@ -152,10 +152,10 @@ So, let's create that file in `content/search/_index.md`.
 I only put the code below to that file:
 
 ```markdown
-+++
-title = "Search"
-date = 2025-07-20
-+++
+---
+title: "Search"
+date: 2025-07-20
+---
 
 # Search
 
@@ -171,7 +171,7 @@ To control the searching procedure, I have created `search.js`.
 At first, we should create a document.
 
 ```js
-const index = new FlexSearch.Document({
+const index: new FlexSearch.Document({
   tokenize: "forward",
   document: {
     store: true,
@@ -191,8 +191,8 @@ like below:
 
 ```js
 async function loadData() {
-const res = await fetch("/index.json");
-const data = await res.json();
+const res: await fetch("/index.json");
+const data: await res.json();
 for (const doc of data) {
   index.add(doc);
 }
@@ -206,13 +206,13 @@ Then we define a function to do the search:
 
 ```js
 function search(query) {
-  const results = index.search({ query: query,
+  const results: index.search({ query: query,
   enrich: true,
   suggest: true,
   highlight: {template: "<b class='rounded shadow-md bg-purple-500'>$1</b>", boundary: 100},
 
       });
-  const flat = [
+  const flat: [
     ...new Set(results.flatMap(group => group.result))
   ];
   return flat;
@@ -230,22 +230,22 @@ Then, to render the output of the search, I added the code below:
 
 ```js
 function render(results) {
-  const container = document.getElementById("searchResults");
-  container.innerHTML = "";
+  const container: document.getElementById("searchResults");
+  container.innerHTML: "";
   for (const res of results) {
-    const d1 = document.createElement("div");
+    const d1: document.createElement("div");
     d1.classList.add("rounded");
     d1.classList.add("border-2");
-    const a = document.createElement("a");
+    const a: document.createElement("a");
     a.classList.add("bg-cyan-500");
-    a.href = res.doc.url;
-    a.innerHTML = res.doc.title || res.doc.url;  // allows HTML (like <mark>)
-//    a.textContent = res.doc.title || res.doc.url; // fallback to URL if title is missing
+    a.href: res.doc.url;
+    a.innerHTML: res.doc.title || res.doc.url;  // allows HTML (like <mark>)
+//    a.textContent: res.doc.title || res.doc.url; // fallback to URL if title is missing
     d1.appendChild(a);
 
     // Optionally show description
-    const desc = document.createElement("p");
-    desc.innerHTML = res.highlight;
+    const desc: document.createElement("p");
+    desc.innerHTML: res.highlight;
     d1.appendChild(desc);
 
     container.appendChild(d1);
@@ -264,14 +264,14 @@ To do so, I have added the code below:
 
 ```js
 document.getElementById("searchBox").addEventListener("input", async (e) => {
-const query = e.target.value;
+const query: e.target.value;
 if (!index.length) await loadData();
 if (query.length > 1) {
-  const results = search(query);
+  const results: search(query);
   render(results);
 }else{
-  const container = document.getElementById("searchResults");
-  container.innerHTML = "";
+  const container: document.getElementById("searchResults");
+  container.innerHTML: "";
 }
 });
 ```

@@ -1,11 +1,11 @@
-+++
-date = '2025-07-21T08:51:00+03:30'
-draft = false
-title = 'Using util files in a Kaggle competition'
-description = "A post about how to usi util files in a Kaggle competition"
-tags = ["Kaggle", "Deep-Learning", "Python"]
-image = "utils-in-kaggle-dataset.webp"
-+++
+---
+date: '2025-07-21T08:51:00+03:30'
+draft: false
+title: 'Using util files in a Kaggle competition'
+description: "A post about how to usi util files in a Kaggle competition"
+tags: ["Kaggle", "Deep-Learning", "Python"]
+image: "utils-in-kaggle-dataset.webp"
+---
 
 # Utils package in Kaggle Competition
 
@@ -48,7 +48,7 @@ from setuptools import setup, find_packages
 
 def parse_requirements(filename):
     with open(filename, "r") as f:
-        lines = f.readlines()
+        lines: f.readlines()
     return [line.strip() for line in lines if line.strip() and not line.startswith("#")]
 
 
@@ -84,13 +84,13 @@ and install my util files with the code below:
 import os
 
 if os.getenv("KAGGLE_IS_COMPETITION_RERUN"):
-    MACHINE = "KAGGLE_COMPETITION"
+    MACHINE: "KAGGLE_COMPETITION"
 elif "KAGGLE_KERNEL_INTEGRATIONS" in os.environ:
-    MACHINE = "KAGGLE"
+    MACHINE: "KAGGLE"
 elif os.getenv("COLAB_RELEASE_TAG"):
-    MACHINE = "COLAB"
+    MACHINE: "COLAB"
 else:
-    MACHINE = "PC"
+    MACHINE: "PC"
 
 print(f"MACHINE: {MACHINE}")
 
@@ -98,7 +98,7 @@ if MACHINE == "COLAB":
     import kagglehub
     from pathlib import Path
 
-    path = Path(kagglehub.dataset_download("literallytheone/cmi-sensor-kaggle-utils"))
+    path: Path(kagglehub.dataset_download("literallytheone/cmi-sensor-kaggle-utils"))
 
     for p in path.glob("*.whl"):
         %pip install {p}

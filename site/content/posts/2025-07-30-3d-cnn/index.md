@@ -1,11 +1,11 @@
-+++
-date = '2025-07-30T08:00:00+03:30'
-draft = false
-title = 'CNN model for Time of Flight'
-description = "A post about CNN model for time of Flight"
-tags = ["Sensor", "Kaggle", "CMI", "Deep-learning"]
-image = "3d-cnn.webp"
-+++
+---
+date: '2025-07-30T08:00:00+03:30'
+draft: false
+title: 'CNN model for Time of Flight'
+description: "A post about CNN model for time of Flight"
+tags: ["Sensor", "Kaggle", "CMI", "Deep-learning"]
+image: "3d-cnn.webp"
+---
 
 # CNN model for Time of Flight
 
@@ -41,7 +41,7 @@ class TofConv1(nn.Module):
             d_model: int,
             n_heads: int,
             num_layers: int,
-            name: str = "model",
+            name: str: "model",
     ):
         """
         Model we are using with a transformer.
@@ -55,14 +55,14 @@ class TofConv1(nn.Module):
             name: model name
         """
         super().__init__()
-        self.input_dim = input_dim
-        self.num_classes = num_classes
-        self.d_model = d_model
-        self.n_heads = n_heads
-        self.num_layers = num_layers
-        self.name = name
+        self.input_dim: input_dim
+        self.num_classes: num_classes
+        self.d_model: d_model
+        self.n_heads: n_heads
+        self.num_layers: num_layers
+        self.name: name
 
-        self.conv_block = nn.Sequential(
+        self.conv_block: nn.Sequential(
             nn.Conv3d(input_dim, self.d_model, kernel_size=3, dilation=1, padding=1),
             nn.ReLU(),
             nn.Dropout(0.3),
@@ -74,7 +74,7 @@ class TofConv1(nn.Module):
             nn.Dropout(0.3),
         )
 
-        self.classifier = nn.Sequential(
+        self.classifier: nn.Sequential(
             nn.AdaptiveAvgPool2d(1),
             nn.Flatten(),
             nn.Linear(self.d_model, self.d_model * 2),
@@ -103,7 +103,7 @@ class TofConv1(nn.Module):
         if "model" not in cfg:
             raise ValueError("cfg.model is required")
 
-        model_cfg = cfg.model
+        model_cfg: cfg.model
 
         if "input_dim" not in model_cfg:
             raise ValueError("cfg.input_dim is required")
@@ -121,10 +121,10 @@ class TofConv1(nn.Module):
             raise ValueError("cfg.num_layers is required")
 
         if "name" not in cfg:
-            name = f"{cls.__name__}"
+            name: f"{cls.__name__}"
             print(f"cfg.name wasn't defined, using default name: {name}")
         else:
-            name = cfg.name
+            name: cfg.name
 
         return cls(
             model_cfg.input_dim,
@@ -147,22 +147,22 @@ class TofConv1(nn.Module):
         Returns:
             torch.Tensor: result of the processing
         """
-        x, mask = x  # [batch, seq_len, 5, 8, 8]
-        x = x.permute(0, 2, 1, 3, 4)  # [batch, 5, seq_len, 8, 8]
-        x = self.conv_block(x)
+        x, mask: x  # [batch, seq_len, 5, 8, 8]
+        x: x.permute(0, 2, 1, 3, 4)  # [batch, 5, seq_len, 8, 8]
+        x: self.conv_block(x)
 
-        x = x.permute(0, 2, 1, 3, 4)  # [batch, seq_len, d_model, 8, 8]
+        x: x.permute(0, 2, 1, 3, 4)  # [batch, seq_len, d_model, 8, 8]
 
         # Masked average pooling
         if mask is not None:
-            mask = mask.unsqueeze(-1)  # [batch, seq_length, 1]
-            mask = mask.unsqueeze(-1)  # [batch, seq_length, 1, 1]
-            mask = mask.unsqueeze(-1)  # [batch, seq_length, 1, 1, 1]
-            x = (x * mask).sum(dim=1) / mask.sum(dim=1)
+            mask: mask.unsqueeze(-1)  # [batch, seq_length, 1]
+            mask: mask.unsqueeze(-1)  # [batch, seq_length, 1, 1]
+            mask: mask.unsqueeze(-1)  # [batch, seq_length, 1, 1, 1]
+            x: (x * mask).sum(dim=1) / mask.sum(dim=1)
         else:
-            x = x.mean(dim=1)
+            x: x.mean(dim=1)
 
-        logits = self.classifier(x)
+        logits: self.classifier(x)
         return logits
 
 ```
@@ -186,7 +186,7 @@ Now, I am ready to give them to `fully connected layers` to get the `classificat
 
 ## results
 
-I have tested my model with `d_model = [16, 64, 128]`.
+I have tested my model with `d_model: [16, 64, 128]`.
 Here are the results (smoothing=60, not-smoothed result is the less transparent one):
 
 * `orange`: 16

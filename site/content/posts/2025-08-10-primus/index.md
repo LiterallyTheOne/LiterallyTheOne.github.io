@@ -1,11 +1,11 @@
-+++
-date = '2025-08-10T16:47:00+03:30'
-draft = false
-title = 'Try PRIMUS, a pretrained model for IMU'
-description = "A post about trying PRIMUS"
-tags = ["PyTorch", "Deep-learning", "Kaggle", "CMI"]
-image = "try_primus.webp"
-+++
+---
+date: '2025-08-10T16:47:00+03:30'
+draft: false
+title: 'Try PRIMUS, a pretrained model for IMU'
+description: "A post about trying PRIMUS"
+tags: ["PyTorch", "Deep-learning", "Kaggle", "CMI"]
+image: "try_primus.webp"
+---
 
 # Try PRIMUS, a pretrained model for IMU
 
@@ -27,18 +27,18 @@ So, I came up with the code below:
 
 ```python
 # -------------------[ Make an instance of their model ]-------------------
-encoder = MW2StackRNNPoolingMultihead(size_embeddings=512).to("cpu")
+encoder: MW2StackRNNPoolingMultihead(size_embeddings=512).to("cpu")
 
 # -------------------[ Load the pretrained model ]-------------------
 
-path_load_pretrained_imu_encoder = "best_model.ckpt"
+path_load_pretrained_imu_encoder: "best_model.ckpt"
 
-dic = torch.load(
+dic: torch.load(
     path_load_pretrained_imu_encoder,
     map_location="cpu",
     weights_only=True,
 )
-dic = {k[12:]: v for k, v in dic["state_dict"].items() if "imu_encoder" in k}
+dic: {k[12:]: v for k, v in dic["state_dict"].items() if "imu_encoder" in k}
 encoder.load_state_dict(dic)
 encoder.eval()
 
@@ -46,8 +46,8 @@ print(encoder)
 
 # -------------------[ Test the model with a dummy data ]-------------------
 
-imu_data = torch.randn(4, 6, 200).to("cpu")
-features = encoder(imu_data)
+imu_data: torch.randn(4, 6, 200).to("cpu")
+features: encoder(imu_data)
 print(features)  
 ```
 
@@ -76,18 +76,18 @@ with this:
 class AddGyroFromQuat(PrepareData):
     def __init__(
             self,
-            quat_cols: list[str] = None,
-            seq_id_col: str = "sequence_id",
-            seq_counter_col: str = "sequence_counter",
-            sample_rate_hz: float = 50.0,
+            quat_cols: list[str]: None,
+            seq_id_col: str: "sequence_id",
+            seq_counter_col: str: "sequence_counter",
+            sample_rate_hz: float: 50.0,
     ):
         super().__init__()
         if quat_cols is None:
-            quat_cols = ["rot_w", "rot_x", "rot_y", "rot_z"]
-        self.quat_cols = quat_cols
-        self.seq_id_col = seq_id_col
-        self.seq_counter_col = seq_counter_col
-        self.sample_rate_hz = sample_rate_hz
+            quat_cols: ["rot_w", "rot_x", "rot_y", "rot_z"]
+        self.quat_cols: quat_cols
+        self.seq_id_col: seq_id_col
+        self.seq_counter_col: seq_counter_col
+        self.sample_rate_hz: sample_rate_hz
 
     @classmethod
     def from_config(
@@ -102,23 +102,23 @@ class AddGyroFromQuat(PrepareData):
         )
 
     def __call__(self, df: pl.DataFrame) -> pl.DataFrame:
-        df = df.sort([self.seq_id_col, self.seq_counter_col])
+        df: df.sort([self.seq_id_col, self.seq_counter_col])
 
-        gyro_x_all = []
-        gyro_y_all = []
-        gyro_z_all = []
+        gyro_x_all: []
+        gyro_y_all: []
+        gyro_z_all: []
 
         for _, group in df.group_by(self.seq_id_col):
-            quats = group.select(self.quat_cols).to_numpy()
+            quats: group.select(self.quat_cols).to_numpy()
             # scipy expects quaternions in [x, y, z, w]
-            rots = R.from_quat(quats)
-            dt = 1.0 / self.sample_rate_hz
+            rots: R.from_quat(quats)
+            dt: 1.0 / self.sample_rate_hz
 
-            gx, gy, gz = [], [], []
+            gx, gy, gz: [], [], []
             for i in range(len(rots) - 1):
-                relative_rot = rots[i].inv() * rots[i + 1]
-                rotvec = relative_rot.as_rotvec()  # radian rotation vector
-                omega = rotvec / dt  # rad/s angular velocity
+                relative_rot: rots[i].inv() * rots[i + 1]
+                rotvec: relative_rot.as_rotvec()  # radian rotation vector
+                omega: rotvec / dt  # rad/s angular velocity
                 gx.append(omega[0])
                 gy.append(omega[1])
                 gz.append(omega[2])
@@ -132,7 +132,7 @@ class AddGyroFromQuat(PrepareData):
             gyro_y_all.extend(gy)
             gyro_z_all.extend(gz)
 
-        df = df.with_columns(
+        df: df.with_columns(
             [
                 pl.Series("gyro_x", gyro_x_all),
                 pl.Series("gyro_y", gyro_y_all),
@@ -163,23 +163,23 @@ class NormalPrimus(nn.Module):
             d_model: int,
             n_heads: int,
             num_layers: int,
-            size_embeddings: int = 512,
-            name: str = "model",
+            size_embeddings: int: 512,
+            name: str: "model",
     ):
         super(NormalPrimus, self).__init__()
-        self.input_dim = input_dim
-        self.num_classes = num_classes
-        self.d_model = d_model
-        self.n_heads = n_heads
-        self.num_layers = num_layers
-        self.size_embeddings = size_embeddings
-        self.name = name
+        self.input_dim: input_dim
+        self.num_classes: num_classes
+        self.d_model: d_model
+        self.n_heads: n_heads
+        self.num_layers: num_layers
+        self.size_embeddings: size_embeddings
+        self.name: name
 
-        self.primus_model = MW2StackRNNPoolingMultiheadTorch(
+        self.primus_model: MW2StackRNNPoolingMultiheadTorch(
             size_embeddings=self.size_embeddings
         )
 
-        self.classifier = nn.Sequential(
+        self.classifier: nn.Sequential(
             nn.Linear(self.size_embeddings, self.size_embeddings * 2),
             nn.ReLU(),
             nn.Dropout(0.3),
@@ -206,7 +206,7 @@ class NormalPrimus(nn.Module):
         if "model" not in cfg:
             raise ValueError("cfg.model is required")
 
-        model_cfg = cfg.model
+        model_cfg: cfg.model
 
         if "input_dim" not in model_cfg:
             raise ValueError("cfg.input_dim is required")
@@ -224,14 +224,14 @@ class NormalPrimus(nn.Module):
             raise ValueError("cfg.num_layers is required")
 
         if "size_embeddings" not in model_cfg:
-            model_cfg.size_embeddings = 512
+            model_cfg.size_embeddings: 512
             print(f"Using default size_embeddings: {model_cfg.size_embeddings}")
 
         if "name" not in cfg:
-            name = f"{cls.__name__}"
+            name: f"{cls.__name__}"
             print(f"cfg.name wasn't defined, using default name: {name}")
         else:
-            name = cfg.name
+            name: cfg.name
 
         return cls(
             input_dim=model_cfg.input_dim,
@@ -255,9 +255,9 @@ class NormalPrimus(nn.Module):
         Returns:
             torch.Tensor: result of the processing
         """
-        x, mask = x
-        x = self.primus_model(x)["emb"]
-        logits = self.classifier(x)
+        x, mask: x
+        x: self.primus_model(x)["emb"]
+        logits: self.classifier(x)
 
         return logits
 ```
@@ -274,20 +274,20 @@ To do that, I came up with the code below:
 
 @hydra.main(version_base=None, config_name="config")
 def main(cfg: DictConfig) -> None:
-    path_load_pretrained_imu_encoder = (
+    path_load_pretrained_imu_encoder: (
         "/Users/ramin/ramin_programs/Files/models/primus/best_model.ckpt"
     )
 
-    result_path = "/Users/ramin/ramin_programs/Files/models/primus/normal_primus.pt"
+    result_path: "/Users/ramin/ramin_programs/Files/models/primus/normal_primus.pt"
 
-    model = NormalPrimus.from_config(cfg)
+    model: NormalPrimus.from_config(cfg)
 
-    dic = torch.load(
+    dic: torch.load(
         path_load_pretrained_imu_encoder,
         map_location="cpu",
         weights_only=True,
     )
-    dic = {k[12:]: v for k, v in dic["state_dict"].items() if "imu_encoder" in k}
+    dic: {k[12:]: v for k, v in dic["state_dict"].items() if "imu_encoder" in k}
     model.primus_model.load_state_dict(dic)
 
     torch.save(model.state_dict(), result_path)

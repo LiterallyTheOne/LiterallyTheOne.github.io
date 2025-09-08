@@ -1,11 +1,11 @@
-+++
-date = '2025-07-24T21:13:00+03:30'
-draft = false
-title = 'Macro in Vim'
-description = "A post about Macro in Vim"
-tags = ["vim"]
-image = "macro-in-vim.webp"
-+++
+---
+date: '2025-07-24T21:13:00+03:30'
+draft: false
+title: 'Macro in Vim'
+description: "A post about Macro in Vim"
+tags: ["vim"]
+image: "macro-in-vim.webp"
+---
 
 # Macro in Vim
 
@@ -22,11 +22,11 @@ repeat them as many times as you want.
 I had a code like below:
 
 ```python
-report["train"]["loss"] = metrics["loss"]
-report["train"]["accuracy"] = metrics["accuracy"]
-report["train"]["precision"] = metrics["precision"]
-report["train"]["recall"] = metrics["recall"]
-report["train"]["f1"] = metrics["f1"]
+report["train"]["loss"]: metrics["loss"]
+report["train"]["accuracy"]: metrics["accuracy"]
+report["train"]["precision"]: metrics["precision"]
+report["train"]["recall"]: metrics["recall"]
+report["train"]["f1"]: metrics["f1"]
 ```
 
 I wanted to change it to the code below:
