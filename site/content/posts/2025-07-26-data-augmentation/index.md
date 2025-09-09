@@ -1,11 +1,11 @@
----
-date: '2025-07-26T21:13:00+03:30'
-draft: false
-title: 'Data augmentation is so important'
-description: "A post about the importance of data augmentation"
-tags: ["Pytorch", "Deep-learning", "Data-augmentation", "Kaggle", "CMI"]
-image: "data-augmentation.webp"
----
++++
+date = '2025-07-26T21:13:00+03:30'
+draft = false
+title = 'Data augmentation is so important'
+description = "A post about the importance of data augmentation"
+tags = ["Pytorch", "Deep-learning", "Data-augmentation", "Kaggle", "CMI"]
+image = "data-augmentation.webp"
++++
 
 # Data augmentation
 
@@ -39,12 +39,12 @@ class AddGaussianNoise:
     def __init__(
             self,
             features_to_use: list[str],
-            probability: float: 0.5,
-            noise_std: float: 0.01,
+            probability: float = 0.5,
+            noise_std: float = 0.01,
     ):
-        self.features_to_use: features_to_use
-        self.probability: probability
-        self.noise_std: noise_std
+        self.features_to_use = features_to_use
+        self.probability = probability
+        self.noise_std = noise_std
 
     @classmethod
     def from_config(cls, cfg: DictConfig) -> "AddGaussianNoise":
@@ -52,15 +52,15 @@ class AddGaussianNoise:
             raise ValueError("features_to_use is required")
 
         if "gaussian_noise" in cfg and "probability" in cfg.gaussian_noise:
-            probability: cfg.gaussian_noise.probability
+            probability = cfg.gaussian_noise.probability
         else:
-            probability: 0.5
+            probability = 0.5
             print(f"Using default probability: {probability}")
 
         if "gaussian_noise" in cfg and "noise_std" in cfg.gaussian_noise:
-            noise_std: cfg.gaussian_noise.noise_std
+            noise_std = cfg.gaussian_noise.noise_std
         else:
-            noise_std: 0.01
+            noise_std = 0.01
             print(f"Using default gaussian noise_std: {noise_std}")
 
         return cls(
@@ -74,11 +74,11 @@ class AddGaussianNoise:
             sequence: pl.DataFrame,
     ):
 
-        result: sequence
+        result = sequence
 
         if np.random.rand() < self.probability:
             for feature in self.features_to_use:
-                result: result.with_columns(
+                result = result.with_columns(
                     pl.col(feature)
                     + np.random.normal(
                         loc=0.0, scale=self.noise_std, size=result[feature].shape
@@ -97,7 +97,7 @@ So, in this class, I have a `class method` called `from_config` which
 helps me to create a new instance of this object simply, like the code below:
 
 ```python
-agn: AddGaussianNoise.from_config(cfg)
+agn = AddGaussianNoise.from_config(cfg)
 ```
 
 I really like this approach, and it made my code way cleaner and more readable.
@@ -115,10 +115,10 @@ class ShrinkOneSequence:
 
     def __init__(
             self,
-            probability: float: 0.2,
+            probability: float = 0.2,
     ):
         super().__init__()
-        self.probability: probability
+        self.probability = probability
 
     @classmethod
     def from_config(
@@ -127,9 +127,9 @@ class ShrinkOneSequence:
     ) -> "ShrinkOneSequence":
 
         if "shrink_one_sequence" in cfg and "probability" in cfg.shrink_one_sequence:
-            probability: cfg.shrink_one_sequence.probability
+            probability = cfg.shrink_one_sequence.probability
         else:
-            probability: 0.2
+            probability = 0.2
             print(f"Using default probability: {probability}")
 
         return cls(
@@ -139,11 +139,11 @@ class ShrinkOneSequence:
     def __call__(self, sequence: pl.DataFrame) -> pl.DataFrame:
 
         if np.random.rand() < self.probability:
-            max_len: sequence.shape[0]
-            shrink_random: (np.random.randint(70, 90)) / 100
+            max_len = sequence.shape[0]
+            shrink_random = (np.random.randint(70, 90)) / 100
             max_len *= shrink_random
-            max_len: round(max_len)
-            take_sample: np.linspace(
+            max_len = round(max_len)
+            take_sample = np.linspace(
                 0,
                 sequence.shape[0],
                 max_len,
@@ -151,7 +151,7 @@ class ShrinkOneSequence:
                 dtype=int,
             )
 
-            sequence: sequence[take_sample]
+            sequence = sequence[take_sample]
 
         return sequence
 
@@ -177,10 +177,10 @@ class CropStartSequence:
 
     def __init__(
             self,
-            probability: float: 0.2,
+            probability: float = 0.2,
     ):
         super().__init__()
-        self.probability: probability
+        self.probability = probability
 
     @classmethod
     def from_config(
@@ -189,9 +189,9 @@ class CropStartSequence:
     ) -> "CropStartSequence":
 
         if "crop_start_sequence" in cfg and "probability" in cfg.crop_start_sequence:
-            probability: cfg.crop_start_sequence.probability
+            probability = cfg.crop_start_sequence.probability
         else:
-            probability: 0.2
+            probability = 0.2
             print(f"Using default probability: {probability}")
 
         return cls(
@@ -201,10 +201,10 @@ class CropStartSequence:
     def __call__(self, sequence: pl.DataFrame) -> pl.DataFrame:
 
         if np.random.rand() < self.probability:
-            max_len: sequence.shape[0]
-            crop_percentage: (np.random.randint(10, 50)) / 100
-            crop_start: round(max_len * crop_percentage)
-            sequence: sequence[crop_start:]
+            max_len = sequence.shape[0]
+            crop_percentage = (np.random.randint(10, 50)) / 100
+            crop_start = round(max_len * crop_percentage)
+            sequence = sequence[crop_start:]
 
         return sequence
 

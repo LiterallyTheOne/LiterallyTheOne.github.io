@@ -1,11 +1,11 @@
----
-date: '2025-08-16T17:36:00+03:30'
-draft: false
-title: "Git submodule and sparse-checkout"
-description: "A post about how I used git submodule and sparse-checkout to add tutorials"
-tags: ["Git", "GitHub"]
-image: "submodule-git.webp"
----
++++
+date = '2025-08-16T17:36:00+03:30'
+draft = false
+title = "Git submodule and sparse-checkout"
+description = "A post about how I used git submodule and sparse-checkout to add tutorials"
+tags = ["Git", "GitHub"]
+image = "submodule-git.webp"
++++
 
 # Git Submodule and sparse-checkout
 
@@ -33,8 +33,8 @@ This code has created a file called `.gitmodules` with the content below:
 
 ```text
 [submodule "site/content/tutorials/pytorch"]
-	path: site/content/tutorials/pytorch
-	url: https://github.com/LiterallyTheOne/Pytorch_Tutorial
+	path = site/content/tutorials/pytorch
+	url = https://github.com/LiterallyTheOne/Pytorch_Tutorial
 ```
 
 And now, I have access to my other repository.

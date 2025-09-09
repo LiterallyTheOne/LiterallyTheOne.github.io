@@ -1,11 +1,11 @@
----
-date: '2025-08-03T16:56:00+03:30'
-draft: false
-title: 'Model with all its preprocesses and transforms'
-description: "A post about model with all its preprocesses and transforms"
-tags: ["Python", "PyTorch", "Deep-learning"]
-image: "giga-model.webp"
----
++++
+date = '2025-08-03T16:56:00+03:30'
+draft = false
+title = 'Model with all its preprocesses and transforms'
+description = "A post about model with all its preprocesses and transforms"
+tags = ["Python", "PyTorch", "Deep-learning"]
+image = "giga-model.webp"
++++
 
 # Model with all its preprocesses and transforms
 
@@ -39,27 +39,27 @@ class GigaModel:
     def __init__(
             self,
             cfg: DictConfig,
-            device: str: "cuda",
-            checkpoint_path: Path: None,
+            device: str = "cuda",
+            checkpoint_path: Path = None,
     ):
-        self.cfg: cfg
-        self.device: device
-        self.checkpoint_path: checkpoint_path
+        self.cfg = cfg
+        self.device = device
+        self.checkpoint_path = checkpoint_path
 
-        self.model: self.get_model()
-        self.model: self.prepare_model(self.model)
+        self.model = self.get_model()
+        self.model = self.prepare_model(self.model)
 
-        self.prs: self.get_prs()
-        self.train_transforms: self.get_train_transforms()
-        self.val_transforms: self.get_val_transforms()
-        self.target_transform: self.get_target_transform()
+        self.prs = self.get_prs()
+        self.train_transforms = self.get_train_transforms()
+        self.val_transforms = self.get_val_transforms()
+        self.target_transform = self.get_target_transform()
 
     def get_model(self):
-        model: TransformerTCN.from_config(self.cfg)
+        model = TransformerTCN.from_config(self.cfg)
         return model
 
     def prepare_model(self, model: nn.Module) -> nn.Module:
-        model: model.to(self.device)
+        model = model.to(self.device)
         if self.checkpoint_path is not None:
             model.load_state_dict(torch.load(self.checkpoint_path))
             print("^" * 10, "checkpoint loaded")
@@ -67,7 +67,7 @@ class GigaModel:
 
     def get_prs(self) -> list[Callable]:
 
-        prs: [
+        prs = [
             DropUnnecessaryColumns.from_config(self.cfg),
             FillNulls.from_config(self.cfg),
             ShrinkSequence.from_config(self.cfg),
@@ -80,50 +80,50 @@ class GigaModel:
 
     def get_train_transforms(self) -> list[Callable]:
 
-        train_transforms: [
+        train_transforms = [
             TTCNTransform.from_config(self.cfg),
         ]
         return train_transforms
 
     def get_val_transforms(self) -> list[Callable]:
 
-        val_transforms: [
+        val_transforms = [
             TTCNTransform.from_config(self.cfg),
         ]
 
         return val_transforms
 
     def get_target_transform(self) -> NormalTargetTransform:
-        target_transform: NormalTargetTransform.from_config(self.cfg)
+        target_transform = NormalTargetTransform.from_config(self.cfg)
         return target_transform
 
     def predict_sequence(self, sequence: pl.DataFrame):
 
         for pr in self.prs:
-            sequence: pr(sequence)
+            sequence = pr(sequence)
 
         for transform in self.val_transforms:
-            sequence: transform(sequence)
+            sequence = transform(sequence)
 
-        model_device: next(self.model.parameters()).device
+        model_device = next(self.model.parameters()).device
 
         self.model.eval()
         with torch.inference_mode():
-            sequence: [x.to(model_device) for x in sequence]
-            sequence: [x.unsqueeze(0) for x in sequence]
-            prediction: self.model(sequence)
+            sequence = [x.to(model_device) for x in sequence]
+            sequence = [x.unsqueeze(0) for x in sequence]
+            prediction = self.model(sequence)
 
         return prediction
 
     def prediction_to_label(self, prediction):
-        prediction: prediction.squeeze().argmax().item()
+        prediction = prediction.squeeze().argmax().item()
         return self.target_transform.label_int_to_category[prediction]
 
 
 def get_giga_model(
         cfg: DictConfig,
-        device: str: "cuda",
-        checkpoint_path: Path: None,
+        device: str = "cuda",
+        checkpoint_path: Path = None,
 ) -> GigaModel:
     return GigaModel(
         cfg=cfg,
@@ -143,8 +143,8 @@ class GigaTofConv1(GigaModel):
     def __init__(
             self,
             cfg: DictConfig,
-            device: str: "cuda",
-            checkpoint_path: Path: None,
+            device: str = "cuda",
+            checkpoint_path: Path = None,
     ):
         super().__init__(cfg, device, checkpoint_path)
 
@@ -152,7 +152,7 @@ class GigaTofConv1(GigaModel):
         return TofConv1.from_config(self.cfg)
 
     def get_prs(self) -> list[Callable]:
-        prs: [
+        prs = [
             DropUnnecessaryColumns.from_config(self.cfg),
             DropNulls.from_config(self.cfg),
             ShrinkSequence.from_config(self.cfg),
@@ -162,13 +162,13 @@ class GigaTofConv1(GigaModel):
         return prs
 
     def get_train_transforms(self) -> list[Callable]:
-        train_transforms: [
+        train_transforms = [
             TOFTransform.from_config(self.cfg),
         ]
         return train_transforms
 
     def get_val_transforms(self) -> list[Callable]:
-        val_transforms: [
+        val_transforms = [
             TOFTransform.from_config(self.cfg),
         ]
         return val_transforms
@@ -176,8 +176,8 @@ class GigaTofConv1(GigaModel):
 
 def get_giga_model(
         cfg: DictConfig,
-        device: str: "cuda",
-        checkpoint_path: Path: None,
+        device: str = "cuda",
+        checkpoint_path: Path = None,
 ) -> GigaModel:
     return GigaTofConv1(
         cfg=cfg,

@@ -1,10 +1,10 @@
----
-date: '2025-07-13T21:04:23+03:30'
-draft: false
-title: 'Export Command'
-tags: ['Linux']
-image: "export.png"
----
++++
+date = '2025-07-13T21:04:23+03:30'
+draft = false
+title = 'Export Command'
+tags = ['Linux']
+image = "export.png"
++++
 
 # Export Command
 

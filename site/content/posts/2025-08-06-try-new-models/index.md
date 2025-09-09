@@ -1,11 +1,11 @@
----
-date: '2025-08-06T16:47:00+03:30'
-draft: false
-title: 'Try new models for CMI competition in Kaggle'
-description: "A post about trying new models for CMI competition in Kaggle"
-tags: ["PyTorch", "Deep-learning", "Kaggle", "CMI"]
-image: "try_new_models.webp"
----
++++
+date = '2025-08-06T16:47:00+03:30'
+draft = false
+title = 'Try new models for CMI competition in Kaggle'
+description = "A post about trying new models for CMI competition in Kaggle"
+tags = ["PyTorch", "Deep-learning", "Kaggle", "CMI"]
+image = "try_new_models.webp"
++++
 
 # Try new models for CMI competition in Kaggle
 
@@ -26,7 +26,7 @@ rotations behind.
 I used simple `1D Convolution` layers with dilation, like below:
 
 ```python
-self.conv_block: nn.Sequential(
+self.conv_block = nn.Sequential(
     nn.Conv1d(input_dim, self.d_model, kernel_size=3, dilation=1, padding=1),
     nn.ReLU(),
     nn.Dropout(0.3),
@@ -49,7 +49,7 @@ After I saw that this `1D convolution` method is working, I started to train the
 So, for preprocessing, I used these steps:
 
 ```python
-prs: [
+prs = [
     DropUnnecessaryColumns.from_config(self.cfg),
     DropNulls.from_config(self.cfg),
     ShrinkSequence.from_config(self.cfg),
@@ -82,8 +82,8 @@ I wanted to combine the results of the two models for my `prediction` function r
 So, I came up with this idea:
 
 ```python
-giga_models: []
-ensemble_weights: []
+giga_models = []
+ensemble_weights = []
 
 # %%
 
@@ -117,14 +117,14 @@ ensemble_weights.append(2)
 
 
 def predict(sequence: pl.DataFrame, demographics: pl.DataFrame) -> str:
-    logits: torch.zeros((1, giga_models[0].cfg.num_classes), device=DEVICE)
+    logits = torch.zeros((1, giga_models[0].cfg.num_classes), device=DEVICE)
 
     for giga_model, weight in zip(giga_models, ensemble_weights):
         if sequence[giga_model.cfg.features_to_check].null_count().pipe(sum).item() == 0:  # type: ignore
 
-            logits: logits + giga_model.predict_sequence(sequence) * weight
+            logits = logits + giga_model.predict_sequence(sequence) * weight
 
-    prediction: giga_models[0].logits_to_label(logits)
+    prediction = giga_models[0].logits_to_label(logits)
 
     return prediction
 

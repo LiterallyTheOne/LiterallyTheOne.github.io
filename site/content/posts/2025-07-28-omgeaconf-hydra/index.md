@@ -1,11 +1,11 @@
----
-date: '2025-07-28T08:00:00+03:30'
-draft: false
-title: 'Using config in deep learning'
-description: "A post about using config in deep learning"
-tags: ["Hydra", "OmegaConf", "Deep-learning"]
-image: "omegaconf-hydra.webp"
----
++++
+date = '2025-07-28T08:00:00+03:30'
+draft = false
+title = 'Using config in deep learning'
+description = "A post about using config in deep learning"
+tags = ["Hydra", "OmegaConf", "Deep-learning"]
+image = "omegaconf-hydra.webp"
++++
 
 # Using config in deep learning
 
@@ -35,7 +35,7 @@ from dataclasses import dataclass, field
 
 from pathlib import Path
 
-features_to_use: [
+features_to_use = [
     "acc_x",
     "acc_y",
     "acc_z",
@@ -45,7 +45,7 @@ features_to_use: [
     "rot_z",
 ]
 
-label_category_to_int: {
+label_category_to_int = {
     "Above ear - pull hair": 0,
     "Cheek - pinch skin": 1,
     "Drink from bottle/cup": 2,
@@ -69,51 +69,51 @@ label_category_to_int: {
 
 @dataclass
 class ModelConfig:
-    num_classes: int: 18
-    input_channel: int: len(features_to_use)
-    d_length: int: 103
+    num_classes: int = 18
+    input_channel: int = len(features_to_use)
+    d_length: int = 103
 
 
 @dataclass
 class GaussianNoiseConfig:
-    probability: float: 0.5
-    noise_std: float: 0.01
+    probability: float = 0.5
+    noise_std: float = 0.01
 
 
 @dataclass
 class ShrinkOneSequenceConfig:
-    probability: float: 0.2
-    low: int: 70
-    high: int: 90
+    probability: float = 0.2
+    low: int = 70
+    high: int = 90
 
 
 @dataclass
 class CropStartSequenceConfig:
-    probability: float: 0.2
-    low: int: 10
-    high: int: 50
+    probability: float = 0.2
+    low: int = 10
+    high: int = 50
 
 
 @dataclass
 class StretchOneSequenceConfig:
-    probability: float: 0.2
-    low: int: 20
-    high: int: 50
+    probability: float = 0.2
+    low: int = 20
+    high: int = 50
 
 
 @dataclass
 class TimeWarpConfig:
-    probability: float: 0.2
-    n_knots: int: 4
+    probability: float = 0.2
+    n_knots: int = 4
 
 
 @dataclass
 class BaseConfig:
-    name: str: f"{Path(__file__).stem}"
-    max_sequence_count: int: 103
-    num_classes: int: 18
-    features_to_use: list[str]: field(default_factory=lambda: features_to_use)
-    features_to_check: list[str]: field(
+    name: str = f"{Path(__file__).stem}"
+    max_sequence_count: int = 103
+    num_classes: int = 18
+    features_to_use: list[str] = field(default_factory=lambda: features_to_use)
+    features_to_check: list[str] = field(
         default_factory=lambda: [
             "acc_x",
             "acc_y",
@@ -124,42 +124,42 @@ class BaseConfig:
             "rot_z",
         ]
     )
-    target_label: str: "gesture"
-    id_features: list[str]: field(
+    target_label: str = "gesture"
+    id_features: list[str] = field(
         default_factory=lambda: ["sequence_id", "sequence_counter"]
     )
 
-    label_category_to_int: dict[str, int]: field(
+    label_category_to_int: dict[str, int] = field(
         default_factory=lambda: label_category_to_int
     )
 
-    model: ModelConfig: field(default_factory=ModelConfig)
-    gaussian_noise: GaussianNoiseConfig: field(default_factory=GaussianNoiseConfig)
-    shrink_one_sequence: ShrinkOneSequenceConfig: field(
+    model: ModelConfig = field(default_factory=ModelConfig)
+    gaussian_noise: GaussianNoiseConfig = field(default_factory=GaussianNoiseConfig)
+    shrink_one_sequence: ShrinkOneSequenceConfig = field(
         default_factory=ShrinkOneSequenceConfig
     )
-    crop_start_sequence: CropStartSequenceConfig: field(
+    crop_start_sequence: CropStartSequenceConfig = field(
         default_factory=CropStartSequenceConfig
     )
 
-    stretch_one_sequence: StretchOneSequenceConfig: field(
+    stretch_one_sequence: StretchOneSequenceConfig = field(
         default_factory=StretchOneSequenceConfig
     )
 
-    time_warp: TimeWarpConfig: field(default_factory=TimeWarpConfig)
+    time_warp: TimeWarpConfig = field(default_factory=TimeWarpConfig)
 
-    valid_split: float: 0.2
-    max_epochs: int: 200
-    patience: int: 6
-    min_delta: float: 0.0
-    use_tensorboard: bool: True
-    fill_value: float: 0.0
+    valid_split: float = 0.2
+    max_epochs: int = 200
+    patience: int = 6
+    min_delta: float = 0.0
+    use_tensorboard: bool = True
+    fill_value: float = 0.0
 
 
 def register_config():
     from hydra.core.config_store import ConfigStore
 
-    cs: ConfigStore.instance()
+    cs = ConfigStore.instance()
     cs.store(name="config", node=BaseConfig)
 
 ```
@@ -198,7 +198,7 @@ from dataclasses import dataclass, field
 
 from pathlib import Path
 
-features_to_use: [
+features_to_use = [
     "acc_x",
     "acc_y",
     "acc_z",
@@ -215,7 +215,7 @@ features_to_use: [
     "gamma",
 ]
 
-weight: [
+weight = [
     0.70977011,
     0.71088435,
     2.8126294,
@@ -239,27 +239,27 @@ weight: [
 
 @dataclass
 class AttentionModelConfig(ModelConfig):
-    d_model: int: 16
-    n_head: int: 4
-    num_layers: int: 2
-    num_classes: int: 18
-    input_dim: int: len(features_to_use)
+    d_model: int = 16
+    n_head: int = 4
+    num_layers: int = 2
+    num_classes: int = 18
+    input_dim: int = len(features_to_use)
 
 
 @dataclass
 class TransformTcnGlobalFeaturesConfig(BaseConfig):
-    name: str: f"{Path(__file__).stem}"
-    features_to_use: list[str]: field(default_factory=lambda: features_to_use)
-    model: AttentionModelConfig: field(default_factory=AttentionModelConfig)
-    weight: list[float]: field(default_factory=lambda: weight)
+    name: str = f"{Path(__file__).stem}"
+    features_to_use: list[str] = field(default_factory=lambda: features_to_use)
+    model: AttentionModelConfig = field(default_factory=AttentionModelConfig)
+    weight: list[float] = field(default_factory=lambda: weight)
 
-    patience: int: 10
+    patience: int = 10
 
 
 def register_config():
     from hydra.core.config_store import ConfigStore
 
-    cs: ConfigStore.instance()
+    cs = ConfigStore.instance()
     cs.store(name="config", node=TransformTcnGlobalFeaturesConfig)
 
 ```
@@ -281,19 +281,19 @@ from dataclasses import dataclass, field
 
 @dataclass
 class AttentionModelConfig2(AttentionModelConfig):
-    d_model: int: 128
+    d_model: int = 128
 
 
 @dataclass
 class TransformTcnGlobalFeaturesConfig2(TransformTcnGlobalFeaturesConfig):
-    name: str: "a1_tcnt_d_model_128"
-    model: AttentionModelConfig: field(default_factory=AttentionModelConfig2)
+    name: str = "a1_tcnt_d_model_128"
+    model: AttentionModelConfig = field(default_factory=AttentionModelConfig2)
 
 
 def register_config():
     from hydra.core.config_store import ConfigStore
 
-    cs: ConfigStore.instance()
+    cs = ConfigStore.instance()
     cs.store(name="config", node=TransformTcnGlobalFeaturesConfig2)
 ```
 
@@ -340,7 +340,7 @@ from cmi_sensor_kaggle.configs.tcnt_weight_global.a1_tcnt_d_model_128 import Tra
 from omegaconf import OmegaConf
 
 # %%
-cfg: OmegaConf.structured(TransformTcnGlobalFeaturesConfig2)
+cfg = OmegaConf.structured(TransformTcnGlobalFeaturesConfig2)
 print(OmegaConf.to_yaml(cfg))
 ```
 

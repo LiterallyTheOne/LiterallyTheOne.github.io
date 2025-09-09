@@ -1,11 +1,11 @@
----
-date: '2025-08-05T16:47:00+03:30'
-draft: false
-title: 'Improve SEO and structure of my site'
-description: "A post about improving SEO and struction of my website"
-tags: ["SEO", "Google-Search-Console", "Site"]
-image: "seo-improvement.webp"
----
++++
+date = '2025-08-05T16:47:00+03:30'
+draft = false
+title = 'Improve SEO and structure of my site'
+description = "A post about improving SEO and struction of my website"
+tags = ["SEO", "Google-Search-Console", "Site"]
+image = "seo-improvement.webp"
++++
 
 ## Improve SEO and structure of my site
 

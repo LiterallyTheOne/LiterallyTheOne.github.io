@@ -1,6 +1,6 @@
----
-title: "Search"
-date: 2025-07-20
----
++++
+title = "Search"
+date = 2025-07-20
++++
 
 # Search
