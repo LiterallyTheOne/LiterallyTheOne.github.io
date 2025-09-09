@@ -1,11 +1,11 @@
-+++
-date = '2025-08-16T17:36:00+03:30'
-draft = false
-title = "Git submodule and sparse-checkout"
-description = "A post about how I used git submodule and sparse-checkout to add tutorials"
-tags = ["Git", "GitHub"]
-image = "submodule-git.webp"
-+++
+---
+date: '2025-08-16T17:36:00+03:30'
+draft: false
+title: "Git submodule and sparse-checkout"
+description: "A post about how I used git submodule and sparse-checkout to add tutorials"
+tags: ["Git", "GitHub"]
+image: "submodule-git.webp"
+---
 
 # Git Submodule and sparse-checkout
 

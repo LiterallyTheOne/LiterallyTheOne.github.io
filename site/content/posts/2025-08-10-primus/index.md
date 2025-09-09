@@ -1,11 +1,11 @@
-+++
-date = '2025-08-10T16:47:00+03:30'
-draft = false
-title = 'Try PRIMUS, a pretrained model for IMU'
-description = "A post about trying PRIMUS"
-tags = ["PyTorch", "Deep-learning", "Kaggle", "CMI"]
-image = "try_primus.webp"
-+++
+---
+date: '2025-08-10T16:47:00+03:30'
+draft: false
+title: 'Try PRIMUS, a pretrained model for IMU'
+description: "A post about trying PRIMUS"
+tags: ["PyTorch", "Deep-learning", "Kaggle", "CMI"]
+image: "try_primus.webp"
+---
 
 # Try PRIMUS, a pretrained model for IMU
 

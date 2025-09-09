@@ -1,11 +1,11 @@
-+++
-date = '2025-07-29T08:00:00+03:30'
-draft = false
-title = 'Working with Time of Flight data'
-description = "A post about Working with Time of Flight data"
-tags = ["Polars", "Sensor", "Kaggle", "CMI", "Deep-learning"]
-image = "time-of-flight-cmi.webp"
-+++
+---
+date: '2025-07-29T08:00:00+03:30'
+draft: false
+title: 'Working with Time of Flight data'
+description: "A post about Working with Time of Flight data"
+tags: ["Polars", "Sensor", "Kaggle", "CMI", "Deep-learning"]
+image: "time-of-flight-cmi.webp"
+---
 
 # Working with Time of Flight data
 

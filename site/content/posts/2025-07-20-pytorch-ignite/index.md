@@ -1,11 +1,11 @@
-+++
-date = '2025-07-20T09:20:00+03:30'
-draft = false
-title = 'Trying PyTorch Ignite'
-description = "A post about trying PyTorch Ignite"
-tags = ["Pytorch-Ignite", "PyTorch", "Python", "Deep-Learning"]
-image = "Trying-PyTorch-Ignite.webp"
-+++
+---
+date: '2025-07-20T09:20:00+03:30'
+draft: false
+title: 'Trying PyTorch Ignite'
+description: "A post about trying PyTorch Ignite"
+tags: ["Pytorch-Ignite", "PyTorch", "Python", "Deep-Learning"]
+image: "Trying-PyTorch-Ignite.webp"
+---
 
 # Trying Pytorch Ignite
 

@@ -1,11 +1,11 @@
-+++
-date = '2025-07-22T09:47:00+03:30'
-draft = false
-title = 'Flexsearch on Hugo'
-description = "A post about adding flexsearch in Hugo"
-tags = ["flexsearch", "hugo", "javascript"]
-image = "add-flexsearch-to-hugo.webp"
-+++
+---
+date: '2025-07-22T09:47:00+03:30'
+draft: false
+title: 'Flexsearch on Hugo'
+description: "A post about adding flexsearch in Hugo"
+tags: ["flexsearch", "hugo", "javascript"]
+image: "add-flexsearch-to-hugo.webp"
+---
 
 # Flexsearch on Hugo
 

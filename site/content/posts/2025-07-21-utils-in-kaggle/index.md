@@ -1,11 +1,11 @@
-+++
-date = '2025-07-21T08:51:00+03:30'
-draft = false
-title = 'Using util files in a Kaggle competition'
-description = "A post about how to usi util files in a Kaggle competition"
-tags = ["Kaggle", "Deep-Learning", "Python"]
-image = "utils-in-kaggle-dataset.webp"
-+++
+---
+date: '2025-07-21T08:51:00+03:30'
+draft: false
+title: 'Using util files in a Kaggle competition'
+description: "A post about how to usi util files in a Kaggle competition"
+tags: ["Kaggle", "Deep-Learning", "Python"]
+image: "utils-in-kaggle-dataset.webp"
+---
 
 # Utils package in Kaggle Competition
 

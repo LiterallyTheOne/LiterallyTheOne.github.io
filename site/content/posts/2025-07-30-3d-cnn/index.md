@@ -1,11 +1,11 @@
-+++
-date = '2025-07-30T08:00:00+03:30'
-draft = false
-title = 'CNN model for Time of Flight'
-description = "A post about CNN model for time of Flight"
-tags = ["Sensor", "Kaggle", "CMI", "Deep-learning"]
-image = "3d-cnn.webp"
-+++
+---
+date: '2025-07-30T08:00:00+03:30'
+draft: false
+title: 'CNN model for Time of Flight'
+description: "A post about CNN model for time of Flight"
+tags: ["Sensor", "Kaggle", "CMI", "Deep-learning"]
+image: "3d-cnn.webp"
+---
 
 # CNN model for Time of Flight
 

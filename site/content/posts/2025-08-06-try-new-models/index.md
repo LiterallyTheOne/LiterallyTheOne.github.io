@@ -1,11 +1,11 @@
-+++
-date = '2025-08-06T16:47:00+03:30'
-draft = false
-title = 'Try new models for CMI competition in Kaggle'
-description = "A post about trying new models for CMI competition in Kaggle"
-tags = ["PyTorch", "Deep-learning", "Kaggle", "CMI"]
-image = "try_new_models.webp"
-+++
+---
+date: '2025-08-06T16:47:00+03:30'
+draft: false
+title: 'Try new models for CMI competition in Kaggle'
+description: "A post about trying new models for CMI competition in Kaggle"
+tags: ["PyTorch", "Deep-learning", "Kaggle", "CMI"]
+image: "try_new_models.webp"
+---
 
 # Try new models for CMI competition in Kaggle
 

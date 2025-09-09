@@ -1,11 +1,11 @@
-+++
-date = '2025-08-11T16:47:00+03:30'
-draft = false
-title = "Add sidebar and shortcodes to tutorial's section"
-description = "Add a post about adding a sidebar and shortcodes to tutorial's section"
-tags = ["hugo", "TailwindCSS"]
-image = "sidebar-and-shortcodes.webp"
-+++
+---
+date: '2025-08-11T16:47:00+03:30'
+draft: false
+title: "Add sidebar and shortcodes to tutorial's section"
+description: "Add a post about adding a sidebar and shortcodes to tutorial's section"
+tags: ["hugo", "TailwindCSS"]
+image: "sidebar-and-shortcodes.webp"
+---
 
 # Add sidebar to tutorial's section
 

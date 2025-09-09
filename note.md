@@ -4,7 +4,6 @@
 
 * 🌄 Make a shortcode for images
 * 🪾Should I make a submodule for the posts as well?
-* 💡Should I only include a page once in search results?
 
 * 📅Add latest update date and change that date to created date
 
@@ -19,6 +18,8 @@
 
 * ⬇️📄Download pdf button needs work
 * ⬇️📄Download whole tutorial button
+
+* 🗒️🔎 Add pagination for search results
 
 ## seositecheckup
 
@@ -46,6 +47,7 @@
 
 ## Done
 
+* 💡Should I only include a page once in search results?
 * 🔗put the source code in frontmatter
 * 🎇Change `favicon.ico` to something better
 * 🪪License on the bottom of each post-card

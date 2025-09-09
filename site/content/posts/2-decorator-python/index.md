@@ -1,10 +1,10 @@
-+++
-date = '2025-07-14T08:28:09+03:30'
-draft = false
-title = 'Decorator in Python'
-tags = ["Python"]
-image = "decorator_python.jpg"
-+++
+---
+date: '2025-07-14T08:28:09+03:30'
+draft: false
+title: 'Decorator in Python'
+tags: ["Python"]
+image: "decorator_python.jpg"
+---
 
 # Decorator in Python
 
