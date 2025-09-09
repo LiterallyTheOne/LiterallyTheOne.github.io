@@ -1,11 +1,11 @@
-+++
-date = '2025-07-28T08:00:00+03:30'
-draft = false
-title = 'Using config in deep learning'
-description = "A post about using config in deep learning"
-tags = ["Hydra", "OmegaConf", "Deep-learning"]
-image = "omegaconf-hydra.webp"
-+++
+---
+date: '2025-07-28T08:00:00+03:30'
+draft: false
+title: 'Using config in deep learning'
+description: "A post about using config in deep learning"
+tags: ["Hydra", "OmegaConf", "Deep-learning"]
+image: "omegaconf-hydra.webp"
+---
 
 # Using config in deep learning
 

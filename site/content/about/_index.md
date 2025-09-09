@@ -1,7 +1,7 @@
-+++
-title = "About Me"
-date = 2025-07-16
-+++
+---
+title: "About Me"
+date: 2025-07-16
+---
 
 # Ramin Zarebidoky
 
