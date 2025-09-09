@@ -26,6 +26,11 @@ jobs:
           librsvg2-bin
           sudo apt-get install -y imagemagick
 
-      - name: convert each md to pdf
+      - name: Convert each md to pdf
         run: |
           bash convert_to_pdf_pandoc/convert_each_md_to_pdf.sh
+          
+
+      - name: Convert each tutorial to pdf
+        run: |
+          bash convert_to_pdf_pandoc/convert_tutorial_to_book.sh
