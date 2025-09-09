@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-current_dir="$(realpath .)"
+current_dir=$(dirname "$(realpath "$0")")
 
 dir_path=$(dirname "${current_dir}")/site/content
 
