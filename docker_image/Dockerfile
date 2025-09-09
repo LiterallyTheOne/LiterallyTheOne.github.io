@@ -11,3 +11,5 @@ RUN apt-get update && \
         librsvg2-bin \
         imagemagick && \
     rm -rf /var/lib/apt/lists/*
+
+CMD ["tail", "-f", "/dev/null"]
