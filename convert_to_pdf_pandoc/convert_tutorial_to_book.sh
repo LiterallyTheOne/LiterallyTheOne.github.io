@@ -41,12 +41,14 @@ for tutorial in $dir_path/*; do
         shopt -s nullglob
 
         for img in *.webp; do
-            magick "$img" "${img%.webp}.png"
+#            magick "$img" "${img%.webp}.png"
+            convert "$img" "${img%.webp}.png"
             should_delete+=("${parent_file}/${img%.webp}.png")
         done
 
         for img in *.gif; do
-            magick "${img}[0]" "${img%.gif}.png"
+#            magick "${img}[0]" "${img%.gif}.png"
+            convert "${img}[0]" "${img%.gif}.png"
             should_delete+=("${parent_file}/${img%.gif}.png")
         done
 
