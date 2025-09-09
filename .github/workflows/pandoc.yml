@@ -1,0 +1,31 @@
+name: Build PDFs with Pandoc
+
+on:
+  push:
+    branches:
+      - main   # or master, depending on your default branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Pandoc
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+          pandoc \
+          texlive-latex-base \
+          texlive-fonts-recommended \
+          texlive-fonts-extra \
+          texlive-latex-extra \
+          texlive-xetex \
+          librsvg2-bin
+          sudo apt-get install -y imagemagick
+
+      - name: convert each md to pdf
+        run: |
+          bash convert_to_pdf_pandoc/convert_each_md_to_pdf.sh
