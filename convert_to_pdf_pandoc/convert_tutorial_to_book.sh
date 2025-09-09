@@ -55,7 +55,7 @@ for tutorial in $dir_path/*; do
         shopt -u nullglob
 
         sed "s:\.webp:\.png:g" index.md > pandoc.md
-        sed -i "" "s:\.gif:\.png:g" pandoc.md
+        sed -i "s:\.gif:\.png:g" pandoc.md
 
       done < <(find "$tutorial" -name "index.md" -print0)
 
