@@ -21,24 +21,24 @@ find "$dir_path" -name "index.md" -print0 | while IFS= read -r -d $'\0' file; do
     fi
 
     echo "$parent_file"
-    cd "$parent_file"
+    cd "$parent_file" || exit
 
     shopt -s nullglob
 
     for img in *.webp; do
-        magick "$img" "${img%.webp}.png"
+        convert "$img" "${img%.webp}.png"
         should_delete+=("${img%.webp}.png")
     done
 
     for img in *.gif; do
-        magick "${img}[0]" "${img%.gif}.png"
+        convert "${img}[0]" "${img%.gif}.png"
         should_delete+=("${img%.gif}.png")
     done
 
     shopt -u nullglob
 
     sed "s:\.webp:\.png:g" index.md > pandoc.md
-    sed -i "" "s:\.gif:\.png:g" pandoc.md
+    sed -i "s:\.gif:\.png:g" pandoc.md
 
     pandoc \
         pandoc.md \
