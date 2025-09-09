@@ -20,7 +20,7 @@ for tutorial in $dir_path/*; do
       should_delete=()
 
       # Define destination path
-      destination_path=$(echo "$tutorial" | sed "s:/site/content/:/site/public/pdf/:g" )
+      destination_path=$(echo "$tutorial" | sed "s:/site/content/:/site/static/pdf/:g" )
       destination_path=$destination_path/docs
       if [ ! -d "$destination_path" ]; then
         mkdir -p "$destination_path"

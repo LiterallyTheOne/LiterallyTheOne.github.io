@@ -15,7 +15,7 @@ find "$dir_path" -name "index.md" -print0 | while IFS= read -r -d $'\0' file; do
 
     parent_file=$(dirname "$file")
 
-    destination_path=$(echo "$parent_file" | sed "s:/site/content/:/site/public/pdf/:g" )
+    destination_path=$(echo "$parent_file" | sed "s:/site/content/:/site/static/pdf/:g" )
     if [ ! -d "$destination_path" ]; then
       mkdir -p "$destination_path"
     fi
