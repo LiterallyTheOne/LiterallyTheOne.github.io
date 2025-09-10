@@ -47,6 +47,12 @@ jobs:
         run: |
           bash convert_to_pdf_pandoc/convert_tutorial_to_book.sh
 
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdfs
+          path: site/public/pdf
+
   build-hugo:
     runs-on: ubuntu-latest
     env:
@@ -110,6 +116,12 @@ jobs:
           path: |
             ${{ runner.temp }}/hugo_cache
           key: ${{ steps.cache-restore.outputs.cache-primary-key }}
+
+      - name: Download PDFs
+        uses: actions/download-artifact@v4
+        with:
+          name: pdfs
+          path: site/public/pdf
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
