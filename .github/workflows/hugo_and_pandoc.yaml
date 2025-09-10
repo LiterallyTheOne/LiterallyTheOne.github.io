@@ -54,7 +54,7 @@ jobs:
       HUGO_VERSION: 0.148.0
       HUGO_ENVIRONMENT: production
       TZ: America/Los_Angeles
-      needs: build-pdf
+    needs: build-pdf
     steps:
       - name: Install Hugo CLI
         run: |
