@@ -5,11 +5,10 @@ RUN apt-get update && \
         pandoc \
         texlive-latex-base \
         texlive-fonts-recommended \
-        texlive-fonts-extra \
         texlive-latex-extra \
         texlive-xetex \
         librsvg2-bin \
         imagemagick && \
     rm -rf /var/lib/apt/lists/*
 
-CMD ["tail", "-f", "/dev/null"]
+CMD ["/bin/bash"]
