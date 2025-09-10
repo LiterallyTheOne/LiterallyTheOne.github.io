@@ -30,22 +30,22 @@ defaults:
 
 jobs:
 
-  #  build-pdf:
-  #    runs-on: ubuntu-latest
-  #    container:
-  #      image: ghcr.io/literallytheone/pandoc-builder:latest
-  #
-  #    steps:
-  #      - name: Checkout repository
-  #        uses: actions/checkout@v4
-  #
-  #      - name: Convert each md to pdf
-  #        run: |
-  #          bash convert_to_pdf_pandoc/convert_each_md_to_pdf.sh
-  #
-  #      - name: Convert each tutorial to pdf
-  #        run: |
-  #          bash convert_to_pdf_pandoc/convert_tutorial_to_book.sh
+  build-pdf:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/literallytheone/pandoc-builder:latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Convert each md to pdf
+        run: |
+          bash convert_to_pdf_pandoc/convert_each_md_to_pdf.sh
+
+      - name: Convert each tutorial to pdf
+        run: |
+          bash convert_to_pdf_pandoc/convert_tutorial_to_book.sh
 
   build-hugo:
     runs-on: ubuntu-latest
@@ -54,7 +54,7 @@ jobs:
       HUGO_VERSION: 0.148.0
       HUGO_ENVIRONMENT: production
       TZ: America/Los_Angeles
-    #    needs: build-pdf
+      needs: build-pdf
     steps:
       - name: Install Hugo CLI
         run: |
