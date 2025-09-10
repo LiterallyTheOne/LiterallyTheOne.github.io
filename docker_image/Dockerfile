@@ -8,7 +8,10 @@ RUN apt-get update && \
         texlive-latex-extra \
         texlive-xetex \
         librsvg2-bin \
-        imagemagick && \
+        imagemagick \
+        git \
+    && \
     rm -rf /var/lib/apt/lists/*
+
 
 CMD ["/bin/bash"]
