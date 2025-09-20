@@ -4,3 +4,6 @@
 [submodule "site/content/posts"]
 	path = site/content/posts
 	url = https://github.com/LiterallyTheOne/LiterallyTheOne-posts
+[submodule "site/content/tutorials/arduino"]
+	path = site/content/tutorials/arduino
+	url = https://github.com/LiterallyTheOne/Arduino-tutorial
