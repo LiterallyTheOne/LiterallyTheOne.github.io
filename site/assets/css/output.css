@@ -231,6 +231,27 @@
   .z-50 {
     z-index: 50;
   }
+  .col-0 {
+    grid-column: 0;
+  }
+  .col-1 {
+    grid-column: 1;
+  }
+  .col-2 {
+    grid-column: 2;
+  }
+  .row-0 {
+    grid-row: 0;
+  }
+  .row-1 {
+    grid-row: 1;
+  }
+  .row-2 {
+    grid-row: 2;
+  }
+  .row-3 {
+    grid-row: 3;
+  }
   .container {
     width: 100%;
     @media (width >= 40rem) {
@@ -249,11 +270,17 @@
       max-width: 96rem;
     }
   }
+  .m-2 {
+    margin: calc(var(--spacing) * 2);
+  }
   .m-3 {
     margin: calc(var(--spacing) * 3);
   }
   .m-4 {
     margin: calc(var(--spacing) * 4);
+  }
+  .m-5 {
+    margin: calc(var(--spacing) * 5);
   }
   .prose {
     color: var(--tw-prose-body);
@@ -773,6 +800,9 @@
   .shrink {
     flex-shrink: 1;
   }
+  .grow {
+    flex-grow: 1;
+  }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
   }
@@ -1272,6 +1302,11 @@
       :where(.lg\:prose-xl > :last-child):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
         margin-bottom: 0;
       }
+    }
+  }
+  .dark\:border-blue-200 {
+    &:where(.dark, .dark *) {
+      border-color: var(--color-blue-200);
     }
   }
   .dark\:border-blue-800 {
