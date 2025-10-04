@@ -2,52 +2,89 @@
 document.documentElement.classList.toggle(
   "dark",
   localStorage.theme === "dark" ||
-    (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches),
+  (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches),
 );
 
 //console.log("hooray")
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    theme_switcher = document.getElementById("theme-switcher")
+  light_mode = document.getElementById("light-mode");
+  dark_mode = document.getElementById("dark-mode");
+  system_mode = document.getElementById("system-mode");
 
-    theme_switcher.addEventListener('click', function() {
-        if(localStorage.theme == "dark"){
-            localStorage.theme = "light";
-        }else{
-            localStorage.theme = "dark";
-        }
-        location.reload();
-    });
+  light_mode.addEventListener('click', function () {
+    localStorage.theme = "light";
+    location.reload();
+  });
 
+  dark_mode.addEventListener('click', function () {
+    localStorage.theme = "dark";
+    location.reload();
+  });
+
+
+  system_mode.addEventListener('click', function () {
+    localStorage.removeItem("theme");
+    location.reload();
+  });
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    const headings = document.querySelectorAll("article h2, article h3");
-    const tocLinks = document.querySelectorAll("#toc a");
+  const headings = document.querySelectorAll("article h2, article h3");
+  const tocLinks = document.querySelectorAll("#toc li");
 
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const id = entry.target.id;
-          tocLinks.forEach(link => {
-            link.classList.remove("toc-active");
-            if (link.getAttribute("href") === `#${id}`) {
-              link.classList.add("toc-active");
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+
+        tocLinks.forEach(l1 => {
+          // l1.classList.remove("toc-active");
+          let childList = l1.querySelector("ul");
+          if (childList) {
+            childList.classList.add("hidden");
+          }
+
+          a1 = l1.querySelector("a");
+          a1.classList.remove("toc-active");
+
+          if (a1.getAttribute("href") === `#${id}`) {
+            a1.classList.add("toc-active");
+
+            let childList = l1.querySelector("ul");
+            if (childList) {
+              childList.classList.remove("hidden");
             }
-//            console.log(`#${id}`)
-          });
-        }
-      });
-    }, {
-      rootMargin: "0px 0px -70% 0px", // triggers when heading is near top
-      threshold: 0
-    });
 
-    headings.forEach(heading => {
-      if (heading.id) observer.observe(heading);
+            parentH3 = l1.parentElement.parentElement;
+            if (parentH3.tagName === "LI") {
+              let childListParent = parentH3.querySelector("ul");
+              if (childListParent) {
+                childListParent.classList.remove("hidden");
+              }
+
+              a2 = parentH3.querySelector("a");
+              a2.classList.add("toc-active");
+
+
+
+            }
+
+          }
+        });
+
+      }
     });
+  }, {
+    rootMargin: "0px 0px -70% 0px", // triggers when heading is near top
+    threshold: 0
   });
+
+  headings.forEach(heading => {
+    if (heading.id) observer.observe(heading);
+  });
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   const menuButton = document.getElementById('menuButton');
