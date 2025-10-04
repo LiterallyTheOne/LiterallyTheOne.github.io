@@ -63,6 +63,12 @@ document.addEventListener("DOMContentLoaded", () => {
               if (childListParent) {
                 childListParent.classList.remove("hidden");
               }
+
+              a2 = parentH3.querySelector("a");
+              a2.classList.add("toc-active");
+
+
+
             }
 
           }
