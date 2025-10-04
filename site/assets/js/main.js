@@ -9,17 +9,25 @@ document.documentElement.classList.toggle(
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    theme_switcher = document.getElementById("theme-switcher")
+    light_mode = document.getElementById("light-mode");
+    dark_mode = document.getElementById("dark-mode");
+    system_mode = document.getElementById("system-mode");
 
-    theme_switcher.addEventListener('click', function() {
-        if(localStorage.theme == "dark"){
-            localStorage.theme = "light";
-        }else{
-            localStorage.theme = "dark";
-        }
+    light_mode.addEventListener('click', function() {
+        localStorage.theme = "light";
         location.reload();
     });
 
+    dark_mode.addEventListener('click', function() {
+        localStorage.theme = "dark";
+        location.reload();
+    });
+
+
+    system_mode.addEventListener('click', function() {
+        localStorage.removeItem("theme");
+        location.reload();
+    });
 });
 
 document.addEventListener("DOMContentLoaded", () => {
