@@ -2,28 +2,26 @@
 
 {{ range where site.Sections "Section" "tutorials" }}
 
-<div class="flex flex-col gap-1 pr-2 dark:text-white rounded border-4 border-blue-200 dark:border-blue-800">
-
+<div class="flex flex-col gap-2 p-2 dark:text-white rounded border-4 border-blue-200 dark:border-blue-800">
     <!--@formatter:off-->
     {{ range .Sections }}
-    <div class="flex">
-        <a href="{{ .RelPermalink }}" class="hover:underline font-bold
-        {{ if eq .RelPermalink $current }}text-blue-500 dark:text-blue-300 underline{{ else }}text-gray-800 dark:text-gray-500{{ end }}">
+
+    <details class="flex flex-col gap-2" {{ if hasPrefix $current .RelPermalink }}open{{ end }}>
+        <summary class="cursor-pointer font-bold
+            {{ if eq .RelPermalink $current }}text-blue-500 dark:text-blue-300 underline{{ else }}text-gray-800 dark:text-gray-500{{ end }}">
             {{ .Title }}
-        </a>
-    </div>
+        </summary>
+
         {{ range .Pages }}
-        <div class="ml-4 border-1 border-blue-200 dark:border-blue-800">
+        <div class="m-1 border-1 border-blue-200 dark:border-blue-800">
             <a href="{{ .RelPermalink }}" class="hover:underline
             {{ if eq .RelPermalink $current }}text-blue-500 dark:text-blue-300 underline font-semibold{{ end }}">
                 {{ .Title }}
             </a>
         </div>
         {{ end }}
+    </details>
     {{ end }}
     <!--@formatter:on-->
-
-
 </div>
-
 {{ end }}
