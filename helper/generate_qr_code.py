@@ -15,7 +15,7 @@ def main():
         embedded_image_path="../site/static/android-chrome-512x512.png",
         fit=True,
     )
-    img_1.save("qr_code_1.png")
+    img_1.save("qr-code-1.webp")
 
 
 if __name__ == "__main__":
