@@ -7,3 +7,6 @@
 [submodule "site/content/tutorials/arduino"]
 	path = site/content/tutorials/arduino
 	url = https://github.com/LiterallyTheOne/Arduino-tutorial
+[submodule "site/content/tutorials/keras"]
+	path = site/content/tutorials/keras
+	url = https://github.com/LiterallyTheOne/deep-learning-with-keras
