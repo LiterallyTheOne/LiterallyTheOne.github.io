@@ -1,0 +1,14 @@
+{{ $file_name := printf "static/slides/%s" .File.Dir  }}
+
+{{ $haha := path.Base .File.Dir }}
+
+{{ if fileExists $file_name }}
+<div class="flex flex-col rounded items-center justify-center">
+    <a href="/slides{{ .RelPermalink }}{{ $haha }}.html" target="_blank"
+       class="btn btn-primary p-2" title="Get the slides">
+        🗂️
+    </a>
+</div>
+{{ else }}
+{{ end }}
+
