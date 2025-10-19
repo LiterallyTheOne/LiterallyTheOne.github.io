@@ -1,6 +1,11 @@
+{{ $file_name := printf "public/pdf/%s/output.pdf" .File.Dir  }}
+{{ if fileExists $file_name }}
 <div class="flex flex-col rounded items-center justify-center">
     <a href="/pdf{{ .RelPermalink }}output.pdf" target="_blank"
        class="btn btn-primary p-2" title="Download PDF">
         📄
     </a>
 </div>
+{{ else }}
+{{ end }}
+

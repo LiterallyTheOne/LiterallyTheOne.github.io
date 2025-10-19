@@ -33,18 +33,7 @@
     <div class="flex flex-wrap md:max-w-3/5 w-full mb-5">
         {{ partial "render-content.html" . }}
 
-        <div class="flex flex-col grow rounded border-4 border-blue-200 dark:border-blue-950 dark:text-white">
-            <h2 class="font-bold mb-2 text-center">Materials</h2>
-
-            <div class="flex flex-row gap-3 m-2">
-                {{ partial "link-code.html" . }}
-
-                {{ partial "download-pdf.html" . }}
-
-                {{ partial "download-pdf-book.html" . }}
-            </div>
-        </div>
-
+        {{ partial "materials.html" . }}
     </div>
 
 
