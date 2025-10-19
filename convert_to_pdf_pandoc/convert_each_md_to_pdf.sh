@@ -3,7 +3,7 @@
 
 current_dir=$(dirname "$(realpath "$0")")
 
-dir_path=$(dirname "${current_dir}")/site/content
+dir_path=$(dirname "${current_dir}")/site/content/tutorials
 
 header_path="$current_dir"/header.tex
 date_format_path="$current_dir"/date-format.lua
