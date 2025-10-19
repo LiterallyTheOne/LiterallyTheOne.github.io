@@ -20,7 +20,7 @@ for tutorial in $dir_path/*; do
       should_delete=()
 
       # Define destination path
-      destination_path=$(echo "$tutorial" | sed "s:/site/content/:/site/public/pdf/:g" )
+      destination_path=$(echo "$tutorial" | sed "s:/site/content/:/site/static/pdf/:g" )
       destination_path=$destination_path/docs
       if [ ! -d "$destination_path" ]; then
         mkdir -p "$destination_path"
@@ -42,21 +42,21 @@ for tutorial in $dir_path/*; do
         shopt -s nullglob
 
         for img in *.webp; do
-#            magick "$img" "${img%.webp}.png"
-            convert "$img" "${img%.webp}.png"
+            magick "$img" "${img%.webp}.png"
+#            convert "$img" "${img%.webp}.png"
             should_delete+=("${parent_file}/${img%.webp}.png")
         done
 
         for img in *.gif; do
-#            magick "${img}[0]" "${img%.gif}.png"
-            convert "${img}[0]" "${img%.gif}.png"
+            magick "${img}[0]" "${img%.gif}.png"
+#            convert "${img}[0]" "${img%.gif}.png"
             should_delete+=("${parent_file}/${img%.gif}.png")
         done
 
         shopt -u nullglob
 
         sed "s:\.webp:\.png:g" index.md > pandoc.md
-        sed -i "s:\.gif:\.png:g" pandoc.md
+        sed -i "" "s:\.gif:\.png:g" pandoc.md
 
       done < <(find "$tutorial" -name "index.md" -print0)
 
@@ -76,7 +76,7 @@ for tutorial in $dir_path/*; do
         --metadata author="Ramin Zarebidoky (LiterallyTheOne)" \
         --metadata title="$(basename "$(dirname "$destination_path")" )" \
         --include-in-header="$header_path" \
-        --highlight-style=tango \
+        --syntax-highlighting=tango \
         --lua-filter "$date_format_path"
 
       for x in "${should_delete[@]}"; do
