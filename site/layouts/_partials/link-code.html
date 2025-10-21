@@ -1,9 +1,71 @@
 {{ if .Params.code }}
-<div class="flex flex-col rounded items-center justify-center">
+<div class="flex flex-col rounded shadow bg-blue-200 dark:bg-blue-950  items-center justify-center">
     <a href="{{ .Params.Code }}" target="_blank"
        class="btn btn-primary p-2" title="Link to the code">
-        🧑‍💻
+        {{ template "code" . }}
     </a>
 </div>
+
+{{ end }}
+
+
+{{ define "code" }}
+
+<svg
+        width="40"
+        height="40"
+        class="fill-black stroke-black dark:fill-white dark:stroke-white"
+        viewBox="0 0 10.583333 10.583333"
+        version="1.1"
+        id="svg1"
+        sodipodi:docname="code.svg"
+        inkscape:version="1.4.2 (ebf0e940, 2025-05-08)"
+        xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+        xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:svg="http://www.w3.org/2000/svg">
+    <sodipodi:namedview
+            id="namedview1"
+            pagecolor="#ffffff"
+            bordercolor="#000000"
+            borderopacity="0.25"
+            inkscape:showpageshadow="2"
+            inkscape:pageopacity="0.0"
+            inkscape:pagecheckerboard="0"
+            inkscape:deskcolor="#d1d1d1"
+            inkscape:document-units="px"
+            inkscape:zoom="12.415051"
+            inkscape:cx="14.015247"
+            inkscape:cy="22.472723"
+            inkscape:window-width="1296"
+            inkscape:window-height="861"
+            inkscape:window-x="221"
+            inkscape:window-y="34"
+            inkscape:window-maximized="0"
+            inkscape:current-layer="layer1"/>
+    <defs
+            id="defs1"/>
+    <g
+            inkscape:label="Layer 1"
+            inkscape:groupmode="layer"
+            id="layer1">
+        <path
+                id="rect1"
+                style="stroke-width:0.157614"
+                d="M 3.1382174,2.7368403 0.52813176,5.3469259 3.1382174,7.9560861 3.562125,7.5321785 1.2833906,5.2525187 3.4686432,3.0672661 Z"/>
+        <path
+                id="rect1-2"
+                style="stroke-width:0.157805;stroke-dasharray:none"
+                d="M 7.4417958,7.9247465 10.051881,5.3146609 7.4417958,2.7055009 7.0178885,3.1294082 9.2966226,5.4090683 7.11137,7.5943207 Z"/>
+        <rect
+                style="opacity:1;fill-opacity:1;stroke:none;stroke-width:0.18714;stroke-dasharray:none;stroke-opacity:1"
+                id="rect3"
+                width="0.60541558"
+                height="6.3712754"
+                x="-6.9022269"
+                y="-6.6352205"
+                transform="rotate(-162.5)"/>
+    </g>
+</svg>
 
 {{ end }}

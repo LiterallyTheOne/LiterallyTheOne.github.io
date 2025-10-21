@@ -1,11 +1,113 @@
 {{ $file_name := printf "public/pdf/%s/output.pdf" .File.Dir  }}
 {{ if fileExists $file_name }}
-<div class="flex flex-col rounded items-center justify-center">
+
+<div class="flex flex-col rounded shadow bg-blue-200 dark:bg-blue-950  items-center justify-center">
     <a href="/pdf{{ .RelPermalink }}output.pdf" target="_blank"
        class="btn btn-primary p-2" title="Download PDF">
-        📄
+        {{ template "pdf" . }}
     </a>
 </div>
 {{ else }}
 {{ end }}
 
+
+{{ define "pdf" }}
+
+<svg
+        width="40"
+        height="40"
+        viewBox="0 0 10.583333 10.583333"
+        class="fill-black stroke-black dark:fill-white dark:stroke-white"
+        version="1.1"
+        id="svg1"
+        sodipodi:docname="document.svg"
+        inkscape:version="1.4.2 (ebf0e940, 2025-05-08)"
+        xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+        xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:svg="http://www.w3.org/2000/svg">
+    <sodipodi:namedview
+            id="namedview1"
+            pagecolor="#ffffff"
+            bordercolor="#000000"
+            borderopacity="0.25"
+            inkscape:showpageshadow="2"
+            inkscape:pageopacity="0.0"
+            inkscape:pagecheckerboard="0"
+            inkscape:deskcolor="#d1d1d1"
+            inkscape:document-units="px"
+            inkscape:zoom="12.415051"
+            inkscape:cx="14.015247"
+            inkscape:cy="22.472723"
+            inkscape:window-width="1512"
+            inkscape:window-height="949"
+            inkscape:window-x="0"
+            inkscape:window-y="33"
+            inkscape:window-maximized="0"
+            inkscape:current-layer="layer1" />
+    <defs
+            id="defs1" />
+    <g
+            inkscape:label="Layer 1"
+            inkscape:groupmode="layer"
+            id="layer1">
+        <rect
+                style="opacity:1;fill:none;fill-opacity:1;stroke-width:0.088041;stroke-dasharray:none;stroke-opacity:1"
+                id="rect5"
+                width="7.8000741"
+                height="9.4410591"
+                x="1.363903"
+                y="0.55406624"
+                ry="0.16753446" />
+        <rect
+                style="opacity:1;fill-opacity:1;stroke-width:0.0881063;stroke-dasharray:none;stroke-opacity:1"
+                id="rect6"
+                width="5.7327929"
+                height="0.21311498"
+                x="2.3442647"
+                y="1.5770508"
+                ry="0.10655749" />
+        <rect
+                style="fill-opacity:1;stroke-width:0.0748235;stroke-dasharray:none;stroke-opacity:1"
+                id="rect6-1"
+                width="3.8919754"
+                height="0.22639778"
+                x="2.3209496"
+                y="2.780957"
+                ry="0.11319889" />
+        <rect
+                style="fill-opacity:1;stroke-width:0.0841898;stroke-dasharray:none;stroke-opacity:1"
+                id="rect6-0"
+                width="5.1399875"
+                height="0.21703151"
+                x="2.302891"
+                y="4.1194191"
+                ry="0.10851575" />
+        <rect
+                style="fill-opacity:1;stroke-width:0.0810483;stroke-dasharray:none;stroke-opacity:1"
+                id="rect6-1-9"
+                width="4.6955876"
+                height="0.22017299"
+                x="2.2846463"
+                y="5.4136419"
+                ry="0.11008649" />
+        <rect
+                style="fill-opacity:1;stroke-width:0.0632535;stroke-dasharray:none;stroke-opacity:1"
+                id="rect6-5"
+                width="2.646167"
+                height="0.23796777"
+                x="2.1862786"
+                y="6.7194028"
+                ry="0.11898389" />
+        <rect
+                style="fill-opacity:1;stroke-width:0.0881063;stroke-dasharray:none;stroke-opacity:1"
+                id="rect6-1-94"
+                width="5.7327929"
+                height="0.21311498"
+                x="2.1607196"
+                y="7.9636879"
+                ry="0.10655749" />
+    </g>
+</svg>
+
+{{ end }}
