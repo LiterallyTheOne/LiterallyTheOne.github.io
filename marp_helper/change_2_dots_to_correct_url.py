@@ -6,6 +6,7 @@ def main():
     root_path = Path("../site/static/slides")
 
     for slide in root_path.rglob("*.html"):
+        print(f"Changed: {slide}")
         need_to_replace = str(slide).split("/slides/")[1].split("/docs")[0]
         with open(slide, "r") as slide_file:
             content = slide_file.read()
