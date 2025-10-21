@@ -1,11 +1,114 @@
 {{ with .Parent }}
 {{ $file_name := printf "public/pdf/%soutput.pdf" .File.Dir  }}
 {{ if fileExists $file_name }}
-<div class="flex flex-col rounded items-center justify-center">
+
+<div class="flex flex-col rounded shadow bg-blue-200 dark:bg-blue-950 items-center justify-center">
     <a href="/pdf{{ .RelPermalink }}output.pdf" target="_blank"
        class="btn btn-primary p-2" title="Download Book">
-        📘
+        {{ template "book" . }}
     </a>
 </div>
 {{ end }}
+{{ end }}
+
+
+{{ define "book" }}
+
+<svg
+        width="40"
+        height="40"
+        class="fill-black stroke-black dark:fill-white dark:stroke-white"
+        viewBox="0 0 10.583333 10.583333"
+        version="1.1"
+        id="svg1"
+        sodipodi:docname="book.svg"
+        inkscape:version="1.4.2 (ebf0e940, 2025-05-08)"
+        xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+        xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:svg="http://www.w3.org/2000/svg">
+    <sodipodi:namedview
+            id="namedview1"
+            pagecolor="#ffffff"
+            bordercolor="#000000"
+            borderopacity="0.25"
+            inkscape:showpageshadow="2"
+            inkscape:pageopacity="0.0"
+            inkscape:pagecheckerboard="0"
+            inkscape:deskcolor="#d1d1d1"
+            inkscape:document-units="px"
+            inkscape:zoom="12.415051"
+            inkscape:cx="14.095794"
+            inkscape:cy="22.472723"
+            inkscape:window-width="1512"
+            inkscape:window-height="949"
+            inkscape:window-x="0"
+            inkscape:window-y="33"
+            inkscape:window-maximized="0"
+            inkscape:current-layer="layer1"/>
+    <defs
+            id="defs1"/>
+    <g
+            inkscape:label="Layer 1"
+            inkscape:groupmode="layer"
+            id="layer1">
+        <rect
+                style="opacity:1;fill:none;fill-opacity:1;stroke-width:0.106749;stroke-dasharray:none;stroke-opacity:1"
+                id="rect7"
+                width="7.1370797"
+                height="9.2616997"
+                x="1.6587917"
+                y="0.52099037"
+                ry="0.10004924"/>
+        <rect
+                style="fill:none;fill-opacity:1;stroke-width:0.108407;stroke-dasharray:none;stroke-opacity:1"
+                id="rect7-5"
+                width="7.3616657"
+                height="9.2600355"
+                x="1.6348141"
+                y="0.52103651"
+                ry="0.10003126"/>
+        <rect
+                style="fill:none;fill-opacity:1;stroke-width:0.110038;stroke-dasharray:none;stroke-opacity:1"
+                id="rect7-5-7"
+                width="7.586277"
+                height="9.2583961"
+                x="1.626017"
+                y="0.5671103"
+                ry="0.10001354"/>
+        <rect
+                style="fill:none;fill-opacity:1;stroke-width:0.102271;stroke-dasharray:none;stroke-opacity:1"
+                id="rect7-1"
+                width="6.5476685"
+                height="9.2661991"
+                x="1.6323099"
+                y="0.54865527"
+                ry="0.10009784"/>
+        <rect
+                style="fill:none;fill-opacity:1;stroke-width:0.103571;stroke-dasharray:none;stroke-opacity:1"
+                id="rect7-1-8"
+                width="6.7160516"
+                height="9.2648935"
+                x="1.6654923"
+                y="0.54715919"
+                ry="0.10008373"/>
+        <rect
+                style="fill:none;fill-opacity:1;stroke-width:0.105278;stroke-dasharray:none;stroke-opacity:1"
+                id="rect7-1-8-3"
+                width="6.9405875"
+                height="9.2631779"
+                x="1.6567323"
+                y="0.56471872"
+                ry="0.1000652"/>
+        <rect
+                style="opacity:1;fill:none;fill-opacity:1;stroke-width:0.117476;stroke-dasharray:none;stroke-opacity:1"
+                id="rect8"
+                width="5.03373"
+                height="1.3134025"
+                x="2.371114"
+                y="1.6684685"
+                ry="0.071380578"/>
+    </g>
+</svg>
+
 {{ end }}
