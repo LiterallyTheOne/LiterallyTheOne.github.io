@@ -9,7 +9,6 @@
       "Courier New", monospace;
     --color-orange-500: oklch(70.5% 0.213 47.604);
     --color-lime-500: oklch(76.8% 0.233 130.85);
-    --color-cyan-200: oklch(91.7% 0.08 205.041);
     --color-cyan-300: oklch(86.5% 0.127 207.078);
     --color-cyan-500: oklch(71.5% 0.143 215.221);
     --color-blue-100: oklch(93.2% 0.032 255.585);
@@ -22,6 +21,7 @@
     --color-blue-900: oklch(37.9% 0.146 265.522);
     --color-blue-950: oklch(28.2% 0.091 267.935);
     --color-purple-500: oklch(62.7% 0.265 303.9);
+    --color-gray-100: oklch(96.7% 0.003 264.542);
     --color-gray-200: oklch(92.8% 0.006 264.531);
     --color-gray-300: oklch(87.2% 0.01 258.338);
     --color-gray-400: oklch(70.7% 0.022 261.325);
@@ -1470,6 +1470,36 @@
   .prose-h3\:text-orange-500 {
     & :is(:where(h3):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
       color: var(--color-orange-500);
+    }
+  }
+  .prose-code\:bg-cyan-300 {
+    & :is(:where(code):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+      background-color: var(--color-cyan-300);
+    }
+  }
+  .prose-code\:bg-gray-100 {
+    & :is(:where(code):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+      background-color: var(--color-gray-100);
+    }
+  }
+  .prose-code\:bg-gray-200 {
+    & :is(:where(code):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+      background-color: var(--color-gray-200);
+    }
+  }
+  .prose-pre\:bg-gray-100 {
+    & :is(:where(pre):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+      background-color: var(--color-gray-100);
+    }
+  }
+  .prose-pre\:bg-gray-200 {
+    & :is(:where(pre):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+      background-color: var(--color-gray-200);
+    }
+  }
+  .prose-pre\:text-gray-800 {
+    & :is(:where(pre):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+      color: var(--color-gray-800);
     }
   }
   .prose-inline-code\:rounded {
