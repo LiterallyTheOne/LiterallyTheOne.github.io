@@ -1472,36 +1472,6 @@
       color: var(--color-orange-500);
     }
   }
-  .prose-code\:bg-cyan-300 {
-    & :is(:where(code):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
-      background-color: var(--color-cyan-300);
-    }
-  }
-  .prose-code\:bg-gray-100 {
-    & :is(:where(code):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
-      background-color: var(--color-gray-100);
-    }
-  }
-  .prose-code\:bg-gray-200 {
-    & :is(:where(code):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
-      background-color: var(--color-gray-200);
-    }
-  }
-  .prose-pre\:bg-gray-100 {
-    & :is(:where(pre):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
-      background-color: var(--color-gray-100);
-    }
-  }
-  .prose-pre\:bg-gray-200 {
-    & :is(:where(pre):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
-      background-color: var(--color-gray-200);
-    }
-  }
-  .prose-pre\:text-gray-800 {
-    & :is(:where(pre):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
-      color: var(--color-gray-800);
-    }
-  }
   .prose-inline-code\:rounded {
     &.prose :where(:not(pre)>code):not(:where([class~="not-prose"] *)) {
       border-radius: 0.25rem;
