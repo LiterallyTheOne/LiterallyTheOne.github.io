@@ -28,3 +28,7 @@ outputs:
   home:
     - HTML
     - JSON
+
+ignoreFiles:
+  - "README\\.md$"
+  - "tutorials/.*/slides/.*$"

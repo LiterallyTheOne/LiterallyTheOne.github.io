@@ -31,9 +31,13 @@
 
 
     <div class="flex flex-wrap md:max-w-3/5 w-full mb-5">
-        {{ partial "render-content.html" . }}
 
-        {{ partial "materials.html" . }}
+        <div class="flex flex-col w-full items-center">
+            {{ partial "render-content.html" . }}
+
+            {{ partial "materials.html" . }}
+        </div>
+
     </div>
 
 
