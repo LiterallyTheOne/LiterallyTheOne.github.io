@@ -26,13 +26,13 @@
         </div>
 
 
-        <div class="flex flex-wrap md:max-w-3/5 w-full mb-5">
+        <div class="flex flex-wrap md:max-w-3/5 w-full mb-5 items-center">
 
-            <div class="flex flex-col w-full items-center">
+            <div class="flex flex-wrap w-full justify-center">
                 {{ partial "render-content.html" . }}
-
-                {{ partial "materials.html" . }}
             </div>
+
+            {{ partial "materials.html" . }}
 
         </div>
 
