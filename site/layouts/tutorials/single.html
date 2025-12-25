@@ -32,7 +32,13 @@
     </div>
 
 
-    <div class="flex flex-wrap md:max-w-3/5 w-full mb-5 items-center">
+    <div class="flex flex-wrap md:max-w-3/5 w-full mb-5 items-center justify-center">
+
+        <div class="flex hidden sm:block dark:text-white">
+
+            {{ partial "post-card-in-post.html" . }}
+
+        </div>
 
         <div class="flex flex-wrap w-full justify-center">
             {{ partial "render-content.html" . }}
@@ -46,8 +52,6 @@
     <div class="md:max-w-5/24 w-full hidden sm:block dark:text-white">
         <div class="sticky top-20">
             <div class="flex flex-col gap-2">
-                {{ partial "post-card.html" . }}
-
                 {{ partial "toc.html" . }}
 
                 {{ partial "show-slide.html" . }}
