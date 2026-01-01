@@ -1,0 +1,20 @@
+{{ $pages := .CurrentSection.Pages.ByWeight.Reverse }}
+
+<nav class="flex justify-between items-center mt-8 w-full">
+    {{ with $pages.Prev . }}
+    <a href="{{ .RelPermalink }}" class="btn btn-prev flex items-center gap-2 text-sm">
+        &larr;&nbsp;Prev: {{ .Title }}
+    </a>
+    {{ else }}
+    <span></span>
+    {{ end }}
+
+    {{ with $pages.Next . }}
+    <a href="{{ .RelPermalink }}" class="btn btn-next flex items-center gap-2 text-sm">
+        Next: {{ .Title }}&nbsp;&rarr;
+    </a>
+    {{ else }}
+    <span></span>
+    {{ end }}
+</nav>
+
