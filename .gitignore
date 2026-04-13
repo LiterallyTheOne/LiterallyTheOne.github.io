@@ -2,6 +2,7 @@
 
 public/
 node_modules/
+helper/to_upload/
 
 .hugo_build.lock
 
