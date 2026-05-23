@@ -28,7 +28,8 @@ def main():
             previous_src = img_tag.get("src", "")
             new_src = str(previous_src).split("/")[-1]
 
-            copy_src = Path("../site/content") / previous_src.replace("/", "", 1)
+            if previous_src.startswith("/"):
+                copy_src = Path("../site/content") / previous_src.replace("/", "", 1)
             if copy_src.exists():
                 copyfile(copy_src, ready_path / new_src)
                 content = content.replace(previous_src, new_src)
