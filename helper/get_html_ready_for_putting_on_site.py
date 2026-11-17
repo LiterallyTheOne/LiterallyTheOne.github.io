@@ -1,6 +1,7 @@
 from pathlib import Path
-from bs4 import BeautifulSoup
 from shutil import copyfile
+
+from bs4 import BeautifulSoup
 
 
 def main():
