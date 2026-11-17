@@ -2,7 +2,7 @@ from pathlib import Path
 
 
 def main():
-    root_path = Path("../site/static/slides")
+    root_path = Path("site/static/slides")
 
     for slide in root_path.rglob("*.html"):
         print(f"Changed: {slide}")
