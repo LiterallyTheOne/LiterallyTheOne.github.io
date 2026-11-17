@@ -10,11 +10,11 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@tailwindcss/cli": "^4.1.11",
+    "@tailwindcss/cli": "^4.3.5",
     "flexsearch": "^0.8.205",
-    "tailwindcss": "^4.1.11"
+    "tailwindcss": "^4.3.5"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.16"
+    "@tailwindcss/typography": "^0.5.4"
   }
 }
