@@ -29,7 +29,7 @@ defaults:
     shell: bash
 
 jobs:
-  build:
+  build-hugo:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
