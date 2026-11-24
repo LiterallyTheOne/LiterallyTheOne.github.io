@@ -3,7 +3,7 @@ title: "Support me"
 date: 2026-11-24
 ---
 
-# Support LitreallyTheOne ❤️
+# Support LiterallyTheOne ❤️
 
 I create free programming tutorials, technical articles, and open-source projects.
 
