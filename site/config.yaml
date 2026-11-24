@@ -8,18 +8,21 @@ caches:
 
 menus:
   main:
+    - name: "Support me ❤️"
+      pageRef: "/support"
+      weight: 10
     - name: "About Me"
       pageRef: "/about"
-      weight: 10
+      weight: 20
     - name: "Posts"
       pageRef: "/posts"
-      weight: 20
+      weight: 30
     - name: "Tags"
       pageRef: "/tags"
-      weight: 30
+      weight: 40
     - name: "Tutorials"
       pageRef: "/tutorials"
-      weight: 40
+      weight: 50
 
 pagination:
   pagerSize: 6
