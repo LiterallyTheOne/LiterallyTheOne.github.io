@@ -16,7 +16,7 @@ Every contribution helps me dedicate more time to creating educational content.
 ![Bitcoin](bitcoin.webp)
 
 ```text
-bc1quetq94fwrv3fpxsfx3nhz7dkwked33lvxgm83v
+BTC(Bitcoin): bc1quetq94fwrv3fpxsfx3nhz7dkwked33lvxgm83v
 ```
 
 ## Donate with Tether
@@ -24,5 +24,5 @@ bc1quetq94fwrv3fpxsfx3nhz7dkwked33lvxgm83v
 ![Tether](tether.webp)
 
 ```text
-TZFpRETZAvQJLUJtsRwJ384ARBUsUNEyYB
+USDT(TRC20): TZFpRETZAvQJLUJtsRwJ384ARBUsUNEyYB
 ```
