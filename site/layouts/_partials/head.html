@@ -1,11 +1,11 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8XRYKDTZG7"></script>
 <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
 
-    gtag('config', 'G-8XRYKDTZG7');
+  gtag('config', 'G-8XRYKDTZG7');
 </script>
 
 
@@ -14,7 +14,7 @@
 <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
 
 <meta name="description"
-      content="{{ with .Params.description }}{{ . }}{{ else }}Official website of Ramin Zarebidoky, (LiterallyTheOne).{{ end }}">
+  content="{{ with .Params.description }}{{ . }}{{ else }}Official website of Ramin Zarebidoky, (LiterallyTheOne).{{ end }}">
 <meta name="author" content="Ramin Zarebidoky">
 
 <!-- Icons -->
@@ -31,17 +31,17 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:image"
-      content="{{ with .Params.image }}{{ . }}{{ else }}{{ .Site.BaseURL }}images/profile.webp{{ end }}">
+  content="{{ with .Params.image }}{{ . }}{{ else }}{{ .Site.BaseURL }}images/profile.webp{{ end }}">
 <meta property="og:description"
-      content="{{ with .Params.description }}{{ . }}{{ else }}Official site of Ramin Zarebidoky (LiterallyTheOne).{{ end }}">
+  content="{{ with .Params.description }}{{ . }}{{ else }}Official site of Ramin Zarebidoky (LiterallyTheOne).{{ end }}">
 
 <!--Twitter card-->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ .Title }}">
 <meta name="twitter:description"
-      content="{{ with .Params.description }}{{ . }}{{ else }}Official website of Ramin Zarebidoky, (LiterallyTheOne).{{ end }}">
+  content="{{ with .Params.description }}{{ . }}{{ else }}Official website of Ramin Zarebidoky, (LiterallyTheOne).{{ end }}">
 <meta name="twitter:image"
-      content="{{ with .Params.image }}{{ . }}{{ else }}{{ .Site.BaseURL }}images/profile.webp{{ end }}">
+  content="{{ with .Params.image }}{{ . }}{{ else }}{{ .Site.BaseURL }}images/profile.webp{{ end }}">
 
 
 {{ partialCached "head/css.html" . }}
@@ -71,46 +71,49 @@
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
 <script>
-    window.addEventListener("load", function(){
-      window.cookieconsent.initialise({
-        palette: {
-          popup: { background: "#000" },
-          button: { background: "#f1d600" }
-        },
-        theme: "classic",
-        content: {
-          message: "This website uses cookies to enhance the user experience.",
-          dismiss: "Got it!",
-          link: "Learn more",
-          href: "https://policies.google.com/technologies/cookies"
-        }
-      });
+  window.addEventListener("load", function () {
+    window.cookieconsent.initialise({
+      palette: {
+        popup: { background: "#000" },
+        button: { background: "#f1d600" }
+      },
+      theme: "classic",
+      content: {
+        message: "This website uses cookies to enhance the user experience.",
+        dismiss: "Got it!",
+        link: "Learn more",
+        href: "https://policies.google.com/technologies/cookies"
+      }
     });
+  });
 </script>
 
 <!--KaTex-->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css"
-      integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous">
+  integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous">
 
 <!-- The loading of KaTeX is deferred to speed up page rendering -->
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"
-        integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6"
-        crossorigin="anonymous"></script>
+  integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6" crossorigin="anonymous"></script>
 
 <!-- To automatically render math in text elements, include the auto-render extension: -->
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"
-        integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"
-        onload="renderMathInElement(document.body);"></script>
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"></script>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      renderMathInElement(document.body, {
-        delimiters: [
-          {left: "$$", right: "$$", display: true},
-          {left: "$", right: "$", display: false}
-        ]
-      });
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false }
+      ]
     });
+  });
 </script>
+
+{{- $copyCode := resources.Get "js/copy-code.js" | minify | fingerprint -}}
+<script src="{{ $copyCode.RelPermalink }}" integrity="{{ $copyCode.Data.Integrity }}" crossorigin="anonymous"
+  defer></script>
