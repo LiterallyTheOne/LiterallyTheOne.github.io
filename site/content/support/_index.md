@@ -13,4 +13,16 @@ Every contribution helps me dedicate more time to creating educational content.
 
 ## Donate with Bitcoin
 
+![Bitcoin](bitcoin.webp)
+
+```text
+bc1quetq94fwrv3fpxsfx3nhz7dkwked33lvxgm83v
+```
+
 ## Donate with Tether
+
+![Tether](tether.webp)
+
+```text
+TZFpRETZAvQJLUJtsRwJ384ARBUsUNEyYB
+```
