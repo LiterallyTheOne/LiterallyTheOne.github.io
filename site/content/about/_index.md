@@ -15,25 +15,25 @@ Generative AI (especially Large Language Models), and robotics.
 He is proven to be capable of teaching and providing practical solutions in
 industrial projects.
 
-## 🔭 What I Do:
+## 🔭 What I Do
 
 * **Computer Vision**:
-    * Mostly focused on Visual Object tracking, Image Segmentation, and Object Detection.
+  * Mostly focused on Visual Object tracking, Image Segmentation, and Object Detection.
 * **Generative AI**:
-    * Exploring Large Language Models (LLMs) and their applications.
+  * Exploring Large Language Models (LLMs) and their applications.
       Specially multi-modal LLMs.
 * **Robotics**:
-    * Working with ROS (Robot Operating System) and PyBullet for robotic applications.
-    * Combining computer vision and robotics for real-world applications.
+  * Working with ROS (Robot Operating System) and PyBullet for robotic applications.
+  * Combining computer vision and robotics for real-world applications.
 
-## 🛠️ Tech Stack:
+## 🛠️ Tech Stack
 
-- **Languages**: Python, C++, C
-- **Frameworks**: PyTorch, transformers, ROS, TensorFlow
-- **Platforms**: Linux, Docker, Git, PlatformIO
-- **Other Tools**: OpenCV, Numpy, Pandas
+* **Languages**: Python, C++, C
+* **Frameworks**: PyTorch, transformers, ROS, TensorFlow
+* **Platforms**: Linux, Docker, Git, PlatformIO
+* **Other Tools**: OpenCV, Numpy, Pandas
 
-### 📫 How to Reach Me:
+### 📫 How to Reach Me
 
-- [LinkedIn](https://www.linkedin.com/in/ramin-zarebidoky/)
-- [Twitter](https://twitter.com/LiterallyTheOne)
+* [LinkedIn](https://www.linkedin.com/in/ramin-zarebidoky/)
+* [Twitter](https://twitter.com/LiterallyTheOne)
