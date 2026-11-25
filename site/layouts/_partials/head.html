@@ -117,3 +117,12 @@
 {{- $copyCode := resources.Get "js/copy-code.js" | minify | fingerprint -}}
 <script src="{{ $copyCode.RelPermalink }}" integrity="{{ $copyCode.Data.Integrity }}" crossorigin="anonymous"
   defer></script>
+
+{{- with resources.Get "css/highlight.css" -}}
+<link rel="stylesheet" href="{{ .RelPermalink }}">
+{{- end -}}
+
+
+{{- with resources.Get "css/highlight-dark.css" -}}
+<link rel="stylesheet" href="{{ .RelPermalink }}">
+{{- end -}}
