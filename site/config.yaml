@@ -35,3 +35,8 @@ outputs:
 ignoreFiles:
   - "README\\.md$"
   - "tutorials/.*/slides/.*$"
+
+markup:
+  highlight:
+    style: github
+    noClasses: False
