@@ -15,14 +15,26 @@ Every contribution helps me dedicate more time to creating educational content.
 
 ![Bitcoin](bitcoin.webp)
 
+BTC(Bitcoin):
+
 ```text
-BTC(Bitcoin): bc1quetq94fwrv3fpxsfx3nhz7dkwked33lvxgm83v
+bc1quetq94fwrv3fpxsfx3nhz7dkwked33lvxgm83v
 ```
+
+> The address above only accepts assets on BTC(Bitcoin).
+> Sending any other types of tokens to this address will
+> result in permanent loss.
 
 ## Donate with Tether
 
 ![Tether](tether.webp)
 
+USDT(TRC20):
+
 ```text
-USDT(TRC20): TZFpRETZAvQJLUJtsRwJ384ARBUsUNEyYB
+TZFpRETZAvQJLUJtsRwJ384ARBUsUNEyYB
 ```
+
+> The address above only accepts assets on USDT(TRC20).
+> Sending any other types of tokens to this address will
+> result in permanent loss.
