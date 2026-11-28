@@ -18,25 +18,7 @@
     </div>
 
 
-    <div class="flex flex-col md:max-w-3/5 w-full m-2">
-        <div class="rounded border-4 border-blue-200 dark:border-blue-800">
-
-            <h1 class="text-2xl text-center text-cyan-500">
-                <a href="/posts/">
-                    Latest Posts
-                </a>
-            </h1>
-
-            <div class="ml-2 mr-2 grid md:grid-cols-3 sm:grid-cols-1 gap-4 mb-10  ">
-
-                {{ range first 6 (where site.RegularPages "Section" "posts") }}
-
-                {{ partial "post-card.html" . }}
-
-                {{ end }}
-            </div>
-        </div>
-
+    <div class="flex flex-col md:max-w-3/5 w-full m-2 gap-5">
         <div class="mt-2 rounded border-4 border-blue-200 dark:border-blue-800">
 
             <h1 class="text-2xl text-center text-cyan-500">
@@ -45,7 +27,7 @@
                 </a>
             </h1>
 
-            <div class="ml-2 mr-2 grid md:grid-cols-3 sm:grid-cols-1 gap-4 mb-10  ">
+            <div class="ml-2 mr-2 grid md:grid-cols-3 sm:grid-cols-1 gap-4">
 
                 {{ range where site.Sections "Section" "tutorials" }}
 
@@ -56,6 +38,42 @@
                 {{ end }}
                 {{ end }}
             </div>
+
+            <div class="flex text-cyan-500 m-2 justify-end">
+                <div class="rounded border-2 border-blue-200 dark:border-blue-800 text-xl">
+                    <a class="m-2" href="/tutorials/">
+                        See more ➡️
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Post section -->
+        <div class="rounded border-4 border-blue-200 dark:border-blue-800">
+
+            <h1 class="text-2xl text-center text-cyan-500">
+                <a href="/posts/">
+                    Latest Posts
+                </a>
+            </h1>
+
+            <div class="ml-2 mr-2 grid md:grid-cols-3 sm:grid-cols-1 gap-4 ">
+
+                {{ range first 3 (where site.RegularPages "Section" "posts") }}
+
+                {{ partial "post-card.html" . }}
+
+                {{ end }}
+            </div>
+
+            <div class="flex text-cyan-500 m-2 justify-end">
+                <div class="rounded border-2 border-blue-200 dark:border-blue-800 text-xl">
+                    <a class="m-2" href="/posts/">
+                        See more ➡️
+                    </a>
+                </div>
+            </div>
+
         </div>
 
 
