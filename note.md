@@ -23,9 +23,6 @@
 
 * 🤔 Decide if I should move the helper functions to antoher separate repository
 
-* 🧹 Make the posts' section smaller and tutorials' section bigger
-* 🧹 Put the tutorials' section before posts' section
-
 ## seositecheckup
 
 * To address URL canonicalization issues, it is recommended to select a primary URL for your webpage and set up
@@ -51,6 +48,9 @@
 * Check why TailwindCSS typography didn't perform well on iPhone's Chrome
 
 ## Done
+
+* 🧹 Make the posts' section smaller and tutorials' section bigger
+* 🧹 Put the tutorials' section before posts' section
 
 * 💡Should I only include a page once in search results?
 * 🔗put the source code in frontmatter
