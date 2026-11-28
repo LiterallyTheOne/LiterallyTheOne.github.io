@@ -5,8 +5,6 @@
 * 🌄 Make a shortcode for images
 * 🪾Should I make a submodule for the posts as well?
 
-* 📅Add latest update date and change that date to created date
-
 * ⌨ Table of content different headers indentation
 * 🤖 think about the background of the manifest
 
@@ -22,6 +20,10 @@
 * 🗒️🔎 Add pagination for search results
 
 * 🤔 Decide if I should move the helper functions to antoher separate repository
+
+## Ongoing
+
+* 📅 Add latest update date and change that date to created date
 
 ## seositecheckup
 
