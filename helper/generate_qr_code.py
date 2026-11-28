@@ -3,6 +3,7 @@
 from pathlib import Path
 
 import qrcode
+from qrcode.constants import ERROR_CORRECT_H
 from qrcode.image.styledpil import StyledPilImage
 from qrcode.image.styles.colormasks import RadialGradiantColorMask
 from qrcode.image.styles.moduledrawers.pil import HorizontalBarsDrawer
@@ -22,7 +23,7 @@ RESULT_PATH = CURRENT_DIR / "qr-code-1.webp"
 # %%
 # -------------------[ Create QR Code ]-------------------
 
-qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_H)
+qr = qrcode.QRCode(error_correction=ERROR_CORRECT_H)
 qr.add_data(URL_PATH)
 
 img_1 = qr.make_image(
