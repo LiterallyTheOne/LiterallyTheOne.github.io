@@ -23,6 +23,9 @@
 
 * 🤔 Decide if I should move the helper functions to antoher separate repository
 
+* 🧹 Make the posts' section smaller and tutorials' section bigger
+* 🧹 Put the tutorials' section before posts' section
+
 ## seositecheckup
 
 * To address URL canonicalization issues, it is recommended to select a primary URL for your webpage and set up
